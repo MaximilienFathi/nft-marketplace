@@ -1,0 +1,19 @@
+{
+  "name": "nft-marketplace",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaximilienFathi/nft-marketplace.git"
+  },
+  "author": "Maximilien Fathi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaximilienFathi/nft-marketplace/issues"
+  },
+  "homepage": "https://github.com/MaximilienFathi/nft-marketplace#readme"
+}
