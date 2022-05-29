@@ -1,0 +1,54 @@
+.header {
+  height: 9.6rem;
+  padding: 0 4.8rem;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /*background: linear-gradient(113.49deg, #984d38 -30.3%, #181e41 58.12%);*/
+}
+
+.brand-logo {
+  color: #fff;
+  /*height: 2.2rem;*/
+  font-size: 1.8rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.main-nav-list {
+  list-style: none;
+  display: flex;
+  /*align-items: center;*/
+  gap: 4.8rem;
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s;
+  /*display: inline-block;*/
+}
+
+.main-nav-link:hover,
+.main-nav-link:active {
+  color: #ff4500ff;
+}
+
+.main-nav-link.nav-cta:link,
+.main-nav-link.nav-cta:visited {
+  background-color: #ff4500ff;
+  border-radius: 9px;
+  padding: 1.2rem 2.4rem;
+  /*color: #fff;*/
+}
+
+.main-nav-link.nav-cta:hover,
+.main-nav-link.nav-cta:active {
+  background-color: #dc4b05;
+  color: #fff;
+}
