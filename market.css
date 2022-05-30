@@ -1,0 +1,90 @@
+/*Must deal with margins in NFT card when we have too much text*/
+
+.market-section {
+  padding: 9.6rem 0;
+}
+
+.market-heading-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8rem;
+}
+
+.nft-card {
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+  border-radius: 11px;
+  overflow: hidden;
+  transition: all 0.4s;
+  /*border: 3px solid red;*/
+  height: 65%;
+  background: linear-gradient(113.49deg, #c73d54 -30.3%, #16256b 58.12%);
+}
+
+.nft-card:hover {
+  transform: translateY(-1.2rem);
+  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.06);
+}
+
+.nft-img {
+  width: 100%;
+  height: 60%;
+  object-fit: cover;
+  /*border-radius: 11px;*/
+}
+
+.nft-info {
+  /*padding: 3.2rem 4.8rem 4.8rem 4.8rem;*/
+  padding: 3.2rem;
+}
+
+.nft-name {
+  font-size: 2.4rem;
+  color: #ded6d6;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+
+.nft-creator {
+  font-size: 1.6rem;
+  color: #ded6d6;
+  margin-bottom: 3.2rem;
+}
+
+.nft-bid-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  margin-bottom: 8.6rem;
+}
+
+.nft-bid-description {
+  font-size: 1.2rem;
+  color: #ded6d6;
+  margin-bottom: 1.2rem;
+}
+
+.nft-bid-ethereum {
+  font-size: 1.6rem;
+  color: #e3ae0f;
+  margin-bottom: 1rem;
+}
+
+.nft-bid-dollar {
+  font-size: 1.2rem;
+}
+
+.nft-bid-btn {
+  color: #fff;
+  background-color: #ff4500ff;
+  font-size: 1.6rem;
+  font-weight: 600;
+  padding: 0.8rem 1.2rem;
+  border-radius: 9px;
+  transition: all 0.3s;
+}
+
+.nft-bid-btn:hover,
+.nft-bid-btn:active {
+  background-color: #dc4b05;
+}
