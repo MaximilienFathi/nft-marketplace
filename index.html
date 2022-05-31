@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="header.css" />
     <link rel="stylesheet" href="hero.css" />
     <link rel="stylesheet" href="market.css" />
+    <link rel="stylesheet" href="creators.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -86,7 +87,7 @@
             <h2 class="heading-secondary">Limited Auctions</h2>
             <a class="btn btn-outline" href="">More artwork</a>
           </div>
-          <div class="grid grid-4-cols">
+          <div class="grid grid-4-cols grid-market">
             <div class="nft-card">
               <img class="nft-img" src="img/space-ga758f1522_640.jpg" alt="" />
               <div class="nft-info">
@@ -101,7 +102,7 @@
                     </p>
                     <p class="nft-bid-dollar">($150)</p>
                   </div>
-                  <button class="nft-bid-btn">View Artwork</button>
+                  <button class="btn btn-artwork">View Artwork</button>
                 </div>
               </div>
             </div>
@@ -119,7 +120,7 @@
                     </p>
                     <p class="nft-bid-dollar">($60)</p>
                   </div>
-                  <button class="nft-bid-btn">View Artwork</button>
+                  <button class="btn btn-artwork">View Artwork</button>
                 </div>
               </div>
             </div>
@@ -137,7 +138,7 @@
                     </p>
                     <p class="nft-bid-dollar">($350)</p>
                   </div>
-                  <button class="nft-bid-btn">View Artwork</button>
+                  <button class="btn btn-artwork">View Artwork</button>
                 </div>
               </div>
             </div>
@@ -155,7 +156,7 @@
                     </p>
                     <p class="nft-bid-dollar">($645)</p>
                   </div>
-                  <button class="nft-bid-btn">View Artwork</button>
+                  <button class="btn btn-artwork">View Artwork</button>
                 </div>
               </div>
             </div>
@@ -163,51 +164,115 @@
         </div>
       </section>
 
-      <section class="creator-section">
-        <div class="heading-container">
-          <h2 class="creator-heading">Top Creators</h2>
-          <a class="creator-explore" href=""></a>
-        </div>
-        <div class="creator-container">
-          <div class="creator-card">
-            <img class="creator-banner" />
-            <img class="creator-img" src="" alt="" />
-            <div class="creator-info">
-              <p class="creator-items"></p>
-              <p class="creator-sales"></p>
-              <p class="creator-followers"></p>
-            </div>
-            <button class="btn btn-full">View Creator</button>
+      <section class="creators-section">
+        <div class="container">
+          <div class="creators-heading-box">
+            <h2 class="heading-secondary">Top Creators</h2>
+            <a class="btn btn-outline" href="">More creators</a>
           </div>
-          <div class="creator-card">
-            <img class="creator-banner" />
-            <img class="creator-img" src="" alt="" />
-            <div class="creator-info">
-              <p class="creator-items"></p>
-              <p class="creator-sales"></p>
-              <p class="creator-followers"></p>
+          <div class="grid grid-4-cols grid-creators">
+            <div class="creator-card">
+              <img class="creator-banner" src="img/cosmos-g20ff2fd5e_640.png" />
+              <img
+                class="creator-img"
+                src="img/man-g238e36a78_640.png"
+                alt=""
+              />
+              <div class="creator-info">
+                <p class="creator-name">Bob Taylor</p>
+                <div class="creator-stat">
+                  <p>Items</p>
+                  <p>56</p>
+                </div>
+                <div class="creator-stat">
+                  <p>Sales</p>
+                  <p>10</p>
+                </div>
+                <div class="creator-stat">
+                  <p>Followers</p>
+                  <p>8</p>
+                </div>
+              </div>
+              <button class="btn btn-creator">View Creator</button>
             </div>
-            <button class="btn btn-full">View Creator</button>
-          </div>
-          <div class="creator-card">
-            <img class="creator-banner" />
-            <img class="creator-img" src="" alt="" />
-            <div class="creator-info">
-              <p class="creator-items"></p>
-              <p class="creator-sales"></p>
-              <p class="creator-followers"></p>
+            <div class="creator-card">
+              <img class="creator-banner" src="img/bear-gfc11ffe9c_640.png" />
+              <img
+                class="creator-img"
+                src="img/man-g1679334f6_640.png"
+                alt=""
+              />
+              <div class="creator-info">
+                <p class="creator-name">John Smith</p>
+                <div class="creator-stat">
+                  <p>Items</p>
+                  <p>23</p>
+                </div>
+                <div class="creator-stat">
+                  <p>Sales</p>
+                  <p>3</p>
+                </div>
+                <div class="creator-stat">
+                  <p>Followers</p>
+                  <p>4</p>
+                </div>
+              </div>
+              <button class="btn btn-creator">View Creator</button>
             </div>
-            <button class="btn btn-full">View Creator</button>
-          </div>
-          <div class="creator-card">
-            <img class="creator-banner" />
-            <img class="creator-img" src="" alt="" />
-            <div class="creator-info">
-              <p class="creator-items"></p>
-              <p class="creator-sales"></p>
-              <p class="creator-followers"></p>
+            <div class="creator-card">
+              <img
+                class="creator-banner"
+                src="img/memphis-g1020b08ad_640.jpg"
+              />
+              <img
+                class="creator-img"
+                src="img/woman-g33cc37279_640.jpg"
+                alt=""
+              />
+              <div class="creator-info">
+                <p class="creator-name">Lucy Pudding</p>
+                <div class="creator-stat">
+                  <p>Items</p>
+                  <p>145</p>
+                </div>
+                <div class="creator-stat">
+                  <p>Sales</p>
+                  <p>78</p>
+                </div>
+                <div class="creator-stat">
+                  <p>Followers</p>
+                  <p>34</p>
+                </div>
+              </div>
+              <button class="btn btn-creator">View Creator</button>
             </div>
-            <button class="btn btn-full">View Creator</button>
+            <div class="creator-card">
+              <img
+                class="creator-banner"
+                src="img/ice-cream-g26773c881_640.png"
+              />
+              <img
+                class="creator-img"
+                src="img/woman-g11e4ec8b8_640.jpg"
+                alt=""
+              />
+              <div class="creator-info">
+                <p class="creator-name">Jacky Foster</p>
+                <div class="creator-stat">
+                  <p>Items</p>
+                  <p>34</p>
+                </div>
+                <div class="creator-stat">
+                  <p>Sales</p>
+                  <p>4</p>
+                </div>
+                <div class="creator-stat">
+                  <p>Followers</p>
+                  <p>16</p>
+                </div>
+              </div>
+              <button class="btn btn-creator">View Creator</button>
+            </div>
           </div>
         </div>
       </section>

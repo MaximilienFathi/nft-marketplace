@@ -11,13 +11,17 @@
   margin-bottom: 8rem;
 }
 
+.grid-market {
+  height: 50rem;
+}
+
 .nft-card {
   box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
   border-radius: 11px;
   overflow: hidden;
   transition: all 0.4s;
   /*border: 3px solid red;*/
-  height: 65%;
+  /*height: 65%;*/
   background: linear-gradient(113.49deg, #c73d54 -30.3%, #16256b 58.12%);
 }
 
@@ -35,7 +39,7 @@
 
 .nft-info {
   /*padding: 3.2rem 4.8rem 4.8rem 4.8rem;*/
-  padding: 3.2rem;
+  padding: 2.4rem;
 }
 
 .nft-name {
@@ -55,7 +59,7 @@
   display: flex;
   justify-content: space-between;
   align-items: stretch;
-  margin-bottom: 8.6rem;
+  /*margin-bottom: 2.4rem;*/
 }
 
 .nft-bid-description {
@@ -74,17 +78,14 @@
   font-size: 1.2rem;
 }
 
-.nft-bid-btn {
-  color: #fff;
+.btn-artwork {
   background-color: #ff4500ff;
+  /*background: linear-gradient(45deg, #ea4c0a, #5252d9);*/
   font-size: 1.6rem;
-  font-weight: 600;
   padding: 0.8rem 1.2rem;
-  border-radius: 9px;
-  transition: all 0.3s;
 }
 
-.nft-bid-btn:hover,
-.nft-bid-btn:active {
+.btn-artwork:hover,
+.btn-artwork:active {
   background-color: #dc4b05;
 }
