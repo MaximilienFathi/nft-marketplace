@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="hero.css" />
     <link rel="stylesheet" href="market.css" />
     <link rel="stylesheet" href="creators.css" />
+    <link rel="stylesheet" href="procedure.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,10 +18,14 @@
       rel="stylesheet"
     />
 
-    <!--    <link-->
-    <!--      rel="stylesheet"-->
-    <!--      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"-->
-    <!--    />-->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
   </head>
   <body>
     <header class="header">
@@ -278,12 +283,42 @@
       </section>
 
       <section class="procedure-section">
-        <h2 class="procedure-heading">procedure-heading</h2>
-        <div class="procedure-container">
-          <div class="procedure-step"></div>
-          <div class="procedure-step"></div>
-          <div class="procedure-step"></div>
-          <div class="procedure-step"></div>
+        <div class="container colored-container">
+          <h2 class="heading-secondary procedure-heading">How it works</h2>
+          <div class="container grid grid-4-cols">
+            <div class="procedure-step">
+              <ion-icon class="step-icon" name="wallet"></ion-icon>
+              <p class="step-title">Heading 1</p>
+              <p class="step-description">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab
+                aliquam amet blanditiis dolorem
+              </p>
+            </div>
+            <div class="procedure-step">
+              <ion-icon class="step-icon" name="albums"></ion-icon>
+              <p class="step-title">Heading 2</p>
+              <p class="step-description">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab
+                aliquam amet blanditiis dolorem
+              </p>
+            </div>
+            <div class="procedure-step">
+              <ion-icon class="step-icon" name="images"></ion-icon>
+              <p class="step-title">Heading 3</p>
+              <p class="step-description">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab
+                aliquam amet blanditiis dolorem
+              </p>
+            </div>
+            <div class="procedure-step">
+              <ion-icon class="step-icon" name="pricetags"></ion-icon>
+              <p class="step-title">Heading 4</p>
+              <p class="step-description">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab
+                aliquam amet blanditiis dolorem
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 

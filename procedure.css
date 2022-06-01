@@ -1,0 +1,48 @@
+.procedure-section {
+  padding: 0 0 9.6rem 0;
+  backdrop-filter: contrast(80%);
+}
+
+.procedure-heading {
+  display: block;
+  text-align: center;
+  padding: 2.4rem 0;
+  margin-bottom: 2.4rem;
+}
+
+/*.procedure-container {*/
+/*  display: flex;*/
+/*  gap: 2.4rem;*/
+/*}*/
+
+.procedure-step {
+  border: 1px solid darkgoldenrod;
+  border-radius: 11px;
+  box-shadow: 0 0 12.8rem 0.08rem goldenrod;
+  background: linear-gradient(113.49deg, #640348 -30.3%, #060649 58.12%);
+  text-align: center;
+  padding: 1.6rem;
+}
+
+.step-icon {
+  color: blue;
+  backdrop-filter: blur(8px);
+  color: darkgoldenrod; /*or goldenrod*/
+  border-radius: 50%;
+  height: 3.2rem;
+  width: 3.2rem;
+  padding: 1.6rem;
+  margin-bottom: 3.2rem; /* or 2.4rem*/
+}
+
+.step-title {
+  font-size: 2.4rem;
+  color: #ded6d6;
+  font-weight: 700;
+  margin-bottom: 1.6rem;
+}
+
+.step-description {
+  font-size: 1.8rem;
+  line-height: 1.8;
+}

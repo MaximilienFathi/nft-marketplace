@@ -27,7 +27,7 @@
 
 .nft-card:hover {
   transform: translateY(-1.2rem);
-  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.06);
+  box-shadow: 0 0 4.8rem goldenrod;
 }
 
 .nft-img {
@@ -70,7 +70,7 @@
 
 .nft-bid-ethereum {
   font-size: 1.6rem;
-  color: #e3ae0f;
+  color: goldenrod;
   margin-bottom: 1rem;
 }
 

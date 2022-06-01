@@ -1,6 +1,6 @@
-/*.creators-section {*/
-/*  padding: 9.6rem 0;*/
-/*}*/
+.creators-section {
+  padding: 0 0 9.6rem 0;
+}
 
 .creators-heading-box {
   display: flex;
@@ -24,11 +24,12 @@
   /*border: 3px solid red;*/
   /*height: 65%;*/
   background: linear-gradient(113.49deg, #c73d54 -30.3%, #16256b 58.12%);
+  /*backdrop-filter: blur(1px);*/
   position: relative;
 }
 .creator-card:hover {
   transform: translateY(-1.2rem);
-  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.06);
+  box-shadow: 0 0 6.4rem goldenrod;
 }
 
 .creator-banner {
@@ -80,7 +81,7 @@
 .creator-stat p:nth-child(2) {
   font-size: 2rem;
   font-weight: 500;
-  color: #e3ae0f;
+  color: goldenrod;
 }
 
 .btn-creator {
