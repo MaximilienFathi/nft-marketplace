@@ -1,7 +1,23 @@
 .procedure-section {
   padding: 0 0 9.6rem 0;
+  /*background-image: url("img/map-g165894aa7_640.png");*/
+  /*background-size: cover;*/
   backdrop-filter: contrast(80%);
+  /*position: relative;*/
 }
+
+/*.procedure-section:before {*/
+/*  background: url(img/treasure-map-g92be65d30_1280.png);*/
+/*  content: "";*/
+/*  z-index: 10;*/
+/*  position: absolute;*/
+/*  opacity: 0.05;*/
+/*  top: 0;*/
+/*  bottom: 10rem;*/
+/*  left: 0;*/
+/*  right: 0;*/
+/*  background-size: 200rem;*/
+/*}*/
 
 .procedure-heading {
   display: block;
@@ -15,6 +31,7 @@
 /*  gap: 2.4rem;*/
 /*}*/
 
+/* Add animation for each box when reaching viewport*/
 .procedure-step {
   border: 1px solid darkgoldenrod;
   border-radius: 11px;
