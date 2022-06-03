@@ -1,5 +1,6 @@
 .procedure-section {
   padding: 0 0 9.6rem 0;
+  margin-bottom: 2.4rem;
   /*background-image: url("img/map-g165894aa7_640.png");*/
   /*background-size: cover;*/
   backdrop-filter: contrast(80%);
