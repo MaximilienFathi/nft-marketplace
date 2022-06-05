@@ -1,5 +1,6 @@
 .hero-section {
   padding: 4.8rem 0 9.6rem 0;
+  backdrop-filter: contrast(70%);
 }
 
 .hero-container {
@@ -20,34 +21,41 @@
 
 .hero-btn-box {
   display: flex;
+  align-items: center;
   gap: 1.6rem;
   margin-bottom: 8rem;
 }
 
 .hero-stats-box {
   display: flex;
+  align-items: center;
   gap: 9.6rem;
 }
 
 .stats-text,
 .stats-value {
+  color: goldenrod;
   font-size: 2.4rem;
   font-weight: 600;
-  background: -webkit-linear-gradient(113.49deg, #ffedc0, #e86108);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  /*background: -webkit-linear-gradient(113.49deg, #ffedc0, #e86108);*/
+  /*-webkit-background-clip: text;*/
+  /*-webkit-text-fill-color: transparent;*/
+}
+
+.hero-img-box {
+  justify-self: center;
 }
 
 .hero-img {
-  animation: bounce 1s infinite alternate;
-  /*-webkit-animation: mover 1s infinite alternate;*/
+  transform: scale(1.2);
+  /*animation: bounce 1s infinite alternate;*/
 }
 
-@keyframes bounce {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-10px);
-  }
-}
+/*@keyframes bounce {*/
+/*  0% {*/
+/*    transform: translateY(0);*/
+/*  }*/
+/*  100% {*/
+/*    transform: translateY(-10px);*/
+/*  }*/
+/*}*/

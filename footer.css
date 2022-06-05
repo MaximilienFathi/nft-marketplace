@@ -1,0 +1,92 @@
+.footer {
+  padding: 9.6rem 0 2.4rem 0;
+  background-color: #060649;
+  /*border-top: 1px solid goldenrod;*/
+}
+
+.grid-footer {
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  padding-bottom: 4.8rem;
+  border-bottom: 1px solid darkgoldenrod;
+  margin-bottom: 2.4rem;
+}
+
+.footer-logos {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-logo {
+  /*display: block; useful for img*/
+  color: #fff;
+  /*height: 2.2rem;*/
+  font-size: 2.4rem;
+  font-weight: 500;
+  /*text-decoration: none;*/
+  transition: all 0.3s;
+}
+
+.footer-description {
+  font-size: 1.6rem;
+  margin-bottom: 2.4rem;
+}
+
+.footer-community {
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1.6rem;
+}
+
+.networks-list {
+  list-style: none;
+  display: flex;
+  gap: 2.4rem;
+}
+
+.network-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+}
+
+.footer-heading {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 3.2rem;
+}
+
+.footer-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.footer-link:link,
+.footer-link:visited {
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: goldenrod;
+  transition: all 0.3s;
+}
+
+.footer-link:hover,
+.footer-link:active {
+  color: darkgoldenrod;
+}
+
+.copyright-container {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+}
+
+.legal-documents {
+  display: flex;
+  gap: 2.4rem;
+}
+
+.legal-doc-link {
+  text-decoration: none;
+  color: #ded6d6;
+}

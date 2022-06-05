@@ -20,8 +20,13 @@
 .main-nav-list {
   list-style: none;
   display: flex;
-  /*align-items: center;*/
-  gap: 4.8rem;
+  align-items: center;
+  gap: 3.2rem;
+}
+
+.main-nav-cta {
+  display: flex;
+  gap: 1.6rem;
 }
 
 .main-nav-link:link,
