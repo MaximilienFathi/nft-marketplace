@@ -3,6 +3,7 @@
 // ELEMENTS
 const allLinks = document.querySelectorAll("a:link");
 const heroSectionEl = document.querySelector(".hero-section");
+const yearEl = document.querySelector(".year");
 
 // SMOOTH SCROLLING ANIMATION
 allLinks.forEach(function (link) {
@@ -46,3 +47,7 @@ const obs = new IntersectionObserver(
   }
 );
 obs.observe(heroSectionEl);
+
+// SET CURRENT YEAR
+const currentYear = new Date().getFullYear();
+yearEl.textContent = currentYear.toString();
