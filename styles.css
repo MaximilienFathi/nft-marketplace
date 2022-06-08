@@ -82,6 +82,7 @@ body {
   padding: 1.6rem 3.2rem;
   border-radius: 9px;
   transition: all 0.3s;
+  cursor: pointer;
 }
 
 .btn-full:link,
