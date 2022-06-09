@@ -11,6 +11,9 @@ const signUpEl = document.querySelector(".sign-up-btn");
 const modalEl = document.querySelector(".modal-container");
 const modalCloseEl = document.querySelector(".modal-close");
 
+const loginFormEl = document.querySelector("#login-form");
+const signupFormEl = document.querySelector("#signup-form");
+
 //////////////////////////////////////////////////
 // SMOOTH SCROLLING ANIMATION
 allLinks.forEach(function (link) {
@@ -64,6 +67,12 @@ yearEl.textContent = currentYear.toString();
 //////////////////////////////////////////////////
 // ENABLE MODAL FORM INTERACTION
 
+// Reset forms when closing them
+const resetForm = function () {
+  document.getElementById(loginFormEl.id).reset();
+  document.getElementById(signupFormEl.id).reset();
+};
+
 // When the user clicks on the LOGIN button, open the modal
 loginEl.onclick = function () {
   modalEl.style.display = "flex";
@@ -81,6 +90,7 @@ signUpEl.onclick = function () {
 
 // When the user clicks on <span> (x), close the modal
 modalCloseEl.onclick = function () {
+  resetForm();
   modalEl.style.display = "none";
   document.querySelector("body").style.overflowY = "scroll";
 };
@@ -88,6 +98,7 @@ modalCloseEl.onclick = function () {
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
   if (event.target == modalEl) {
+    resetForm();
     modalEl.style.display = "none";
     document.querySelector("body").style.overflowY = "scroll";
   }

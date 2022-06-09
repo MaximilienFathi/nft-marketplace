@@ -15,15 +15,20 @@
 }
 
 .modal-close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
+  color: goldenrod;
+  /*display: block;*/
+  /*float: right;*/
+  font-size: 3.2rem;
   font-weight: bold;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  /*transform: translate(-150%, 25%);*/
 }
 
 .modal-close:hover,
 .modal-close:focus {
-  color: black;
+  color: #ff4500ff;
   text-decoration: none;
   cursor: pointer;
 }
@@ -37,6 +42,8 @@
   background-color: rgba(6, 6, 73, 0.8);
   border-radius: 11px;
   box-shadow: 0 0 5rem #000;
+  border: 3px solid red;
+  position: relative;
 }
 
 #chk {
