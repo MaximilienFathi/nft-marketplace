@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  color: #ded6d6;
+  color: #ded6d6; /* remove all duplicates of that style elsewhere */
   font-family: Rubik, sans-serif;
   font-weight: 400;
   line-height: 1;
@@ -83,6 +83,7 @@ body {
   border-radius: 9px;
   transition: all 0.3s;
   cursor: pointer;
+  border: none;
 }
 
 .btn-full:link,
@@ -113,3 +114,41 @@ body {
 /*img {*/
 /*    width: 100%;*/
 /*}*/
+
+/*/////////////////////////////////////////////////////*/
+/* MODAL STUFF */
+
+.modal-container {
+  display: none;
+  position: fixed; /* annoying bug - changed from absolute to fixed*/
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden; /* Can show or hide scroll*/
+  backdrop-filter: blur(15px);
+  /*backdrop-filter: grayscale(80%);*/
+  justify-content: center;
+  align-items: center;
+  /*transition: all 5s ease-in;*/
+}
+
+.modal-close {
+  color: goldenrod;
+  /*display: block;*/
+  /*float: right;*/
+  font-size: 3.2rem;
+  font-weight: bold;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  /*transform: translate(-150%, 25%);*/
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  color: #ff4500ff;
+  text-decoration: none;
+  cursor: pointer;
+}

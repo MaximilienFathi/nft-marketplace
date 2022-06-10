@@ -3,16 +3,21 @@
 //////////////////////////////////////////////////
 // ELEMENTS
 const allLinks = document.querySelectorAll("a:link");
-const heroSectionEl = document.querySelector(".hero-section");
-const yearEl = document.querySelector(".year");
+const heroSection = document.querySelector(".hero-section");
+const year = document.querySelector(".year");
+const timer = document.querySelector(".timer");
 
-const loginEl = document.querySelector(".login-btn");
-const signUpEl = document.querySelector(".sign-up-btn");
-const modalEl = document.querySelector(".modal-container");
-const modalCloseEl = document.querySelector(".modal-close");
+const btnLogin = document.querySelector(".btn-login");
+const btnSignup = document.querySelector(".btn-signup");
+const btnArtwork = document.querySelector(".btn-artwork");
+const btnCreator = document.querySelector(".btn-creator");
 
-const loginFormEl = document.querySelector("#login-form");
-const signupFormEl = document.querySelector("#signup-form");
+const modalAuthentication = document.querySelector("#modal-authentication");
+const modalArtwork = document.querySelector("#modal-artwork");
+// const modalClose = document.querySelector(".modal-close");
+
+const formLogin = document.querySelector("#form-login");
+const formSignup = document.querySelector("#form-signup");
 
 //////////////////////////////////////////////////
 // SMOOTH SCROLLING ANIMATION
@@ -41,7 +46,7 @@ allLinks.forEach(function (link) {
 const obs = new IntersectionObserver(
   function (entries) {
     const ent = entries[0];
-    console.log(entries);
+    // console.log(entries);
 
     if (ent.isIntersecting === false) {
       document.body.classList.add("sticky");
@@ -57,49 +62,93 @@ const obs = new IntersectionObserver(
     rootMargin: "-100%",
   }
 );
-obs.observe(heroSectionEl);
+obs.observe(heroSection);
 
 //////////////////////////////////////////////////
 // SET CURRENT YEAR
 const currentYear = new Date().getFullYear();
-yearEl.textContent = currentYear.toString();
+year.textContent = currentYear.toString();
 
 //////////////////////////////////////////////////
-// ENABLE MODAL FORM INTERACTION
+// COMMON METHODS FOR ALL MODALS
 
 // Reset forms when closing them
 const resetForm = function () {
-  document.getElementById(loginFormEl.id).reset();
-  document.getElementById(signupFormEl.id).reset();
+  document.getElementById(formLogin.id).reset();
+  document.getElementById(formSignup.id).reset();
 };
 
-// When the user clicks on the LOGIN button, open the modal
-loginEl.onclick = function () {
-  modalEl.style.display = "flex";
+// Show modal form
+const showModal = function (currentModal) {
+  console.log(currentModal);
+  currentModal.style.display = "flex";
   document.querySelector("body").style.overflow = "hidden";
+};
+
+// Close modal when the user clicks outside of it
+window.onclick = function (event) {
+  const currentModal = event.target;
+  console.log("TEST", currentModal);
+  if (currentModal === modalAuthentication || currentModal === modalArtwork) {
+    resetForm();
+    currentModal.style.display = "none";
+    document.querySelector("body").style.overflowY = "scroll";
+  }
+};
+
+//////////////////////////////////////////////////
+// ENABLE MODAL FORM INTERACTION - LOGIN/SIGN UP
+
+// When the user clicks on the LOGIN button, open the modal
+btnLogin.onclick = function () {
+  showModal(modalAuthentication);
   document.querySelector("#chk").checked = true;
   // transition: 0.5s ease-in-out
 };
 
 // When the user clicks on the SIGN UP button, open the modal
-signUpEl.onclick = function () {
-  modalEl.style.display = "flex";
-  document.querySelector("body").style.overflow = "hidden";
+btnSignup.onclick = function () {
+  showModal(modalAuthentication);
   document.querySelector("#chk").checked = false;
 };
 
 // When the user clicks on <span> (x), close the modal
-modalCloseEl.onclick = function () {
-  resetForm();
-  modalEl.style.display = "none";
-  document.querySelector("body").style.overflowY = "scroll";
+// modalClose.onclick = function () {
+//   resetForm();
+//   modalAuthentication.style.display = "none";
+//   document.querySelector("body").style.overflowY = "scroll";
+// };
+
+//////////////////////////////////////////////////
+// ENABLE MODAL FORM INTERACTION - VIEW ARTWORK
+
+btnArtwork.onclick = function () {
+  showModal(modalArtwork);
 };
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-  if (event.target == modalEl) {
-    resetForm();
-    modalEl.style.display = "none";
-    document.querySelector("body").style.overflowY = "scroll";
-  }
+window.onload = function () {
+  let hours = 24;
+  let minutes = 60;
+  let seconds = 60;
+  setInterval(function () {
+    timer.textContent = hours + " : " + minutes + " : " + seconds;
+    seconds--;
+    if (seconds === 0) {
+      minutes--;
+      seconds = 60;
+      if (minutes === 0) {
+        hours--;
+        minutes = 60;
+      }
+      if (hours === 0) {
+        hours = 24;
+      }
+    }
+    if (seconds >= 58) {
+      timer.style.color = "#ded6d6";
+    }
+    if (seconds < 58) {
+      timer.style.color = "red";
+    }
+  }, 1000);
 };

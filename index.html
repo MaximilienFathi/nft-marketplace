@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css-sections/newsletter.css" />
     <link rel="stylesheet" href="css-sections/footer.css" />
     <link rel="stylesheet" href="css-modals/authentication.css" />
+    <link rel="stylesheet" href="css-modals/artwork.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,6 +30,8 @@
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
+    <script src="https://unpkg.com/phosphor-icons"></script>
+    <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
 
     <script defer src="index.js"></script>
   </head>
@@ -43,19 +46,20 @@
           <li><a class="main-nav-link" href="#procedure">How it works</a></li>
           <li>
             <div class="main-nav-cta">
-              <a class="login-btn main-nav-link nav-cta" href="">Login</a>
-              <a class="sign-up-btn main-nav-link nav-cta" href="">Sign Up</a>
+              <a class="btn-login main-nav-link nav-cta" href="">Login</a>
+              <a class="btn-signup main-nav-link nav-cta" href="">Sign Up</a>
             </div>
           </li>
         </ul>
       </nav>
 
-      <div class="modal-container">
+      <div id="modal-authentication" class="modal-container">
         <div class="modal-content">
-          <ion-icon class="modal-close" name="close-outline"></ion-icon>
+          <!--          <ion-icon class="modal-close" name="close-outline"></ion-icon>-->
+          <!--          <div class="modal-close" name="close-outline"></div>-->
           <input type="checkbox" id="chk" aria-hidden="true" />
           <div class="modal-signup">
-            <form id="signup-form">
+            <form id="form-signup">
               <label for="chk" aria-hidden="true">Sign up</label>
               <input
                 type="text"
@@ -80,7 +84,7 @@
           </div>
 
           <div class="modal-login">
-            <form id="login-form">
+            <form id="form-login">
               <label for="chk" aria-hidden="true">Login</label>
               <input
                 type="email"
@@ -168,6 +172,56 @@
                 </div>
               </div>
             </div>
+
+            <div id="modal-artwork" class="modal-container">
+              <div class="artwork-modal-content">
+                <img
+                  class="modal-nft-img"
+                  src="img/space-ga758f1522_640.jpg"
+                  alt=""
+                />
+                <div class="modal-nft-info">
+                  <p class="modal-nft-name">Flying Astronaut</p>
+                  <p class="modal-nft-creator">
+                    By <a class="modal-creator-link" href="">Bob Taylor</a>
+                  </p>
+                  <div class="modal-nft-stats">
+                    <div class="modal-nft-stat">
+                      <div class="icon">O</div>
+                      <p>15 views</p>
+                    </div>
+                    <div class="modal-nft-stat">
+                      <div class="icon">O</div>
+                      <p>59 favorites</p>
+                    </div>
+                  </div>
+                  <div class="modal-nft-time">
+                    <div class="icon">O</div>
+                    <p>Sale ends in <span class="timer"></span></p>
+                  </div>
+                  <div class="modal-nft-quantities">
+                    <div class="modal-nft-quantity">
+                      <p class="nft-quantity-description">For sale</p>
+                      <p class="modal-nft-quantity">112</p>
+                    </div>
+                    <div class="modal-nft-quantity">
+                      <p class="">Quantity sold</p>
+                      <p class="">53</p>
+                    </div>
+                  </div>
+                  <div class="modal-nft-prices">
+                    <p class="nft-price-description">Current price</p>
+                    <p class="nft-price-ethereum">
+                      <!--                      <i class="lab la-ethereum"></i>-->
+                      <strong>90 ETH</strong>
+                    </p>
+                    <p class="nft-price-dollar">($150)</p>
+                  </div>
+                  <button class="btn btn-full btn-buy">Buy Now</button>
+                </div>
+              </div>
+            </div>
+
             <div class="nft-card">
               <img class="nft-img" src="img/art-g388e5fb4f_640.jpg" alt="" />
               <div class="nft-info">
