@@ -1,27 +1,31 @@
 .artwork-modal-content {
   /*transition: all 5s ease-in;*/
-  /*width: 60%;*/
-  height: 50rem;
-  /*overflow: hidden;*/
+  /*width: 500rem;*/
+  /*height: 40rem;*/
   background-color: rgba(6, 6, 73, 0.8);
   border-radius: 11px;
-  box-shadow: 0 0 5rem #000;
-  border: 3px solid red;
-  position: relative;
+  /*box-shadow: 0 0 5rem #000;*/
+  /*box-shadow: 0 0 8rem goldenrod;*/
+  /*position: relative;*/
 
   display: flex;
+  flex-basis: 100rem;
   gap: 3.2rem;
   /*box-shadow: 0 0 4.8rem gold;*/
+  /*flex-shrink: 1;*/
+  /*flex-grow: 1;*/
+  /*transition: all 3s ease-in-out;*/
 }
 
 .modal-nft-img {
   /*width: 100%;*/
   /*height: 100%;*/
+  width: 40rem;
   /*object-fit: cover;*/
   border-radius: 11px;
   box-shadow: 0 0 6.4rem rgb(0, 0, 0);
   transform: scale(1.1);
-  transition: all 0.5s;
+  transition: all 0.4s;
 }
 
 .modal-nft-img:hover {
@@ -30,10 +34,10 @@
 
 .modal-nft-info {
   /*padding: 3.2rem 4.8rem 4.8rem 4.8rem;*/
-  padding: 4.8rem;
-  text-align: center;
+  padding: 4.8rem 6.4rem 4.8rem 4.8rem;
+  /*text-align: center;*/
 }
-
+/*/////////////////////////////////////////////////*/
 .modal-nft-name {
   font-size: 4.4rem;
   color: #ded6d6;
@@ -46,7 +50,6 @@
   color: #ded6d6;
   margin-bottom: 4.8rem;
 }
-
 .modal-creator-link:link,
 .modal-creator-link:visited {
   text-decoration: none;
@@ -58,56 +61,60 @@
 .modal-creator-link:active {
   color: darkgoldenrod;
 }
+/*/////////////////////////////////////////////////*/
+/*.modal-nft-quantities {*/
+/*  font-size: 2rem;*/
+/*  margin-bottom: 3.2rem;*/
+/*  display: flex;*/
+/*  gap: 2.4rem;*/
+/*  justify-content: space-evenly;*/
+/*}*/
 
-.modal-nft-stats {
-  font-size: 2rem;
-  margin-bottom: 3.2rem;
-  display: flex;
-  gap: 2.4rem;
-  justify-content: space-evenly;
-}
-
-.modal-nft-stat {
-  display: flex;
-  gap: 1.2rem;
-}
-
-.modal-nft-time {
-  font-size: 2.4rem;
-  margin-bottom: 3.2rem;
-  display: flex;
-  gap: 1.2rem;
-  justify-content: center;
-}
-
-.modal-nft-quantities {
-  font-size: 2rem;
-  margin-bottom: 3.2rem;
-  display: flex;
-  gap: 2.4rem;
-  justify-content: space-evenly;
-}
-
-.modal-nft-quantity {
+/*.modal-nft-quantity {*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  align-items: center;*/
+/*  gap: 1.2rem;*/
+/*}*/
+/*/////////////////////////////////////////////////*/
+.nft-description {
   display: flex;
   flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 2.4rem;
+}
+
+.nft-description-label {
+  font-size: 1.6rem;
+  color: #b2abab;
+}
+
+.nft-description-text {
+  font-size: 1.6rem;
+}
+/*/////////////////////////////////////////////////*/
+.modal-nft-sale {
+  /*flex-direction: column;*/
+  /*gap: 1.6rem;*/
+  display: grid;
+  margin-bottom: 2.4rem;
+}
+
+.nft-prices-label {
+  font-size: 1.6rem;
+  color: #b2abab;
+  /*margin-bottom: 1.2rem;*/
+}
+
+.nft-prices {
+  grid-row: 2 / -1;
+  display: flex;
   align-items: center;
   gap: 1.2rem;
 }
 
-.nft-price-description {
-  font-size: 1.6rem;
-  margin-bottom: 1.2rem;
-}
-
-.modal-nft-prices {
-  display: flex;
-  gap: 1.6rem;
-  margin-bottom: 2.4rem;
-}
-
 .nft-price-ethereum {
-  font-size: 1.6rem;
+  font-size: 3rem;
   color: goldenrod;
 }
 
@@ -115,9 +122,73 @@
   font-size: 1.6rem;
 }
 
+.modal-nft-time {
+  grid-row: 2 / -1;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  /*flex-grow: 1;*/
+  gap: 0.8rem;
+  /*justify-content: center;*/
+}
+
+.modal-nft-time svg {
+  width: 2.4rem;
+}
+
+.modal-btn-box {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  margin-bottom: 2.4rem;
+}
+
 .btn-buy {
   background-color: #ff4500ff;
-  /*background: linear-gradient(45deg, #ea4c0a, #5252d9);*/
-  font-size: 2rem;
   padding: 1.2rem 1.6rem;
+  width: 20rem;
+}
+
+.btn-favorites {
+  padding: 0.9rem 1.3rem;
+  background-color: transparent;
+  border: 3px solid #ff4500ff;
+  outline: none;
+  width: 20rem;
+}
+/*/////////////////////////////////////////////////*/
+.modal-nft-stats {
+  font-size: 1.6rem;
+  display: flex;
+  gap: 3.2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-nft-stat {
+  display: flex;
+  /*justify-content: space-between;*/
+  align-items: center;
+  gap: 0.8rem;
+  /*flex-grow: 1;*/
+}
+
+.modal-nft-stat svg {
+  width: 2.4rem;
+}
+/*/////////////////////////////////////////////////*/
+.border-glow {
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    box-shadow: 0 0 8rem 3rem darkgoldenrod;
+  }
+
+  to {
+    box-shadow: 0 0 8rem 3rem goldenrod;
+  }
 }

@@ -78,7 +78,15 @@ const resetForm = function () {
   document.getElementById(formSignup.id).reset();
 };
 
-// Show modal form
+// Set origin of modal popup animation
+const setModalOrigin = function (currentModal, currentButton) {
+  const xPosition = currentButton.offsetLeft;
+  const yPosition = currentButton.offsetTop;
+  currentModal.style.transformOrigin = `${xPosition}px ${yPosition}px`;
+  console.log(currentModal.style.transformOrigin);
+};
+
+// Show modal window
 const showModal = function (currentModal) {
   console.log(currentModal);
   currentModal.style.display = "flex";
@@ -100,16 +108,19 @@ window.onclick = function (event) {
 // ENABLE MODAL FORM INTERACTION - LOGIN/SIGN UP
 
 // When the user clicks on the LOGIN button, open the modal
-btnLogin.onclick = function () {
-  showModal(modalAuthentication);
+btnLogin.onclick = function (event) {
   document.querySelector("#chk").checked = true;
-  // transition: 0.5s ease-in-out
+  const currentButton = event.target;
+  setModalOrigin(modalAuthentication, currentButton);
+  showModal(modalAuthentication);
 };
 
 // When the user clicks on the SIGN UP button, open the modal
-btnSignup.onclick = function () {
-  showModal(modalAuthentication);
+btnSignup.onclick = function (event) {
   document.querySelector("#chk").checked = false;
+  const currentButton = event.target;
+  setModalOrigin(modalAuthentication, currentButton);
+  showModal(modalAuthentication);
 };
 
 // When the user clicks on <span> (x), close the modal
@@ -122,7 +133,9 @@ btnSignup.onclick = function () {
 //////////////////////////////////////////////////
 // ENABLE MODAL FORM INTERACTION - VIEW ARTWORK
 
-btnArtwork.onclick = function () {
+btnArtwork.onclick = function (event) {
+  const currentButton = event.target;
+  setModalOrigin(modalArtwork, currentButton);
   showModal(modalArtwork);
 };
 

@@ -36,7 +36,7 @@
 .procedure-step {
   border: 1px solid darkgoldenrod;
   border-radius: 11px;
-  box-shadow: 0 0 12.8rem 0.08rem goldenrod;
+  box-shadow: 0 0 12.8rem 0.8rem goldenrod;
   background: linear-gradient(113.49deg, #640348 -30.3%, #060649 58.12%);
   text-align: center;
   padding: 1.6rem;
