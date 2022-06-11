@@ -136,6 +136,10 @@
   width: 2.4rem;
 }
 
+.timer {
+  color: red;
+}
+
 .modal-btn-box {
   font-size: 2rem;
   display: flex;

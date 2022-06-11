@@ -16,6 +16,9 @@ const modalAuthentication = document.querySelector("#modal-authentication");
 const modalArtwork = document.querySelector("#modal-artwork");
 // const modalClose = document.querySelector(".modal-close");
 
+const artworkModalContent = document.querySelector(".artwork-modal-content");
+const modalCreatorLink = document.querySelector(".modal-creator-link");
+
 const formLogin = document.querySelector("#form-login");
 const formSignup = document.querySelector("#form-signup");
 
@@ -139,6 +142,10 @@ btnArtwork.onclick = function (event) {
   showModal(modalArtwork);
 };
 
+modalCreatorLink.onclick = function () {
+  artworkModalContent.style.transform = "rotateY(180deg)";
+};
+
 window.onload = function () {
   let hours = 24;
   let minutes = 60;
@@ -157,11 +164,11 @@ window.onload = function () {
         hours = 24;
       }
     }
-    if (seconds >= 58) {
-      timer.style.color = "#ded6d6";
-    }
-    if (seconds < 58) {
-      timer.style.color = "red";
-    }
+    // if (seconds >= 58) {
+    //   timer.style.color = "#ded6d6";
+    // }
+    // if (seconds < 58) {
+    //   timer.style.color = "red";
+    // }
   }, 1000);
 };
