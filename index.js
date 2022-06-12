@@ -18,6 +18,7 @@ const modalArtwork = document.querySelector("#modal-artwork");
 
 const artworkModalContent = document.querySelector(".artwork-modal-content");
 const modalCreatorLink = document.querySelector(".modal-creator-link");
+const flipCard = document.querySelector(".flip-card");
 
 const formLogin = document.querySelector("#form-login");
 const formSignup = document.querySelector("#form-signup");
@@ -104,6 +105,7 @@ window.onclick = function (event) {
     resetForm();
     currentModal.style.display = "none";
     document.querySelector("body").style.overflowY = "scroll";
+    flipCard.classList.remove("is-flipped");
   }
 };
 
@@ -131,6 +133,7 @@ btnSignup.onclick = function (event) {
 //   resetForm();
 //   modalAuthentication.style.display = "none";
 //   document.querySelector("body").style.overflowY = "scroll";
+//   flipCard.classList.remove("is-flipped");
 // };
 
 //////////////////////////////////////////////////
@@ -142,8 +145,8 @@ btnArtwork.onclick = function (event) {
   showModal(modalArtwork);
 };
 
-modalCreatorLink.onclick = function () {
-  artworkModalContent.style.transform = "rotateY(180deg)";
+modalArtwork.onclick = function () {
+  flipCard.classList.toggle("is-flipped");
 };
 
 window.onload = function () {

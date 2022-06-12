@@ -1,0 +1,13 @@
+.creator-modal-content {
+  background: rgba(6, 6, 73, 0.8);
+  border-radius: 11px;
+  display: flex;
+  gap: 3.2rem;
+
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: rotateY(180deg);
+}
