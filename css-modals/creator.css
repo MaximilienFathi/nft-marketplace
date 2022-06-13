@@ -1,13 +1,81 @@
-.creator-modal-content {
+.modal-creator-content {
   background: rgba(6, 6, 73, 0.8);
   border-radius: 11px;
   display: flex;
-  gap: 3.2rem;
+  /*flex-direction: column;*/
+  /*gap: 1.6rem;*/
 
-  height: 100%;
-  width: 100%;
+  /* FOR FLIP CARD STUFF, USE 100% */
+  /*height: 100%;*/
+  /*width: 100%;*/
+  width: 100rem;
+  height: 55rem;
   position: absolute;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  transform: rotateY(180deg);
+  /*transform: rotateY(180deg);*/ /* CANNOT HAVE THAT FOR CREATOR SECTION*/
+  /*overflow: hidden;*/
 }
+
+/*.modal-creator-left {*/
+/*  display: flex;*/
+/*  justify-content: center;*/
+/*  align-items: center;*/
+/*  !*width: 70%;*!*/
+/*  !*background: red;*!*/
+/*}*/
+
+.modal-creator-left-content {
+  /*display: flex;*/
+  /*flex-direction: column;*/
+  /*align-items: center;*/
+  box-shadow: 0 0 1.6rem silver;
+  border-radius: 11px;
+  overflow: hidden;
+  background: linear-gradient(113.49deg, #c73d54 -30.3%, #16256b 58.12%);
+  /*width: 90%;*/
+  /*height: 90%;*/
+  margin: 2.4rem;
+  /*border: 3px solid red;*/
+}
+
+.modal-creator-img {
+  width: 25%;
+  border: 2px solid #e3590f;
+  border-radius: 10%;
+  /*background-color: #fff;*/
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  position: relative;
+  left: 50%;
+  /*top: 40%;*/
+  transform: translate(-50%, -50%);
+}
+
+.modal-creator-right-content {
+  /*display: flex;*/
+  /*flex-direction: column;*/
+  /*align-items: center;*/
+  /*width: 90%;*/
+  /*height: 90%;*/
+  margin: 2.4rem;
+  /*border: 3px solid red;*/
+}
+/*/////////////////////////////////////////////////*/
+.creator-description {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 2.4rem;
+}
+
+.creator-heading {
+  font-size: 3.6rem;
+  color: #b2abab;
+  /*font-weight: 600;*/
+  margin-bottom: 1.6rem;
+}
+
+.creator-description-text {
+  font-size: 1.6rem;
+}
+/*/////////////////////////////////////////////////*/

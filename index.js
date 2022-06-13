@@ -14,6 +14,7 @@ const btnCreator = document.querySelector(".btn-creator");
 
 const modalAuthentication = document.querySelector("#modal-authentication");
 const modalArtwork = document.querySelector("#modal-artwork");
+const modalCreator = document.querySelector("#modal-creator");
 // const modalClose = document.querySelector(".modal-close");
 
 const artworkModalContent = document.querySelector(".artwork-modal-content");
@@ -101,7 +102,11 @@ const showModal = function (currentModal) {
 window.onclick = function (event) {
   const currentModal = event.target;
   console.log("TEST", currentModal);
-  if (currentModal === modalAuthentication || currentModal === modalArtwork) {
+  if (
+    currentModal === modalAuthentication ||
+    currentModal === modalArtwork ||
+    currentModal === modalCreator
+  ) {
     resetForm();
     currentModal.style.display = "none";
     document.querySelector("body").style.overflowY = "scroll";
@@ -143,6 +148,12 @@ btnArtwork.onclick = function (event) {
   const currentButton = event.target;
   setModalOrigin(modalArtwork, currentButton);
   showModal(modalArtwork);
+};
+
+btnCreator.onclick = function (event) {
+  const currentButton = event.target;
+  setModalOrigin(modalCreator, currentButton);
+  showModal(modalCreator);
 };
 
 modalArtwork.onclick = function () {

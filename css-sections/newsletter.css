@@ -55,7 +55,7 @@
   position: absolute;
   left: 80%;
   top: 30%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); /* needed??*/
   animation: bounce 1s infinite alternate;
   /*-webkit-animation: mover 1s infinite alternate;*/
 }
