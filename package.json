@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/MaximilienFathi/nft-marketplace/issues"
   },
-  "homepage": "https://github.com/MaximilienFathi/nft-marketplace#readme"
+  "homepage": "https://github.com/MaximilienFathi/nft-marketplace#readme",
+  "dependencies": {
+    "chart.js": "^3.8.0"
+  }
 }
