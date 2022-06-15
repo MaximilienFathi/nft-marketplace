@@ -24,7 +24,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0 0 1.6rem silver;
+  /*box-shadow: 0 0 1.6rem silver;*/
+  box-shadow: 0 0 0.4rem silver;
   border-radius: 11px;
   overflow: hidden;
   transition: all 0.4s;
@@ -34,7 +35,7 @@
   /*border: 3px solid red;*/
   position: relative;
   /*margin: 2.4rem 1.2rem 2.4rem 2.4rem;*/
-  margin: 2.4rem;
+  margin: 2.4rem 1.2rem 2.4rem 2.4rem;
 }
 
 .modal-creator-banner {
@@ -126,14 +127,15 @@
 .modal-creator-right-content {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 0.3fr 0.5fr 2fr 0.5fr;
+  grid-template-rows: 0.3fr 0.5fr 1.5fr 1fr;
   /*align-items: end;*/
   /*display: flex;*/
   /*flex-direction: column;*/
   /*align-items: center;*/
   /*width: 90%;*/
   /*height: 90%;*/
-  margin: 2.4rem;
+  margin: 2.4rem 2.4rem 2.4rem 1.2rem;
+  gap: 1.2rem;
   /*margin: 2.4rem 4.8rem 2.4rem 2.4rem;*/
   /*border: 3px solid red;*/
 }
@@ -152,11 +154,9 @@
   /*align-items: center;*/
   justify-content: center;
   /*gap: 2.4rem;*/
-  background: linear-gradient(113.49deg, #c73d54 -30.3%, #16256b 58.12%);
   border-radius: 11px;
   padding: 1.2rem;
-  margin: 0.4rem;
-  border: 3px solid red;
+  /*margin: 0.4rem;*/
 }
 
 .stat p:first-child {
@@ -171,23 +171,25 @@
 .area-chart-container {
   grid-column: 1/3;
   /*grid-row: 3/4;*/
-  background: linear-gradient(113.49deg, #c73d54 -30.3%, #16256b 58.12%);
   border-radius: 11px;
 }
 
-.radar-chart-container {
+.bar-chart-container {
   grid-column: 3/-1;
   /*grid-row: 3/4;*/
-  background: linear-gradient(113.49deg, #c73d54 -30.3%, #16256b 58.12%);
+  display: flex;
+  align-items: center;
   border-radius: 11px;
 }
 
-/*#creator-area-chart {*/
-/*  grid-column: 1/3;*/
-/*  !*width: 100%;*!*/
-/*}*/
+.doughnut-chart-container {
+  grid-row: 4/-1;
+  border-radius: 11px;
+}
 
-/*#creator-radar-chart {*/
-/*  grid-column: 3/-1;*/
-/*  !*width: 100%;*!*/
-/*}*/
+.analytics-border {
+  /*background: linear-gradient(113.49deg, #c73d54 -30.3%, #16256b 58.12%);*/
+  background: #16256b;
+  box-shadow: 0 0 0.4rem silver;
+  /*border: 3px solid red;*/
+}

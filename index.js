@@ -188,36 +188,51 @@ window.onload = function () {
 };
 
 /////////////////////////////////////////////////////////////
+const area_ctx = document.querySelector("#creator-area-chart").getContext("2d");
+const gradient1 = area_ctx.createLinearGradient(0, 50, 0, 400);
+gradient1.addColorStop(1, "rgba(234,110,172,0.8)");
+gradient1.addColorStop(0, "rgba(28,186,222,0.5)");
+const gradient2 = area_ctx.createLinearGradient(0, 50, 0, 400);
+gradient2.addColorStop(1, "rgba(234,110,172,1)");
+gradient2.addColorStop(0, "rgba(28,186,222,1)");
+const gradient3 = area_ctx.createLinearGradient(0, 50, 0, 400);
+gradient3.addColorStop(1, "rgba(135,236,26,0.8)");
+gradient3.addColorStop(0, "rgba(222,167,28,0.5)");
+const gradient4 = area_ctx.createLinearGradient(0, 50, 0, 400);
+gradient4.addColorStop(1, "rgb(135,236,26,1)");
+gradient4.addColorStop(0, "rgba(222,167,28,1)");
 
 const area_chart_data = {
-  labels: ["M", "T", "W", "T", "F", "S", "S"],
+  labels: ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"],
   datasets: [
     {
-      label: "apples",
+      label: "Revenue",
       data: [12, 19, 3, 17, 6, 3, 7],
-      backgroundColor: "rgba(153,255,51,0.6)",
+      // backgroundColor: "rgba(88,62,234,0.6)",
+      backgroundColor: gradient1,
       fill: true,
-      borderWidth: 1, // Specify bar border width
-      borderColor: "silver", // Add custom color border (Line)
+      borderWidth: 3, // Specify bar border width
+      borderColor: gradient2, // Add custom color border (Line)
     },
     {
-      label: "oranges",
+      label: "Expenses",
       data: [2, 29, 5, 5, 2, 3, 10],
-      backgroundColor: "rgba(255,153,0,0.6)",
+      // backgroundColor: "rgba(231,10,10,0.6)",
+      backgroundColor: gradient3,
       fill: true,
       borderWidth: 1, // Specify bar border width
-      borderColor: "silver", // Add custom color border (Line)
+      borderColor: gradient4, // Add custom color border (Line)
     },
   ],
 };
 
-const area_ctx = document.querySelector("#creator-area-chart").getContext("2d");
 const myAreaChart = new Chart(area_ctx, {
   type: "line",
   data: area_chart_data,
   options: {
     responsive: true, // Instruct chart js to respond nicely.
     maintainAspectRatio: false, // Add to prevent default behaviour of full-width/height
+    tension: 0.4,
     // animations: {
     //   tension: {
     //     duration: 1000,
@@ -232,53 +247,246 @@ const myAreaChart = new Chart(area_ctx, {
 
 /////////////////////////////////////////////////////////////
 
-const radar_chart_data = {
-  labels: [
-    "Eating",
-    "Drinking",
-    "Sleeping",
-    "Designing",
-    "Coding",
-    "Cycling",
-    "Running",
-  ],
+const bar_ctx = document.querySelector("#creator-bar-chart").getContext("2d");
+
+const bar_chart_data = {
+  labels: ["Red", "Blue", "Yellow", "Green"],
   datasets: [
     {
       label: "My First Dataset",
-      data: [65, 59, 90, 81, 56, 55, 40],
-      fill: true,
-      backgroundColor: "rgba(255, 99, 132, 0.2)",
-      borderColor: "rgb(255, 99, 132)",
-      pointBackgroundColor: "rgb(255, 99, 132)",
-      pointBorderColor: "#fff",
-      pointHoverBackgroundColor: "#fff",
-      pointHoverBorderColor: "rgb(255, 99, 132)",
-    },
-    {
-      label: "My Second Dataset",
-      data: [28, 48, 40, 19, 96, 27, 100],
-      fill: true,
-      backgroundColor: "rgba(54, 162, 235, 0.2)",
-      borderColor: "rgb(54, 162, 235)",
-      pointBackgroundColor: "rgb(54, 162, 235)",
-      pointBorderColor: "#fff",
-      pointHoverBackgroundColor: "#fff",
-      pointHoverBorderColor: "rgb(54, 162, 235)",
+      data: [300, 50, 100, 23],
+      backgroundColor: [
+        "rgb(255, 99, 132, 0.6)",
+        "rgb(54, 162, 235, 0.6)",
+        "rgb(255, 205, 86, 0.6)",
+        "rgb(103,255,86, 0.6)",
+      ],
+      // hoverOffset: 20,
     },
   ],
 };
 
-const radar_ctx = document
-  .querySelector("#creator-radar-chart")
-  .getContext("2d");
-const myRadarChart = new Chart(radar_ctx, {
-  type: "radar",
-  data: radar_chart_data,
+const myBarChart = new Chart(bar_ctx, {
+  type: "doughnut",
+  data: bar_chart_data,
   options: {
+    responsive: true, // Instruct chart js to respond nicely.
+    maintainAspectRatio: false,
+    // showScale: false,
     elements: {
-      line: {
-        borderWidth: 3,
+      arc: {
+        borderWidth: 1,
+      },
+    },
+    plugins: {
+      title: {
+        padding: {
+          bottom: 20,
+        },
+        display: true,
+        text: "Custom Chart Title",
+      },
+      legend: {
+        display: true,
+        position: "bottom",
+        align: "center",
+        maxWidth: 1,
+        labels: {
+          boxWidth: 10,
+          usePointStyle: true,
+          pointStyle: "circle",
+        },
+      },
+    },
+    // animateScale = false
+    // elements: {
+    //   line: {
+    //     borderWidth: 3,
+    //   },
+    // },
+  },
+});
+
+/////////////////////////////////////////////////////////////
+
+const doughnut_ctx_1 = document
+  .querySelector("#creator-doughnut-chart-1")
+  .getContext("2d");
+
+const doughnut_chart_data_1 = {
+  labels: ["Red", "Blue"],
+  datasets: [
+    {
+      label: "My First Dataset",
+      data: [300, 50],
+      backgroundColor: ["rgb(255, 99, 132, 0.6)", "rgb(54, 162, 235, 0.6)"],
+      // hoverOffset: 20,
+    },
+  ],
+};
+
+const myDoughnutChart1 = new Chart(doughnut_ctx_1, {
+  type: "doughnut",
+  data: doughnut_chart_data_1,
+  options: {
+    responsive: true, // Instruct chart js to respond nicely.
+    maintainAspectRatio: false,
+    // showScale: false,
+    elements: {
+      arc: {
+        borderWidth: 1,
+      },
+    },
+    layout: {
+      padding: 5,
+    },
+    plugins: {
+      title: {
+        padding: {
+          bottom: 5,
+        },
+        display: true,
+        text: "Custom Chart Title",
+      },
+      legend: {
+        display: false,
       },
     },
   },
+  plugins: [
+    {
+      id: "text",
+      beforeDraw: function (chart, a, b) {
+        const width = chart.width,
+          height = chart.height,
+          ctx = chart.ctx;
+
+        ctx.restore();
+        const fontSize = (height / 240).toFixed(2);
+        ctx.font = fontSize + "em sans-serif";
+        ctx.textBaseline = "middle";
+
+        const text = "75%",
+          textX = Math.round((width - ctx.measureText(text).width) / 2),
+          textY = height / 2;
+
+        ctx.fillText(text, textX, textY);
+        ctx.save();
+      },
+    },
+  ],
+  // animateScale = false
+  // elements: {
+  //   line: {
+  //     borderWidth: 3,
+  //   },
+  // },
+});
+
+/////////////////////////////////////////////////////////////
+
+const doughnut_ctx_2 = document
+  .querySelector("#creator-doughnut-chart-2")
+  .getContext("2d");
+
+const doughnut_chart_data_2 = {
+  labels: ["Yellow", "Green"],
+  datasets: [
+    {
+      label: "My First Dataset",
+      data: [100, 23],
+      backgroundColor: ["rgb(255, 205, 86, 0.6)", "rgb(103,255,86, 0.6)"],
+      // hoverOffset: 20,
+    },
+  ],
+};
+
+const myDoughnutChart_2 = new Chart(doughnut_ctx_2, {
+  type: "doughnut",
+  data: doughnut_chart_data_2,
+  options: {
+    responsive: true, // Instruct chart js to respond nicely.
+    maintainAspectRatio: false,
+    // showScale: false,
+    elements: {
+      arc: {
+        borderWidth: 1,
+      },
+    },
+    layout: {
+      padding: 5,
+    },
+    plugins: {
+      title: {
+        padding: {
+          bottom: 5,
+        },
+        display: true,
+        text: "Custom Chart Title",
+      },
+      legend: {
+        display: false,
+      },
+    },
+  },
+  // animateScale = false
+  // elements: {
+  //   line: {
+  //     borderWidth: 3,
+  //   },
+  // },
+});
+
+/////////////////////////////////////////////////////////////
+
+const doughnut_ctx_3 = document
+  .querySelector("#creator-doughnut-chart-3")
+  .getContext("2d");
+
+const doughnut_chart_data_3 = {
+  labels: ["Red", "Blue"],
+  datasets: [
+    {
+      label: "My First Dataset",
+      data: [300, 50],
+      backgroundColor: ["rgb(255, 99, 132, 0.6)", "rgb(54, 162, 235, 0.6)"],
+      // hoverOffset: 20,
+    },
+  ],
+};
+
+const myDoughnutChart_3 = new Chart(doughnut_ctx_3, {
+  type: "doughnut",
+  data: doughnut_chart_data_3,
+  options: {
+    responsive: true, // Instruct chart js to respond nicely.
+    maintainAspectRatio: false,
+    // showScale: false,
+    elements: {
+      arc: {
+        borderWidth: 1,
+      },
+    },
+    layout: {
+      padding: 5,
+    },
+    plugins: {
+      title: {
+        padding: {
+          bottom: 5,
+        },
+        display: true,
+        text: "Custom Chart Title",
+      },
+      legend: {
+        display: false,
+      },
+    },
+  },
+  // animateScale = false
+  // elements: {
+  //   line: {
+  //     borderWidth: 3,
+  //   },
+  // },
 });
