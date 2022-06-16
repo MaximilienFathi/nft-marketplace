@@ -168,18 +168,19 @@
   font-weight: 500;
 }
 
-.area-chart-container {
-  grid-column: 1/3;
-  /*grid-row: 3/4;*/
-  border-radius: 11px;
-}
-
 .bar-chart-container {
-  grid-column: 3/-1;
+  grid-column: 1/3;
   /*grid-row: 3/4;*/
   display: flex;
   align-items: center;
   border-radius: 11px;
+}
+
+.area-chart-container {
+  grid-column: 3/-1;
+  /*grid-row: 3/4;*/
+  border-radius: 11px;
+  /*height: 100%;*/
 }
 
 .doughnut-chart-container {
@@ -189,7 +190,14 @@
 
 .analytics-border {
   /*background: linear-gradient(113.49deg, #c73d54 -30.3%, #16256b 58.12%);*/
-  background: #16256b;
+  background: rgba(11, 20, 66, 0.6);
   box-shadow: 0 0 0.4rem silver;
   /*border: 3px solid red;*/
 }
+
+/*
+Have horizontal bar graph
+Put it on left side and area chart on right
+Bar chart is about revenue/expenses
+Area chart is about views
+*/
