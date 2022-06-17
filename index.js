@@ -188,6 +188,7 @@ window.onload = function () {
 };
 
 /////////////////////////////////////////////////////////////
+// SET UP CHARTS
 
 // 1) setup
 const bar_chart_data = {
@@ -198,23 +199,32 @@ const bar_chart_data = {
       data: [65, 59, 80, 81, 56, 55, 40],
       backgroundColor: ["rgba(75, 192, 192, 0.2)"],
       borderColor: ["rgb(75, 192, 192)"],
+      // or use goldenrod
       borderWidth: 1,
     },
     {
       label: "Expanses",
       data: [24, 50, 12, 65, 45, 73, 95],
-      backgroundColor: ["rgba(255, 99, 132, 0.2)"],
-      borderColor: ["rgb(255, 99, 132)"],
+      backgroundColor: ["rgba(255, 69, 0, 0.2)"],
+      borderColor: ["rgb(255, 69, 0)"],
+      // or use #ff4500ff
       borderWidth: 1,
     },
   ],
 };
-
+let delayed;
 // 2) config
 const bar_chart_config = {
   type: "bar",
   data: bar_chart_data,
   options: {
+    animations: {
+      duration: 2000,
+      // NOT WORKING
+      // easing: "linear",
+      // from: 0,
+      // to: 0,
+    },
     scales: {
       x: {
         grid: {
@@ -232,6 +242,7 @@ const bar_chart_config = {
         align: "center",
         labels: {
           boxWidth: 30,
+          color: "#b2abab",
         },
         // labels: {
         //   usePointStyle: true,
@@ -283,15 +294,6 @@ const area_chart_config = {
   responsive: true, // Instruct chart js to respond nicely.
   maintainAspectRatio: false, // Add to prevent default behaviour of full-width/height
   // tension: 0.4,
-  // animations: {
-  //   tension: {
-  //     duration: 1000,
-  //     easing: "linear",
-  //     from: 0.5,
-  //     to: 0,
-  //     loop: true,
-  //   },
-  // },
   options: {
     scales: {
       x: {
@@ -306,6 +308,15 @@ const area_chart_config = {
         ticks: {
           display: false,
         },
+      },
+    },
+    animations: {
+      tension: {
+        duration: 2000,
+        // NOT WORKING
+        // easing: "easeInOutCirc",
+        // from: 0,
+        // to: 1,
       },
     },
     plugins: {
@@ -343,23 +354,25 @@ const centerText = {
     } = chart;
 
     ctx.save();
-    console.log("test", top);
+    // console.log("test", top);
+    const chartData = chart.data.datasets[0].data[0];
+    console.log(chart.data.datasets[0].data[0]);
 
     ctx.font = "bolder 1.6rem Arial";
     ctx.fillStyle = "white";
     ctx.textAlign = "center";
-    ctx.fillText("75%", width / 2, height / 2 + top + 5);
+    ctx.fillText(`${chartData}%`, width / 2, height / 2 + top + 5);
     // 1.6rem = 16px and so must move text by half its font size, i.e. 8px
   },
 };
 
 // 1) setup
 const doughnut_chart_data_1 = {
-  labels: ["Red", "Blue"],
+  labels: ["Profit", "Revenue"],
   datasets: [
     {
       // label: "My First Dataset",
-      data: [300, 100],
+      data: [30, 70],
       backgroundColor: ["rgba(75, 192, 192, 0.2)", "rgba(255, 99, 132, 0.2)"],
       hoverOffset: 10,
       cutout: "60%",
@@ -376,18 +389,17 @@ const doughnut_chart_config_1 = {
     // cutout: "50%",
     rotation: Math.PI * 0.5,
     animation: {
-      duration: 3000,
+      duration: 2000,
       animateRotate: true,
-      // animateScale: true,
-      // render: false,
+      easing: "easeInOutCirc",
     },
-    responsive: true, // Instruct chart js to respond nicely.
+    responsive: true,
     maintainAspectRatio: false,
     // showScale: false,
     elements: {
       arc: {
         borderWidth: 2,
-        borderColor: ["rgb(75, 192, 192)", "rgb(255, 99, 132)"],
+        borderColor: ["rgb(75, 192, 192)", "rgb(255, 69, 0)"],
       },
     },
     layout: {
@@ -406,7 +418,7 @@ const doughnut_chart_config_1 = {
         font: {
           size: 14,
         },
-        text: "Custom Chart Title",
+        text: "Profit Margin",
       },
       legend: {
         display: false,
@@ -415,12 +427,6 @@ const doughnut_chart_config_1 = {
   },
   plugins: [centerText],
 };
-// animateScale = false
-// elements: {
-//   line: {
-//     borderWidth: 3,
-//   },
-// },
 
 // 3) render chart
 const doughnut_ctx_1 = document
@@ -432,11 +438,11 @@ const myDoughnutChart1 = new Chart(doughnut_ctx_1, doughnut_chart_config_1);
 
 // 1) setup
 const doughnut_chart_data_2 = {
-  labels: ["Returning", "New"],
+  labels: ["Sold", "Unsold"],
   datasets: [
     {
       // label: "My First Dataset",
-      data: [300, 100],
+      data: [20, 80],
       backgroundColor: ["rgba(75, 192, 192, 0.2)", "rgba(255, 99, 132, 0.2)"],
       hoverOffset: 10,
       cutout: "60%",
@@ -453,18 +459,17 @@ const doughnut_chart_config_2 = {
     // cutout: "50%",
     rotation: Math.PI * 0.5,
     animation: {
-      duration: 3000,
+      duration: 2000,
       animateRotate: true,
-      // animateScale: true,
-      // render: false,
+      easing: "easeInOutCirc",
     },
-    responsive: true, // Instruct chart js to respond nicely.
+    responsive: true,
     maintainAspectRatio: false,
     // showScale: false,
     elements: {
       arc: {
         borderWidth: 2,
-        borderColor: ["rgb(75, 192, 192)", "rgb(255, 99, 132)"],
+        borderColor: ["rgb(75, 192, 192)", "rgb(255, 69, 0)"],
       },
     },
     layout: {
@@ -483,7 +488,7 @@ const doughnut_chart_config_2 = {
         font: {
           size: 14,
         },
-        text: "Custom Chart Title",
+        text: "Sales Effectiveness",
       },
       legend: {
         display: false,
@@ -492,12 +497,6 @@ const doughnut_chart_config_2 = {
   },
   plugins: [centerText],
 };
-// animateScale = false
-// elements: {
-//   line: {
-//     borderWidth: 3,
-//   },
-// },
 
 // 3) render chart
 const doughnut_ctx_2 = document
@@ -530,18 +529,17 @@ const doughnut_chart_config_3 = {
     // cutout: "50%",
     // rotation: Math.PI * 0.5,
     animation: {
-      duration: 3000,
+      duration: 2000,
       animateRotate: true,
-      // animateScale: true,
-      // render: false,
+      easing: "easeInOutCirc",
     },
-    responsive: true, // Instruct chart js to respond nicely.
+    responsive: true,
     maintainAspectRatio: false,
     // showScale: false,
     elements: {
       arc: {
         borderWidth: 2,
-        borderColor: ["rgb(75, 192, 192)", "rgb(255, 99, 132)"],
+        borderColor: ["rgb(75, 192, 192)", "rgb(255, 69, 0)"],
       },
     },
     layout: {
@@ -569,12 +567,6 @@ const doughnut_chart_config_3 = {
   },
   plugins: [centerText],
 };
-// animateScale = false
-// elements: {
-//   line: {
-//     borderWidth: 3,
-//   },
-// },
 
 // 3) render chart
 const doughnut_ctx_3 = document

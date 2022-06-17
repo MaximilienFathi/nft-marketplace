@@ -14,9 +14,9 @@
   position: absolute;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  /*transform: rotateY(180deg);*/ /* CANNOT HAVE THAT FOR CREATOR SECTION*/
+  /*transform: rotateY(180deg); !*MAKE SURE TO REMOVE THAT FOR CREATOR SECTION*!*/
   /*overflow: hidden;*/
-  border: 3px solid red;
+  /*border: 3px solid red;*/
 }
 
 /*/////////////////////////////////////////////////*/
@@ -148,24 +148,38 @@
   grid-column: 1/-1;
 }
 
-.stat {
+.stat-container {
   display: flex;
-  flex-direction: column;
-  /*align-items: center;*/
-  justify-content: center;
-  /*gap: 2.4rem;*/
-  border-radius: 11px;
+  justify-content: space-around;
+  align-items: center;
   padding: 1.2rem;
+  border-radius: 11px;
   /*margin: 0.4rem;*/
 }
 
-.stat p:first-child {
-  font-size: 1.6rem;
+.stat-icon {
+  width: 3.6rem;
+  height: 3.6rem;
+  color: rgb(255, 69, 0);
 }
 
-.stat p:last-child {
+.stat-text {
+  display: flex;
+  flex-direction: column;
+  /*align-items: center;*/
+  /*justify-content: center;*/
+  gap: 0.8rem;
+}
+
+.stat-text p:first-child {
   font-size: 2rem;
   font-weight: 500;
+  color: rgb(75, 192, 192);
+}
+
+.stat-text p:last-child {
+  font-size: 1.2rem;
+  color: #b2abab;
 }
 
 .bar-chart-container {
