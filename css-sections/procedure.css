@@ -1,6 +1,7 @@
 .procedure-section {
-  padding: 0 0 9.6rem 0;
-  margin-bottom: 2.4rem;
+  /*padding: 0 0 9.6rem 0;*/
+  padding: 4.8rem 0;
+  /*margin-bottom: 2.4rem;*/
   /*background-image: url("img/map-g165894aa7_640.png");*/
   /*background-size: cover;*/
   backdrop-filter: contrast(80%);
@@ -23,8 +24,8 @@
 .procedure-heading {
   display: block;
   text-align: center;
-  padding: 2.4rem 0;
-  margin-bottom: 2.4rem;
+  /*padding: 2.4rem 0;*/
+  margin-bottom: 4.8rem;
 }
 
 /*.procedure-container {*/
@@ -36,7 +37,7 @@
 .procedure-step {
   border: 1px solid darkgoldenrod;
   border-radius: 11px;
-  box-shadow: 0 0 12.8rem 0.8rem goldenrod;
+  box-shadow: 0 0 9.6rem 0.8rem goldenrod;
   background: linear-gradient(113.49deg, #640348 -30.3%, #060649 58.12%);
   text-align: center;
   padding: 1.6rem;

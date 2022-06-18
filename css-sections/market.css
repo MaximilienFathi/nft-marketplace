@@ -1,7 +1,8 @@
 /*Must deal with margins in NFT card when we have too much text*/
 
 .market-section {
-  padding: 9.6rem 0;
+  /*padding: 9.6rem 0;*/
+  padding: 4.8rem 0;
 }
 
 .market-heading-box {
