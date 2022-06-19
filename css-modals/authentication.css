@@ -5,8 +5,7 @@
   overflow: hidden;
   background-color: rgba(6, 6, 73, 0.8);
   border-radius: 11px;
-  box-shadow: 0 0 5rem #000;
-  border: 3px solid red;
+  box-shadow: 0 0 5rem silver;
   position: relative;
 }
 

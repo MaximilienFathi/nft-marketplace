@@ -181,15 +181,13 @@ hr {
 }
 
 .modal-close {
-  color: goldenrod;
-  /*display: block;*/
-  /*float: right;*/
-  font-size: 3.2rem;
-  font-weight: bold;
+  color: #b2abab;
+  /*font-size: 3.2rem;*/
+  width: 3.2rem;
+  height: 3.2rem;
   position: absolute;
-  left: 50%;
-  top: 50%;
-  /*transform: translate(-150%, 25%);*/
+  right: 1.6rem;
+  top: 1.6rem;
 }
 
 .modal-close:hover,

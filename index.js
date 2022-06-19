@@ -15,7 +15,7 @@ const btnCreator = document.querySelector(".btn-creator");
 const modalAuthentication = document.querySelector("#modal-authentication");
 const modalArtwork = document.querySelector("#modal-artwork");
 const modalCreator = document.querySelector("#modal-creator");
-// const modalClose = document.querySelector(".modal-close");
+const modalClose = document.querySelector(".modal-close");
 
 const artworkModalContent = document.querySelector(".artwork-modal-content");
 const modalCreatorLink = document.querySelector(".modal-creator-link");
@@ -101,7 +101,6 @@ const showModal = function (currentModal) {
 // Close modal when the user clicks outside of it
 window.onclick = function (event) {
   const currentModal = event.target;
-  console.log("TEST", currentModal);
   if (
     currentModal === modalAuthentication ||
     currentModal === modalArtwork ||
@@ -133,13 +132,17 @@ btnSignup.onclick = function (event) {
   showModal(modalAuthentication);
 };
 
-// When the user clicks on <span> (x), close the modal
-// modalClose.onclick = function () {
-//   resetForm();
-//   modalAuthentication.style.display = "none";
-//   document.querySelector("body").style.overflowY = "scroll";
-//   flipCard.classList.remove("is-flipped");
-// };
+// When the user clicks on X, close the modal
+document.body.onclick = function (event) {
+  if (event.target.getAttribute("name") === "close-outline") {
+    resetForm();
+    modalAuthentication.style.display = "none";
+    modalArtwork.style.display = "none";
+    modalCreator.style.display = "none";
+    document.querySelector("body").style.overflowY = "scroll";
+    flipCard.classList.remove("is-flipped");
+  }
+};
 
 //////////////////////////////////////////////////
 // ENABLE MODAL FORM INTERACTION - VIEW ARTWORK
@@ -156,9 +159,9 @@ btnCreator.onclick = function (event) {
   showModal(modalCreator);
 };
 
-modalArtwork.onclick = function () {
-  flipCard.classList.toggle("is-flipped");
-};
+// modalArtwork.onclick = function () {
+//   flipCard.classList.toggle("is-flipped");
+// };
 
 window.onload = function () {
   let hours = 24;

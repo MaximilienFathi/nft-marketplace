@@ -186,8 +186,9 @@
   /*flex-grow: 1;*/
 }
 
-.modal-nft-stat svg {
-  width: 2.4rem;
+.modal-nft-icon {
+  width: 2.2rem;
+  height: 2.2rem;
 }
 /*/////////////////////////////////////////////////*/
 .border-glow {
