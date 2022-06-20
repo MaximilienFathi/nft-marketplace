@@ -145,7 +145,7 @@ document.body.onclick = function (event) {
 };
 
 //////////////////////////////////////////////////
-// ENABLE MODAL FORM INTERACTION - VIEW ARTWORK
+// ENABLE MODAL FORM INTERACTION - ARTWORK & CREATOR
 
 btnArtwork.onclick = function (event) {
   const currentButton = event.target;

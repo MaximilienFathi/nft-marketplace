@@ -33,6 +33,7 @@
     ></script>
     <script defer src="index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
   <body>
     <header class="header">
@@ -45,8 +46,8 @@
           <li><a class="main-nav-link" href="#procedure">How it works</a></li>
           <li>
             <div class="main-nav-cta">
-              <a class="btn-login main-nav-link nav-cta" href="">Login</a>
-              <a class="btn-signup main-nav-link nav-cta" href="">Sign Up</a>
+              <button class="btn-login main-nav-link nav-cta">Login</button>
+              <button class="btn-signup main-nav-link nav-cta">Sign Up</button>
             </div>
           </li>
         </ul>
@@ -113,8 +114,8 @@
               facilis omnis optio quaerat
             </p>
             <div class="hero-btn-box">
-              <a class="btn btn-full" href="">Collect NFT</a>
-              <a class="btn btn-outline" href="">Explore now</a>
+              <a class="btn btn-full btn-explore" href="#market">Explore now</a>
+              <a class="btn btn-outline" href="#procedure">Learn more</a>
             </div>
             <div class="hero-stats-box">
               <div class="stats">
@@ -149,7 +150,7 @@
         <div class="container">
           <div class="market-heading-box">
             <h2 class="heading-secondary">Trending Artworks</h2>
-            <a class="btn btn-outline" href="">More artwork</a>
+            <a class="btn btn-outline" href="#">More artwork</a>
           </div>
           <div class="grid grid-4-cols grid-market">
             <div class="nft-card">
@@ -440,7 +441,7 @@
         <div class="container">
           <div class="creators-heading-box">
             <h2 class="heading-secondary">Top Creators</h2>
-            <a class="btn btn-outline" href="">More creators</a>
+            <a class="btn btn-outline" href="#">More creators</a>
           </div>
           <div class="grid grid-4-cols grid-creators">
             <div class="creator-card">
@@ -502,7 +503,7 @@
                   <hr class="modal-creator-divider" />
                   <ul class="networks-list">
                     <li>
-                      <a class="footer-link" href="#"
+                      <a class="footer-link" href=""
                         ><ion-icon
                           class="network-icon"
                           name="logo-facebook"
@@ -510,7 +511,7 @@
                       ></a>
                     </li>
                     <li>
-                      <a class="footer-link" href="#">
+                      <a class="footer-link" href="">
                         <ion-icon
                           class="network-icon"
                           name="logo-instagram"
@@ -518,7 +519,7 @@
                       </a>
                     </li>
                     <li>
-                      <a class="footer-link" href="#">
+                      <a class="footer-link" href="">
                         <ion-icon
                           class="network-icon"
                           name="logo-pinterest"
@@ -526,7 +527,7 @@
                       </a>
                     </li>
                     <li>
-                      <a class="footer-link" href="#">
+                      <a class="footer-link" href="">
                         <ion-icon
                           class="network-icon"
                           name="logo-twitter"
@@ -778,7 +779,7 @@
         <nav class="footer-column">
           <p class="footer-heading">Marketplace</p>
           <ul class="footer-list">
-            <li><a class="footer-link" href="#">All NFTs</a></li>
+            <li><a class="footer-link" href="#market">All NFTs</a></li>
             <li><a class="footer-link" href="#">Art</a></li>
             <li><a class="footer-link" href="#">Collectibles</a></li>
             <li><a class="footer-link" href="#">Domain Names</a></li>

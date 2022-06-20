@@ -29,13 +29,17 @@
   gap: 1.6rem;
 }
 
+.btn-login,
+.btn-signup,
 .main-nav-link:link,
 .main-nav-link:visited {
   color: #fff;
+  font-family: inherit;
   font-size: 1.8rem;
   font-weight: 500;
   text-decoration: none;
   transition: all 0.3s;
+  border: none;
   /*display: inline-block;*/
 }
 
@@ -44,6 +48,8 @@
   color: #ff4500ff;
 }
 
+.btn-login.nav-cta,
+.btn-signup.nav-cta,
 .main-nav-link.nav-cta:link,
 .main-nav-link.nav-cta:visited {
   background-color: #ff4500ff;
