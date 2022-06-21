@@ -46,6 +46,7 @@
 .main-nav-link:hover,
 .main-nav-link:active {
   color: #ff4500ff;
+  cursor: pointer;
 }
 
 .btn-login.nav-cta,

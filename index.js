@@ -576,3 +576,20 @@ const doughnut_ctx_3 = document
   .querySelector("#creator-doughnut-chart-3")
   .getContext("2d");
 const myDoughnutChart3 = new Chart(doughnut_ctx_3, doughnut_chart_config_3);
+
+/////////////////////////////////////////////////////////////
+
+//Get the button:
+const linkToTop = document.querySelector(".link-to-top");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function () {
+  if (
+    document.body.scrollTop > 500 ||
+    document.documentElement.scrollTop > 500
+  ) {
+    linkToTop.style.display = "block";
+  } else {
+    linkToTop.style.display = "none";
+  }
+};

@@ -92,7 +92,7 @@ body {
   border-radius: 9px;
   transition: all 0.3s;
   cursor: pointer;
-  border: none;
+  /*border: none;*/
 }
 
 .btn-full:link,
@@ -116,8 +116,31 @@ body {
   color: #ff4500ff;
 }
 
+.link-to-top {
+  color: #fff;
+  padding: 0.8rem 0.8rem;
+  border-radius: 9px;
+  background-color: rgba(255, 69, 0, 0.5);
+  transition: all 0.3s;
+  cursor: pointer;
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  display: none;
+}
+
+.link-to-top:hover,
+.link-to-top:active {
+  color: #060649;
+}
+
+.logo-to-top {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+
 .margin-bottom {
-  margin-bottom: 0.2rem;
+  margin-bottom: 1.2rem;
 }
 
 /*img {*/
