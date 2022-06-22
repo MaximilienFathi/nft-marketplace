@@ -24,6 +24,33 @@ const flipCard = document.querySelector(".flip-card");
 const formLogin = document.querySelector("#form-login");
 const formSignup = document.querySelector("#form-signup");
 
+/////////////////////////////////////////////////////////////
+// CONVERT ETH TO CAD
+
+let oneETHprice = 0;
+
+(async function () {
+  const fromCurrency = "ethereum";
+  const toCurrency = "cad";
+  const url = `https://api.coingecko.com/api/v3/simple/price?ids=${fromCurrency}&vs_currencies=${toCurrency}`;
+  const response = await fetch(url);
+  const json = await response.json();
+  oneETHprice = await json[fromCurrency][toCurrency];
+  console.log(oneETHprice);
+})();
+
+// (async () => {
+//   oneETHprice = await convertETHtoCAD();
+//   console.log(oneETHprice);
+// })();
+
+const dollarValueElements = document.getElementsByClassName("dollar-value");
+for (let i = 0; i < dollarValueElements.length; i++) {
+  dollarValueElements[i].textContent = `${
+    oneETHprice * Number(dollarValueElements[i].textContent)
+  }`;
+}
+
 //////////////////////////////////////////////////
 // SMOOTH SCROLLING ANIMATION
 allLinks.forEach(function (link) {

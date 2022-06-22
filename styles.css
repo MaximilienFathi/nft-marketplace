@@ -92,7 +92,7 @@ body {
   border-radius: 9px;
   transition: all 0.3s;
   cursor: pointer;
-  /*border: none;*/
+  border: none;
 }
 
 .btn-full:link,

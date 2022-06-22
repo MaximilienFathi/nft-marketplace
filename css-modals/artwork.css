@@ -120,12 +120,12 @@
   gap: 1.2rem;
 }
 
-.nft-price-ethereum {
+.nft-modal-price-ethereum {
   font-size: 3rem;
   color: goldenrod;
 }
 
-.nft-price-dollar {
+.nft-modal-price-dollar {
   font-size: 1.6rem;
 }
 

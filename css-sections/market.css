@@ -56,26 +56,26 @@
   margin-bottom: 3.2rem;
 }
 
-.nft-bid-box {
+.nft-price-box {
   display: flex;
   justify-content: space-between;
   align-items: stretch;
   /*margin-bottom: 2.4rem;*/
 }
 
-.nft-bid-description {
+.nft-price-description {
   font-size: 1.2rem;
-  /*color: #ded6d6;*/
+  color: #b2abab;
   margin-bottom: 1.2rem;
 }
 
-.nft-bid-ethereum {
+.nft-price-ethereum {
   font-size: 1.6rem;
   color: goldenrod;
   margin-bottom: 1rem;
 }
 
-.nft-bid-dollar {
+.nft-price-dollar {
   font-size: 1.2rem;
 }
 
