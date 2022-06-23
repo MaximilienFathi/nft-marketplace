@@ -27,29 +27,33 @@ const formSignup = document.querySelector("#form-signup");
 /////////////////////////////////////////////////////////////
 // CONVERT ETH TO CAD
 
-let oneETHprice = 0;
+const convertETHtoCAD = async function () {
+  try {
+    const fromCurrency = "ethereum";
+    const toCurrency = "cad";
+    const url = `https://api.coingecko.com/api/v3/simple/price?ids=${fromCurrency}&vs_currencies=${toCurrency}`;
+    const response = await fetch(url);
+    const json = await response.json();
+    return await json[fromCurrency][toCurrency];
+  } catch (err) {
+    console.error(`${err}`);
+  }
+};
 
-(async function () {
-  const fromCurrency = "ethereum";
-  const toCurrency = "cad";
-  const url = `https://api.coingecko.com/api/v3/simple/price?ids=${fromCurrency}&vs_currencies=${toCurrency}`;
-  const response = await fetch(url);
-  const json = await response.json();
-  oneETHprice = await json[fromCurrency][toCurrency];
+convertETHtoCAD().then((oneETHprice) => {
   console.log(oneETHprice);
-})();
-
-// (async () => {
-//   oneETHprice = await convertETHtoCAD();
-//   console.log(oneETHprice);
-// })();
-
-const dollarValueElements = document.getElementsByClassName("dollar-value");
-for (let i = 0; i < dollarValueElements.length; i++) {
-  dollarValueElements[i].textContent = `${
-    oneETHprice * Number(dollarValueElements[i].textContent)
-  }`;
-}
+  const numberFormatter = Intl.NumberFormat("en-US");
+  const ethereumValueElements =
+    document.getElementsByClassName("ethereum-value");
+  const dollarValueElements = document.getElementsByClassName("dollar-value");
+  for (let i = 0; i < dollarValueElements.length; i++) {
+    let ethereumValue = Number(ethereumValueElements[i].textContent);
+    let dollarValue = (oneETHprice * ethereumValue).toFixed(2);
+    dollarValueElements[i].textContent = `${numberFormatter.format(
+      dollarValue
+    )}`;
+  }
+});
 
 //////////////////////////////////////////////////
 // SMOOTH SCROLLING ANIMATION
