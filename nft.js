@@ -1,45 +1,45 @@
 "use script";
 
-class ArtworkCl {
-  constructor(name, creator, ethValue, artworkImg) {
+class NftClass {
+  constructor(name, creator, ethValue, nftImg) {
     this.name = name;
     this.creator = creator;
     this.ethValue = ethValue;
-    this.artworkImg = artworkImg;
+    this.nftImg = nftImg;
   }
 }
 
-const artwork1 = new ArtworkCl(
+const nft1 = new NftClass(
   "Flying Astronaut",
   "Bob Taylor",
   "9.23",
   "img/space-ga758f1522_640.jpg"
 );
 
-const artwork2 = new ArtworkCl(
+const nft2 = new NftClass(
   "Death Mask",
   "John Smith",
   "3.78",
   "img/art-g388e5fb4f_640.jpg"
 );
 
-const artwork3 = new ArtworkCl(
+const nft3 = new NftClass(
   "Pink Shirt Guy",
   "Lucy Pudding",
   "6.56",
   "img/art-ga0bb51423_640.jpg"
 );
 
-const artwork4 = new ArtworkCl(
+const nft4 = new NftClass(
   "Green Monster",
   "Jacky Foster",
   "15.04",
   "img/art-ga1ef76e48_640.jpg"
 );
 
-function createCard({ name, creator, ethValue, artworkImg }) {
+function createCard({ name, creator, ethValue, nftImg }) {
   return `<div class="nft-card">
-              <img class="nft-img" src="${artworkImg}" alt="" />
+              <img class="nft-img" src="${nftImg}" alt="" />
               <div class="nft-info">
                 <p class="nft-name">${name}</p>
                 <p class="nft-creator">By ${creator}</p>
@@ -56,16 +56,16 @@ function createCard({ name, creator, ethValue, artworkImg }) {
                       ($<span class="dollar-value">0</span>)
                     </p>
                   </div>
-                  <button class="btn btn-artwork">View Artwork</button>
+                  <button class="btn btn-nft">View NFT</button>
                 </div>
               </div>
            </div>`;
 }
 
 (function () {
-  const gridMarket = document.querySelector(".grid-market");
-  gridMarket.insertAdjacentHTML("beforeend", createCard(artwork1));
-  gridMarket.insertAdjacentHTML("beforeend", createCard(artwork2));
-  gridMarket.insertAdjacentHTML("beforeend", createCard(artwork3));
-  gridMarket.insertAdjacentHTML("beforeend", createCard(artwork4));
+  const gridMarket = document.querySelector(".nfts-grid");
+  gridMarket.insertAdjacentHTML("beforeend", createCard(nft1));
+  gridMarket.insertAdjacentHTML("beforeend", createCard(nft2));
+  gridMarket.insertAdjacentHTML("beforeend", createCard(nft3));
+  gridMarket.insertAdjacentHTML("beforeend", createCard(nft4));
 })();

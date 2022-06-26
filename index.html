@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="css-sections/header.css" />
     <link rel="stylesheet" href="css-sections/hero.css" />
-    <link rel="stylesheet" href="css-sections/market.css" />
+    <link rel="stylesheet" href="css-sections/nfts.css" />
     <link rel="stylesheet" href="css-sections/creators.css" />
     <link rel="stylesheet" href="css-sections/procedure.css" />
     <link rel="stylesheet" href="css-sections/newsletter.css" />
@@ -31,11 +31,12 @@
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
-    <script defer src="index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script defer src="artwork.js"></script>
+
+    <script defer src="nft.js"></script>
     <script defer src="creator.js"></script>
+    <script defer src="index.js"></script>
   </head>
   <body>
     <header class="header">
@@ -46,7 +47,7 @@
 
       <nav class="main-nav">
         <ul class="main-nav-list">
-          <li><a class="main-nav-link" href="#market">Artworks</a></li>
+          <li><a class="main-nav-link" href="#nfts">NFTs</a></li>
           <li><a class="main-nav-link" href="#creators">Creators</a></li>
           <li><a class="main-nav-link" href="#procedure">How it works</a></li>
           <li>
@@ -119,7 +120,7 @@
               facilis omnis optio quaerat
             </p>
             <div class="hero-btn-box">
-              <a class="btn btn-full btn-explore" href="#market">Explore now</a>
+              <a class="btn btn-full btn-explore" href="#nfts">Explore now</a>
               <a class="btn btn-outline" href="#procedure">Learn more</a>
             </div>
             <div class="hero-stats-box">
@@ -151,13 +152,13 @@
         </div>
       </section>
 
-      <section class="market-section" id="market">
+      <section class="nfts-section" id="nfts">
         <div class="container">
-          <div class="market-heading-box">
-            <h2 class="heading-secondary">Trending Artworks</h2>
-            <a class="btn btn-outline" href="#">More artwork</a>
+          <div class="nfts-heading-box">
+            <h2 class="heading-secondary">Trending NFTs</h2>
+            <a class="btn btn-outline" href="#">More NFTs</a>
           </div>
-          <div class="grid grid-4-cols grid-market">
+          <div class="grid grid-4-cols nfts-grid">
             <div id="modal-artwork" class="modal-container">
               <div class="flip-container">
                 <div class="flip-card">
@@ -599,7 +600,7 @@
         <nav class="footer-column">
           <p class="footer-heading">Marketplace</p>
           <ul class="footer-list">
-            <li><a class="footer-link" href="#market">All NFTs</a></li>
+            <li><a class="footer-link" href="#nfts">All NFTs</a></li>
             <li><a class="footer-link" href="#">Art</a></li>
             <li><a class="footer-link" href="#">Collectibles</a></li>
             <li><a class="footer-link" href="#">Domain Names</a></li>

@@ -9,7 +9,7 @@ const timer = document.querySelector(".timer");
 
 const btnLogin = document.querySelector(".btn-login");
 const btnSignup = document.querySelector(".btn-signup");
-const btnArtwork = document.querySelector(".btn-artwork");
+const btnNFT = document.querySelector(".btn-nft");
 const btnCreator = document.querySelector(".btn-creator");
 
 const modalAuthentication = document.querySelector("#modal-authentication");
@@ -178,7 +178,7 @@ document.body.onclick = function (event) {
 //////////////////////////////////////////////////
 // ENABLE MODAL FORM INTERACTION - ARTWORK & CREATOR
 
-btnArtwork.onclick = function (event) {
+btnNFT.onclick = function (event) {
   const currentButton = event.target;
   setModalOrigin(modalArtwork, currentButton);
   showModal(modalArtwork);
