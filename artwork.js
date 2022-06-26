@@ -1,11 +1,11 @@
 "use script";
 
 class ArtworkCl {
-  constructor(name, creator, ethValue, source) {
+  constructor(name, creator, ethValue, artworkImg) {
     this.name = name;
     this.creator = creator;
     this.ethValue = ethValue;
-    this.source = source;
+    this.artworkImg = artworkImg;
   }
 }
 
@@ -37,9 +37,9 @@ const artwork4 = new ArtworkCl(
   "img/art-ga1ef76e48_640.jpg"
 );
 
-function createCard({ name, creator, ethValue, source }) {
+function createCard({ name, creator, ethValue, artworkImg }) {
   return `<div class="nft-card">
-              <img class="nft-img" src="${source}" alt="" />
+              <img class="nft-img" src="${artworkImg}" alt="" />
               <div class="nft-info">
                 <p class="nft-name">${name}</p>
                 <p class="nft-creator">By ${creator}</p>

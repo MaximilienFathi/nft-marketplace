@@ -35,6 +35,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script defer src="artwork.js"></script>
+    <script defer src="creator.js"></script>
   </head>
   <body>
     <header class="header">
@@ -369,229 +370,123 @@
             <a class="btn btn-outline" href="#">More creators</a>
           </div>
           <div class="grid grid-4-cols grid-creators">
-            <div class="creator-card">
-              <img class="creator-banner" src="img/cosmos-g20ff2fd5e_640.png" />
-              <img
-                class="creator-img"
-                src="img/man-g238e36a78_640.png"
-                alt=""
-              />
-              <div class="creator-info">
-                <p class="creator-name">Bob Taylor</p>
-                <div class="creator-stat">
-                  <p>Items</p>
-                  <p>56</p>
-                </div>
-                <div class="creator-stat">
-                  <p>Views</p>
-                  <p>10</p>
-                </div>
-                <div class="creator-stat">
-                  <p>Followers</p>
-                  <p>8</p>
-                </div>
-              </div>
-              <button class="btn btn-creator">View Creator</button>
-            </div>
-            <!------------------------------------------------------------------>
-            <!------------------------------------------------------------------>
-            <div id="modal-creator" class="modal-container">
-              <div class="modal-creator-content border-glow">
-                <!--border-glow-->
-                <ion-icon class="modal-close" name="close-outline"></ion-icon>
-                <div class="modal-creator-left-content">
-                  <img
-                    class="modal-creator-banner"
-                    src="img/cosmos-g20ff2fd5e_640.png"
-                    alt=""
-                  />
-                  <img
-                    class="modal-creator-img"
-                    src="img/man-g238e36a78_640.png"
-                    alt=""
-                  />
-                  <!--                  <div class="modal-creator-about">-->
-                  <p class="modal-creator-name">Bob Taylor</p>
-                  <p class="creator-join-date">Joined January 2022</p>
-                  <p class="creator-description">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Accusamus ad deleniti
-                  </p>
-                  <!--                  <div class="creator-follow-stats">-->
-                  <!--                    <p>24 followers</p>-->
-                  <!--                    <p>10 following</p>-->
-                  <!--                  </div>-->
-                  <div class="creator-modal-btn-box">
-                    <button class="btn btn-full btn-message">Message</button>
-                    <button class="btn btn-outline btn-follow">Follow</button>
-                  </div>
-                  <hr class="modal-creator-divider" />
-                  <ul class="networks-list">
-                    <li>
-                      <a class="footer-link" href=""
-                        ><ion-icon
-                          class="network-icon"
-                          name="logo-facebook"
-                        ></ion-icon
-                      ></a>
-                    </li>
-                    <li>
-                      <a class="footer-link" href="">
-                        <ion-icon
-                          class="network-icon"
-                          name="logo-instagram"
-                        ></ion-icon>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="footer-link" href="">
-                        <ion-icon
-                          class="network-icon"
-                          name="logo-pinterest"
-                        ></ion-icon>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="footer-link" href="">
-                        <ion-icon
-                          class="network-icon"
-                          name="logo-twitter"
-                        ></ion-icon>
-                      </a>
-                    </li>
-                  </ul>
-                  <!--                  </div>-->
-                </div>
-                <div class="modal-creator-right-content">
-                  <p class="creator-analytics-label">Analytics Overview</p>
-                  <div class="stat-container analytics-border">
-                    <ion-icon
-                      class="stat-icon"
-                      name="analytics-outline"
-                    ></ion-icon>
-                    <div class="stat-text">
-                      <p>562 ETH</p>
-                      <p>Total Balance</p>
-                    </div>
-                  </div>
-                  <div class="stat-container analytics-border">
-                    <ion-icon
-                      class="stat-icon"
-                      name="pricetags-outline"
-                    ></ion-icon>
-                    <div class="stat-text">
-                      <p>423 ETH</p>
-                      <p>Total Sales</p>
-                    </div>
-                  </div>
-                  <div class="stat-container analytics-border">
-                    <ion-icon
-                      class="stat-icon"
-                      name="diamond-outline"
-                    ></ion-icon>
-                    <div class="stat-text">
-                      <p>1500 ETH</p>
-                      <p>Total NFT Value</p>
-                    </div>
-                  </div>
-                  <div class="bar-chart-container analytics-border">
-                    <canvas id="creator-bar-chart"></canvas>
-                  </div>
-                  <div class="area-chart-container analytics-border">
-                    <canvas id="creator-area-chart"></canvas>
-                  </div>
-                  <div class="doughnut-chart-container analytics-border">
-                    <canvas id="creator-doughnut-chart-1"></canvas>
-                  </div>
-                  <div class="doughnut-chart-container analytics-border">
-                    <canvas id="creator-doughnut-chart-2"></canvas>
-                  </div>
-                  <div class="doughnut-chart-container analytics-border">
-                    <canvas id="creator-doughnut-chart-3"></canvas>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!------------------------------------------------------------------>
-            <!------------------------------------------------------------------>
-            <div class="creator-card">
-              <img class="creator-banner" src="img/bear-gfc11ffe9c_640.png" />
-              <img
-                class="creator-img"
-                src="img/man-g1679334f6_640.png"
-                alt=""
-              />
-              <div class="creator-info">
-                <p class="creator-name">John Smith</p>
-                <div class="creator-stat">
-                  <p>Items</p>
-                  <p>23</p>
-                </div>
-                <div class="creator-stat">
-                  <p>Views</p>
-                  <p>30</p>
-                </div>
-                <div class="creator-stat">
-                  <p>Followers</p>
-                  <p>4</p>
-                </div>
-              </div>
-              <button class="btn btn-creator">View Creator</button>
-            </div>
-            <div class="creator-card">
-              <img
-                class="creator-banner"
-                src="img/memphis-g1020b08ad_640.jpg"
-              />
-              <img
-                class="creator-img"
-                src="img/woman-g33cc37279_640.jpg"
-                alt=""
-              />
-              <div class="creator-info">
-                <p class="creator-name">Lucy Pudding</p>
-                <div class="creator-stat">
-                  <p>Items</p>
-                  <p>145</p>
-                </div>
-                <div class="creator-stat">
-                  <p>Views</p>
-                  <p>78</p>
-                </div>
-                <div class="creator-stat">
-                  <p>Followers</p>
-                  <p>34</p>
-                </div>
-              </div>
-              <button class="btn btn-creator">View Creator</button>
-            </div>
-            <div class="creator-card">
-              <img
-                class="creator-banner"
-                src="img/ice-cream-g26773c881_640.png"
-              />
-              <img
-                class="creator-img"
-                src="img/woman-g11e4ec8b8_640.jpg"
-                alt=""
-              />
-              <div class="creator-info">
-                <p class="creator-name">Jacky Foster</p>
-                <div class="creator-stat">
-                  <p>Items</p>
-                  <p>34</p>
-                </div>
-                <div class="creator-stat">
-                  <p>Views</p>
-                  <p>4</p>
-                </div>
-                <div class="creator-stat">
-                  <p>Followers</p>
-                  <p>16</p>
-                </div>
-              </div>
-              <button class="btn btn-creator">View Creator</button>
-            </div>
+            <!--            <div id="modal-creator" class="modal-container">-->
+            <!--              <div class="modal-creator-content border-glow">-->
+            <!--                &lt;!&ndash;border-glow&ndash;&gt;-->
+            <!--                <ion-icon class="modal-close" name="close-outline"></ion-icon>-->
+            <!--                <div class="modal-creator-left-content">-->
+            <!--                  <img-->
+            <!--                    class="modal-creator-banner"-->
+            <!--                    src="img/cosmos-g20ff2fd5e_640.png"-->
+            <!--                    alt=""-->
+            <!--                  />-->
+            <!--                  <img-->
+            <!--                    class="modal-creator-img"-->
+            <!--                    src="img/man-g238e36a78_640.png"-->
+            <!--                    alt=""-->
+            <!--                  />-->
+            <!--                  &lt;!&ndash;                  <div class="modal-creator-about">&ndash;&gt;-->
+            <!--                  <p class="modal-creator-name">Bob Taylor</p>-->
+            <!--                  <p class="creator-join-date">Joined January 2022</p>-->
+            <!--                  <p class="creator-description">-->
+            <!--                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.-->
+            <!--                    Accusamus ad deleniti-->
+            <!--                  </p>-->
+            <!--                  &lt;!&ndash;                  <div class="creator-follow-stats">&ndash;&gt;-->
+            <!--                  &lt;!&ndash;                    <p>24 followers</p>&ndash;&gt;-->
+            <!--                  &lt;!&ndash;                    <p>10 following</p>&ndash;&gt;-->
+            <!--                  &lt;!&ndash;                  </div>&ndash;&gt;-->
+            <!--                  <div class="creator-modal-btn-box">-->
+            <!--                    <button class="btn btn-full btn-message">Message</button>-->
+            <!--                    <button class="btn btn-outline btn-follow">Follow</button>-->
+            <!--                  </div>-->
+            <!--                  <hr class="modal-creator-divider" />-->
+            <!--                  <ul class="networks-list">-->
+            <!--                    <li>-->
+            <!--                      <a class="footer-link" href=""-->
+            <!--                        ><ion-icon-->
+            <!--                          class="network-icon"-->
+            <!--                          name="logo-facebook"-->
+            <!--                        ></ion-icon-->
+            <!--                      ></a>-->
+            <!--                    </li>-->
+            <!--                    <li>-->
+            <!--                      <a class="footer-link" href="">-->
+            <!--                        <ion-icon-->
+            <!--                          class="network-icon"-->
+            <!--                          name="logo-instagram"-->
+            <!--                        ></ion-icon>-->
+            <!--                      </a>-->
+            <!--                    </li>-->
+            <!--                    <li>-->
+            <!--                      <a class="footer-link" href="">-->
+            <!--                        <ion-icon-->
+            <!--                          class="network-icon"-->
+            <!--                          name="logo-pinterest"-->
+            <!--                        ></ion-icon>-->
+            <!--                      </a>-->
+            <!--                    </li>-->
+            <!--                    <li>-->
+            <!--                      <a class="footer-link" href="">-->
+            <!--                        <ion-icon-->
+            <!--                          class="network-icon"-->
+            <!--                          name="logo-twitter"-->
+            <!--                        ></ion-icon>-->
+            <!--                      </a>-->
+            <!--                    </li>-->
+            <!--                  </ul>-->
+            <!--                  &lt;!&ndash;                  </div>&ndash;&gt;-->
+            <!--                </div>-->
+            <!--                <div class="modal-creator-right-content">-->
+            <!--                  <p class="creator-analytics-label">Analytics Overview</p>-->
+            <!--                  <div class="stat-container analytics-border">-->
+            <!--                    <ion-icon-->
+            <!--                      class="stat-icon"-->
+            <!--                      name="analytics-outline"-->
+            <!--                    ></ion-icon>-->
+            <!--                    <div class="stat-text">-->
+            <!--                      <p>562 ETH</p>-->
+            <!--                      <p>Total Balance</p>-->
+            <!--                    </div>-->
+            <!--                  </div>-->
+            <!--                  <div class="stat-container analytics-border">-->
+            <!--                    <ion-icon-->
+            <!--                      class="stat-icon"-->
+            <!--                      name="pricetags-outline"-->
+            <!--                    ></ion-icon>-->
+            <!--                    <div class="stat-text">-->
+            <!--                      <p>423 ETH</p>-->
+            <!--                      <p>Total Sales</p>-->
+            <!--                    </div>-->
+            <!--                  </div>-->
+            <!--                  <div class="stat-container analytics-border">-->
+            <!--                    <ion-icon-->
+            <!--                      class="stat-icon"-->
+            <!--                      name="diamond-outline"-->
+            <!--                    ></ion-icon>-->
+            <!--                    <div class="stat-text">-->
+            <!--                      <p>1500 ETH</p>-->
+            <!--                      <p>Total NFT Value</p>-->
+            <!--                    </div>-->
+            <!--                  </div>-->
+            <!--                  <div class="bar-chart-container analytics-border">-->
+            <!--                    <canvas id="creator-bar-chart"></canvas>-->
+            <!--                  </div>-->
+            <!--                  <div class="area-chart-container analytics-border">-->
+            <!--                    <canvas id="creator-area-chart"></canvas>-->
+            <!--                  </div>-->
+            <!--                  <div class="doughnut-chart-container analytics-border">-->
+            <!--                    <canvas id="creator-doughnut-chart-1"></canvas>-->
+            <!--                  </div>-->
+            <!--                  <div class="doughnut-chart-container analytics-border">-->
+            <!--                    <canvas id="creator-doughnut-chart-2"></canvas>-->
+            <!--                  </div>-->
+            <!--                  <div class="doughnut-chart-container analytics-border">-->
+            <!--                    <canvas id="creator-doughnut-chart-3"></canvas>-->
+            <!--                  </div>-->
+            <!--                </div>-->
+            <!--              </div>-->
+            <!--            </div>-->
           </div>
         </div>
       </section>
