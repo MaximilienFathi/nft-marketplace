@@ -5,15 +5,15 @@
 const allLinks = document.querySelectorAll("a:link");
 const heroSection = document.querySelector(".hero-section");
 const year = document.querySelector(".year");
-const timer = document.querySelector(".timer");
 
 const btnLogin = document.querySelector(".btn-login");
 const btnSignup = document.querySelector(".btn-signup");
-const btnNFT = document.querySelector(".btn-nft");
 const btnCreator = document.querySelector(".btn-creator");
 
+const nftButtons = document.querySelectorAll(".nft-button");
+const nftModals = document.querySelectorAll(".nft-modal");
+
 const modalAuthentication = document.querySelector("#modal-authentication");
-const modalArtwork = document.querySelector("#modal-artwork");
 const modalCreator = document.querySelector("#modal-creator");
 const modalClose = document.querySelector(".modal-close");
 
@@ -129,12 +129,22 @@ const showModal = function (currentModal) {
   document.querySelector("body").style.overflow = "hidden";
 };
 
+// Used as an alternative to includes() for modal objects
+const isInArray = function (arr, target) {
+  let found = false;
+  arr.forEach((item) => {
+    if (item === target) found = true;
+  });
+  return found;
+};
+
 // Close modal when the user clicks outside of it
 window.onclick = function (event) {
   const currentModal = event.target;
   if (
     currentModal === modalAuthentication ||
-    currentModal === modalArtwork ||
+    isInArray(nftModals, currentModal) ||
+    // nftModals.includes(currentModal) || // Does not work
     currentModal === modalCreator
   ) {
     resetForm();
@@ -164,11 +174,12 @@ btnSignup.onclick = function (event) {
 };
 
 // When the user clicks on X, close the modal
+// WORK AGAIN ON THIS ---------------------
 document.body.onclick = function (event) {
   if (event.target.getAttribute("name") === "close-outline") {
     resetForm();
     modalAuthentication.style.display = "none";
-    modalArtwork.style.display = "none";
+    nftModals.forEach((nftModal) => (nftModal.style.display = "none"));
     modalCreator.style.display = "none";
     document.querySelector("body").style.overflowY = "scroll";
     flipCard.classList.remove("is-flipped");
@@ -178,11 +189,13 @@ document.body.onclick = function (event) {
 //////////////////////////////////////////////////
 // ENABLE MODAL FORM INTERACTION - ARTWORK & CREATOR
 
-btnNFT.onclick = function (event) {
-  const currentButton = event.target;
-  setModalOrigin(modalArtwork, currentButton);
-  showModal(modalArtwork);
-};
+for (let i = 0; i < nftButtons.length; i++) {
+  nftButtons[i].onclick = function (event) {
+    const currentButton = event.target;
+    setModalOrigin(nftModals[i], currentButton);
+    showModal(nftModals[i]);
+  };
+}
 
 btnCreator.onclick = function (event) {
   const currentButton = event.target;
@@ -193,33 +206,6 @@ btnCreator.onclick = function (event) {
 // modalArtwork.onclick = function () {
 //   flipCard.classList.toggle("is-flipped");
 // };
-
-window.onload = function () {
-  let hours = 24;
-  let minutes = 60;
-  let seconds = 60;
-  setInterval(function () {
-    timer.textContent = hours + " : " + minutes + " : " + seconds;
-    seconds--;
-    if (seconds === 0) {
-      minutes--;
-      seconds = 60;
-      if (minutes === 0) {
-        hours--;
-        minutes = 60;
-      }
-      if (hours === 0) {
-        hours = 24;
-      }
-    }
-    // if (seconds >= 58) {
-    //   timer.style.color = "#ded6d6";
-    // }
-    // if (seconds < 58) {
-    //   timer.style.color = "red";
-    // }
-  }, 1000);
-};
 
 /////////////////////////////////////////////////////////////
 // SET UP CHARTS

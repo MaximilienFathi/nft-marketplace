@@ -80,14 +80,14 @@
 }
 
 /* Refactor and put in style.css*/
-.btn-nft {
+.nft-button {
   background-color: #ff4500ff;
   /*background: linear-gradient(45deg, #ea4c0a, #5252d9);*/
   font-size: 1.8rem;
   padding: 0.8rem 1.6rem;
 }
 
-.btn-nft:hover,
-.btn-nft:active {
+.nft-button:hover,
+.nft-button:active {
   background-color: #dc4b05;
 }

@@ -1,45 +1,10 @@
-"use script";
+// "use script";
 
-class NftClass {
-  constructor(name, creator, ethValue, nftImg) {
-    this.name = name;
-    this.creator = creator;
-    this.ethValue = ethValue;
-    this.nftImg = nftImg;
-  }
-}
+import { nft1, nft2, nft3, nft4 } from "./nft-class.js";
 
-const nft1 = new NftClass(
-  "Flying Astronaut",
-  "Bob Taylor",
-  "9.23",
-  "img/space-ga758f1522_640.jpg"
-);
-
-const nft2 = new NftClass(
-  "Death Mask",
-  "John Smith",
-  "3.78",
-  "img/art-g388e5fb4f_640.jpg"
-);
-
-const nft3 = new NftClass(
-  "Pink Shirt Guy",
-  "Lucy Pudding",
-  "6.56",
-  "img/art-ga0bb51423_640.jpg"
-);
-
-const nft4 = new NftClass(
-  "Green Monster",
-  "Jacky Foster",
-  "15.04",
-  "img/art-ga1ef76e48_640.jpg"
-);
-
-function createCard({ name, creator, ethValue, nftImg }) {
+function createCard({ image, name, creator, ethereum }) {
   return `<div class="nft-card">
-             <img class="nft-img" src="${nftImg}" alt="" />
+             <img class="nft-img" src="${image}" alt="" />
              <div class="nft-info">
                <p class="nft-name">${name}</p>
                <p class="nft-creator">By ${creator}</p>
@@ -49,14 +14,14 @@ function createCard({ name, creator, ethValue, nftImg }) {
                    <p class="nft-price-ethereum">
                      <!--                      <i class="lab la-ethereum"></i>-->
                      <strong
-                       ><span class="ethereum-value">${ethValue}</span> ETH
+                       ><span class="ethereum-value">${ethereum}</span> ETH
                      </strong>
                    </p>
                    <p class="nft-price-dollar">
                      ($<span class="dollar-value">0</span>)
                    </p>
                  </div>
-                 <button class="btn btn-nft">View NFT</button>
+                 <button class="btn nft-button">View NFT</button>
                </div>
              </div>
           </div>`;
