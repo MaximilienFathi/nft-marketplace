@@ -4,15 +4,18 @@ import { nft1, nft2, nft3, nft4 } from "./nft-class.js";
 
 // Automate the timer when main window loads
 window.onload = function () {
-  let hours = 23;
-  let minutes = 59;
-  let seconds = 59;
+  let hours = 10; // 23
+  let minutes = 10; // 59
+  let seconds = 15; //59
   const timers = document.querySelectorAll(".timer");
   setInterval(function () {
     timers.forEach((timer) => {
-      if (seconds < 10) seconds = `0${seconds}`;
-      if (minutes < 10) minutes = `0${minutes}`;
-      if (hours < 10) hours = `0${hours}`;
+      // Add leading 0 for numbers smaller than 10
+      if (seconds < 10 && seconds.toString().length == 1)
+        seconds = `0${seconds}`;
+      if (minutes < 10 && minutes.toString().length == 1)
+        minutes = `0${minutes}`;
+      if (hours < 10 && hours.toString().length == 1) hours = `0${hours}`;
       timer.textContent = hours + " : " + minutes + " : " + seconds;
     });
     seconds--;
