@@ -10,7 +10,7 @@
   margin-bottom: 8rem;
 }
 
-.grid-creators {
+.creators-grid {
   height: 40rem;
 }
 
@@ -85,7 +85,7 @@
   color: goldenrod;
 }
 
-.btn-creator {
+.creator-button {
   background-color: #ff4500ff;
   /*background: linear-gradient(45deg, #ea4c0a, #5252d9);*/
   font-size: 1.6rem;
@@ -93,7 +93,7 @@
   width: 75%;
 }
 
-.btn-creator:hover,
-.btn-creator:active {
+.creator-button:hover,
+.creator-button:active {
   background-color: #dc4b05;
 }

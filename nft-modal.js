@@ -4,9 +4,9 @@ import { nft1, nft2, nft3, nft4 } from "./nft-class.js";
 
 // Automate the timer when main window loads
 window.onload = function () {
-  let hours = 10; // 23
-  let minutes = 10; // 59
-  let seconds = 15; //59
+  let hours = 23;
+  let minutes = 59;
+  let seconds = 59;
   const timers = document.querySelectorAll(".timer");
   setInterval(function () {
     timers.forEach((timer) => {
@@ -58,7 +58,7 @@ function createModal({
             <div>
                 <img
                   class="modal-nft-img"
-                  src="${image}"
+                  src=${image}
                   alt=""
                 />
             </div>

@@ -8,17 +8,18 @@ const year = document.querySelector(".year");
 
 const btnLogin = document.querySelector(".btn-login");
 const btnSignup = document.querySelector(".btn-signup");
-const btnCreator = document.querySelector(".btn-creator");
+const btnCreator = document.querySelector(".creator-button");
 
 const nftButtons = document.querySelectorAll(".nft-button");
 const nftModals = document.querySelectorAll(".nft-modal");
+const creatorButtons = document.querySelectorAll(".creator-button");
+const creatorModals = document.querySelectorAll(".creator-modal");
 
 const modalAuthentication = document.querySelector("#modal-authentication");
-const modalCreator = document.querySelector("#modal-creator");
 const modalClose = document.querySelector(".modal-close");
 
-const artworkModalContent = document.querySelector(".artwork-modal-content");
-const modalCreatorLink = document.querySelector(".modal-creator-link");
+// const artworkModalContent = document.querySelector(".artwork-modal-content");
+// const modalCreatorLink = document.querySelector(".modal-creator-link");
 const flipCard = document.querySelector(".flip-card");
 
 const formLogin = document.querySelector("#form-login");
@@ -145,7 +146,7 @@ window.onclick = function (event) {
     currentModal === modalAuthentication ||
     isInArray(nftModals, currentModal) ||
     // nftModals.includes(currentModal) || // Does not work
-    currentModal === modalCreator
+    isInArray(creatorModals, currentModal)
   ) {
     resetForm();
     currentModal.style.display = "none";
@@ -180,7 +181,9 @@ document.body.onclick = function (event) {
     resetForm();
     modalAuthentication.style.display = "none";
     nftModals.forEach((nftModal) => (nftModal.style.display = "none"));
-    modalCreator.style.display = "none";
+    creatorModals.forEach(
+      (creatorModal) => (creatorModal.style.display = "none")
+    );
     document.querySelector("body").style.overflowY = "scroll";
     flipCard.classList.remove("is-flipped");
   }
@@ -197,402 +200,18 @@ for (let i = 0; i < nftButtons.length; i++) {
   };
 }
 
-btnCreator.onclick = function (event) {
-  const currentButton = event.target;
-  setModalOrigin(modalCreator, currentButton);
-  showModal(modalCreator);
-};
+for (let i = 0; i < creatorButtons.length; i++) {
+  creatorButtons[i].onclick = function (event) {
+    const currentButton = event.target;
+    console.log("TESTING", creatorModals);
+    setModalOrigin(creatorModals[i], currentButton);
+    showModal(creatorModals[i]);
+  };
+}
 
 // modalArtwork.onclick = function () {
 //   flipCard.classList.toggle("is-flipped");
 // };
-
-/////////////////////////////////////////////////////////////
-// SET UP CHARTS
-
-// 1) setup
-const bar_chart_data = {
-  labels: ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"],
-  datasets: [
-    {
-      label: "Revenue",
-      data: [65, 59, 80, 81, 56, 55, 40],
-      backgroundColor: ["rgba(75, 192, 192, 0.2)"],
-      borderColor: ["rgb(75, 192, 192)"],
-      // or use goldenrod
-      borderWidth: 1,
-    },
-    {
-      label: "Expanses",
-      data: [24, 50, 12, 65, 45, 73, 95],
-      backgroundColor: ["rgba(255, 69, 0, 0.2)"],
-      borderColor: ["rgb(255, 69, 0)"],
-      // or use #ff4500ff
-      borderWidth: 1,
-    },
-  ],
-};
-let delayed;
-// 2) config
-const bar_chart_config = {
-  type: "bar",
-  data: bar_chart_data,
-  options: {
-    animations: {
-      duration: 2000,
-      // NOT WORKING
-      // easing: "linear",
-      // from: 0,
-      // to: 0,
-    },
-    scales: {
-      x: {
-        grid: {
-          color: "rgba(91,88,88,0.3)",
-        },
-      },
-      y: {
-        grid: {
-          color: "rgba(91,88,88,0.3)",
-        },
-      },
-    },
-    plugins: {
-      legend: {
-        align: "center",
-        labels: {
-          boxWidth: 30,
-          color: "#b2abab",
-        },
-        // labels: {
-        //   usePointStyle: true,
-        // },
-      },
-    },
-  },
-};
-
-// 3) render chart
-const bar_ctx = document.querySelector("#creator-bar-chart").getContext("2d");
-const myBarChart = new Chart(bar_ctx, bar_chart_config);
-
-/////////////////////////////////////////////////////////////
-const area_ctx = document.querySelector("#creator-area-chart").getContext("2d");
-const gradient1 = area_ctx.createLinearGradient(0, 30, 0, 170);
-gradient1.addColorStop(1, "rgba(11, 20, 66, 1)");
-gradient1.addColorStop(0, "rgba(75, 192, 192, 0.2)");
-const gradient2 = area_ctx.createLinearGradient(0, 50, 0, 100);
-gradient2.addColorStop(1, "rgba(75, 192, 192,1)");
-gradient2.addColorStop(0, "rgba(75, 192, 192,1)");
-
-area_ctx.canvas.width = 50;
-area_ctx.canvas.height = 55;
-
-// 1) setup
-// const labels = Utils.months({ count: 7 });
-const area_chart_data = {
-  labels: [1, 2, 3, 4, 5, 6, 7],
-  datasets: [
-    {
-      // label: "My First Dataset",
-      data: [65, 120, 80, 70, 30, 90, 200],
-      // borderColor: "rgb(75, 192, 192)",
-      tension: 0.4,
-      backgroundColor: gradient1,
-      fill: true,
-      borderWidth: 1, // Specify bar border width
-      borderColor: gradient2, // Add custom color border (Line)
-      pointRadius: 0,
-    },
-  ],
-};
-
-// 2) config
-const area_chart_config = {
-  type: "line",
-  data: area_chart_data,
-  responsive: true, // Instruct chart js to respond nicely.
-  maintainAspectRatio: false, // Add to prevent default behaviour of full-width/height
-  // tension: 0.4,
-  options: {
-    scales: {
-      x: {
-        grid: {
-          color: "rgba(91,88,88,0.3)",
-        },
-      },
-      y: {
-        grid: {
-          color: "rgba(91,88,88,0.3)",
-        },
-        ticks: {
-          display: false,
-        },
-      },
-    },
-    animations: {
-      tension: {
-        duration: 2000,
-        // NOT WORKING
-        // easing: "easeInOutCirc",
-        // from: 0,
-        // to: 1,
-      },
-    },
-    plugins: {
-      title: {
-        padding: {
-          top: 10,
-          bottom: 10,
-        },
-        display: true,
-        color: "#ded6d6",
-        font: {
-          size: 14,
-        },
-        text: "Daily Views (7 days)",
-      },
-      legend: {
-        display: false,
-      },
-    },
-  },
-};
-
-// 3) render chart
-const myAreaChart = new Chart(area_ctx, area_chart_config);
-
-/////////////////////////////////////////////////////////////
-
-// 0) centerText plugin
-const centerText = {
-  id: "centerText",
-  afterDatasetsDraw(chart, args, options) {
-    const {
-      ctx,
-      chartArea: { left, right, top, bottom, width, height },
-    } = chart;
-
-    ctx.save();
-    // console.log("test", top);
-    const chartData = chart.data.datasets[0].data[0];
-    console.log(chart.data.datasets[0].data[0]);
-
-    ctx.font = "bolder 1.6rem Arial";
-    ctx.fillStyle = "white";
-    ctx.textAlign = "center";
-    ctx.fillText(`${chartData}%`, width / 2, height / 2 + top + 5);
-    // 1.6rem = 16px and so must move text by half its font size, i.e. 8px
-  },
-};
-
-// 1) setup
-const doughnut_chart_data_1 = {
-  labels: ["Profit", "Revenue"],
-  datasets: [
-    {
-      // label: "My First Dataset",
-      data: [30, 70],
-      backgroundColor: ["rgba(75, 192, 192, 0.2)", "rgba(255, 99, 132, 0.2)"],
-      hoverOffset: 10,
-      cutout: "60%",
-      // borderRadius: 30,
-    },
-  ],
-};
-
-// 2) config
-const doughnut_chart_config_1 = {
-  type: "doughnut",
-  data: doughnut_chart_data_1,
-  options: {
-    // cutout: "50%",
-    rotation: Math.PI * 0.5,
-    animation: {
-      duration: 2000,
-      animateRotate: true,
-      easing: "easeInOutCirc",
-    },
-    responsive: true,
-    maintainAspectRatio: false,
-    // showScale: false,
-    elements: {
-      arc: {
-        borderWidth: 2,
-        borderColor: ["rgb(75, 192, 192)", "rgb(255, 69, 0)"],
-      },
-    },
-    layout: {
-      padding: {
-        bottom: 10,
-      },
-    },
-    plugins: {
-      title: {
-        padding: {
-          top: 10,
-          bottom: 10,
-        },
-        display: true,
-        color: "#ded6d6",
-        font: {
-          size: 14,
-        },
-        text: "Profit Margin",
-      },
-      legend: {
-        display: false,
-      },
-    },
-  },
-  plugins: [centerText],
-};
-
-// 3) render chart
-const doughnut_ctx_1 = document
-  .querySelector("#creator-doughnut-chart-1")
-  .getContext("2d");
-const myDoughnutChart1 = new Chart(doughnut_ctx_1, doughnut_chart_config_1);
-
-/////////////////////////////////////////////////////////////
-
-// 1) setup
-const doughnut_chart_data_2 = {
-  labels: ["Sold", "Unsold"],
-  datasets: [
-    {
-      // label: "My First Dataset",
-      data: [20, 80],
-      backgroundColor: ["rgba(75, 192, 192, 0.2)", "rgba(255, 99, 132, 0.2)"],
-      hoverOffset: 10,
-      cutout: "60%",
-      // borderRadius: 30,
-    },
-  ],
-};
-
-// 2) config
-const doughnut_chart_config_2 = {
-  type: "doughnut",
-  data: doughnut_chart_data_2,
-  options: {
-    // cutout: "50%",
-    rotation: Math.PI * 0.5,
-    animation: {
-      duration: 2000,
-      animateRotate: true,
-      easing: "easeInOutCirc",
-    },
-    responsive: true,
-    maintainAspectRatio: false,
-    // showScale: false,
-    elements: {
-      arc: {
-        borderWidth: 2,
-        borderColor: ["rgb(75, 192, 192)", "rgb(255, 69, 0)"],
-      },
-    },
-    layout: {
-      padding: {
-        bottom: 10,
-      },
-    },
-    plugins: {
-      title: {
-        padding: {
-          top: 10,
-          bottom: 10,
-        },
-        display: true,
-        color: "#ded6d6",
-        font: {
-          size: 14,
-        },
-        text: "Sales Effectiveness",
-      },
-      legend: {
-        display: false,
-      },
-    },
-  },
-  plugins: [centerText],
-};
-
-// 3) render chart
-const doughnut_ctx_2 = document
-  .querySelector("#creator-doughnut-chart-2")
-  .getContext("2d");
-const myDoughnutChart2 = new Chart(doughnut_ctx_2, doughnut_chart_config_2);
-
-/////////////////////////////////////////////////////////////
-
-// 1) setup
-const doughnut_chart_data_3 = {
-  labels: ["New", "Returning"],
-  datasets: [
-    {
-      // label: "My First Dataset",
-      data: [40, 60],
-      backgroundColor: ["rgba(75, 192, 192, 0.2)", "rgba(255, 99, 132, 0.2)"],
-      hoverOffset: 10,
-      cutout: "60%",
-      // borderRadius: 30,
-    },
-  ],
-};
-
-// 2) config
-const doughnut_chart_config_3 = {
-  type: "doughnut",
-  data: doughnut_chart_data_3,
-  options: {
-    // cutout: "50%",
-    // rotation: Math.PI * 0.5,
-    animation: {
-      duration: 2000,
-      animateRotate: true,
-      easing: "easeInOutCirc",
-    },
-    responsive: true,
-    maintainAspectRatio: false,
-    // showScale: false,
-    elements: {
-      arc: {
-        borderWidth: 2,
-        borderColor: ["rgb(75, 192, 192)", "rgb(255, 69, 0)"],
-      },
-    },
-    layout: {
-      padding: {
-        bottom: 10,
-      },
-    },
-    plugins: {
-      title: {
-        padding: {
-          top: 10,
-          bottom: 10,
-        },
-        display: true,
-        color: "#ded6d6",
-        font: {
-          size: 14,
-        },
-        text: "New Viewership",
-      },
-      legend: {
-        display: false,
-      },
-    },
-  },
-  plugins: [centerText],
-};
-
-// 3) render chart
-const doughnut_ctx_3 = document
-  .querySelector("#creator-doughnut-chart-3")
-  .getContext("2d");
-const myDoughnutChart3 = new Chart(doughnut_ctx_3, doughnut_chart_config_3);
 
 /////////////////////////////////////////////////////////////
 
