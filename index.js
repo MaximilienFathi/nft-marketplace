@@ -1,5 +1,10 @@
 "use strict";
 
+import { creator1, creator2, creator3, creator4 } from "./creator-class.js";
+import { createCreatorModal, createCharts } from "./creator-modal.js";
+import { nft1, nft2, nft3, nft4 } from "./nft-class.js";
+import { createNftModal } from "./nft-modal.js";
+
 //////////////////////////////////////////////////
 // ELEMENTS
 const allLinks = document.querySelectorAll("a:link");
@@ -11,21 +16,25 @@ const btnSignup = document.querySelector(".btn-signup");
 const btnCreator = document.querySelector(".creator-button");
 
 const nftButtons = document.querySelectorAll(".nft-button");
-const nftModals = document.querySelectorAll(".nft-modal");
 const creatorButtons = document.querySelectorAll(".creator-button");
-const creatorModals = document.querySelectorAll(".creator-modal");
 
 const modalAuthentication = document.querySelector("#modal-authentication");
 const modalClose = document.querySelector(".modal-close");
 
-// const artworkModalContent = document.querySelector(".artwork-modal-content");
-// const modalCreatorLink = document.querySelector(".modal-creator-link");
 const flipCard = document.querySelector(".flip-card");
 
 const formLogin = document.querySelector("#form-login");
 const formSignup = document.querySelector("#form-signup");
 
-/////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////
+const nftsGrid = document.querySelector(".nfts-grid");
+const creatorsGrid = document.querySelector(".creators-grid");
+const nfts = [nft1, nft2, nft3, nft4];
+const creators = [creator1, creator2, creator3, creator4];
+let creatorModal = null;
+let nftModal = null;
+
+//////////////////////////////////////////////////
 // CONVERT ETH TO CAD
 
 const convertETHtoCAD = async function () {
@@ -120,45 +129,83 @@ const setModalOrigin = function (currentModal, currentButton) {
   const xPosition = currentButton.offsetLeft;
   const yPosition = currentButton.offsetTop;
   currentModal.style.transformOrigin = `${xPosition}px ${yPosition}px`;
-  console.log(currentModal.style.transformOrigin);
+  // console.log(currentModal.style.transformOrigin);
 };
 
 // Show modal window
 const showModal = function (currentModal) {
-  console.log(currentModal);
+  // console.log(currentModal);
   currentModal.style.display = "flex";
   document.querySelector("body").style.overflow = "hidden";
 };
 
 // Used as an alternative to includes() for modal objects
-const isInArray = function (arr, target) {
-  let found = false;
-  arr.forEach((item) => {
-    if (item === target) found = true;
-  });
-  return found;
-};
+// const isInArray = function (arr, target) {
+//   let found = false;
+//   arr.forEach((item) => {
+//     if (item === target) found = true;
+//   });
+//   return found;
+// };
 
 // Close modal when the user clicks outside of it
 window.onclick = function (event) {
   const currentModal = event.target;
-  if (
-    currentModal === modalAuthentication ||
-    isInArray(nftModals, currentModal) ||
-    // nftModals.includes(currentModal) || // Does not work
-    isInArray(creatorModals, currentModal)
-  ) {
+  if (currentModal === modalAuthentication) {
     resetForm();
     currentModal.style.display = "none";
     document.querySelector("body").style.overflowY = "scroll";
-    flipCard.classList.remove("is-flipped");
+  }
+  // nftModals.includes(currentModal) || // Does not work
+  // if (isInArray(nftModals, currentModal)) {
+  if (currentModal === nftModal) {
+    nftModal.remove();
+    document.querySelector("body").style.overflowY = "scroll";
+    // flipCard.classList.remove("is-flipped");
+  }
+  if (currentModal === creatorModal) {
+    creatorModal.remove();
+    document.querySelector("body").style.overflowY = "scroll";
+    // flipCard.classList.remove("is-flipped");
+  }
+};
+
+// When the user clicks on X, close the modal
+document.body.onclick = function (event) {
+  if (event.target.getAttribute("name") === "close-outline") {
+    if (event.target.parentNode.parentNode === modalAuthentication) {
+      resetForm();
+      modalAuthentication.style.display = "none";
+      document.querySelector("body").style.overflowY = "scroll";
+    }
+    if (
+      event.target.parentNode.parentNode.parentNode.parentNode.parentNode ===
+      nftModal
+    ) {
+      nftModal.remove();
+      document.querySelector("body").style.overflowY = "scroll";
+      // flipCard.classList.remove("is-flipped");
+    }
+    if (event.target.parentNode.parentNode === creatorModal) {
+      creatorModal.remove();
+      document.querySelector("body").style.overflowY = "scroll";
+      // flipCard.classList.remove("is-flipped");
+    }
+
+    // OLD strategy of having all html code for modals at the same tim
+    // NEW strategy is to add html when needed and remove it otherwise
+    // nftModals.forEach((nftModal) => (nftModal.style.display = "none"));
+    // creatorModals.forEach(
+    //   (creatorModal) => (creatorModal.style.display = "none")
+    // );
+    // document.querySelector("body").style.overflowY = "scroll";
+    // flipCard.classList.remove("is-flipped");
   }
 };
 
 //////////////////////////////////////////////////
-// ENABLE MODAL FORM INTERACTION - LOGIN/SIGN UP
 
-// When the user clicks on the LOGIN button, open the modal
+// ENABLE MODAL FORM INTERACTION - LOGIN
 btnLogin.onclick = function (event) {
   document.querySelector("#chk").checked = true;
   const currentButton = event.target;
@@ -166,7 +213,7 @@ btnLogin.onclick = function (event) {
   showModal(modalAuthentication);
 };
 
-// When the user clicks on the SIGN UP button, open the modal
+// ENABLE MODAL FORM INTERACTION - SIGN UP
 btnSignup.onclick = function (event) {
   document.querySelector("#chk").checked = false;
   const currentButton = event.target;
@@ -174,38 +221,37 @@ btnSignup.onclick = function (event) {
   showModal(modalAuthentication);
 };
 
-// When the user clicks on X, close the modal
-// WORK AGAIN ON THIS ---------------------
-document.body.onclick = function (event) {
-  if (event.target.getAttribute("name") === "close-outline") {
-    resetForm();
-    modalAuthentication.style.display = "none";
-    nftModals.forEach((nftModal) => (nftModal.style.display = "none"));
-    creatorModals.forEach(
-      (creatorModal) => (creatorModal.style.display = "none")
-    );
-    document.querySelector("body").style.overflowY = "scroll";
-    flipCard.classList.remove("is-flipped");
-  }
-};
-
 //////////////////////////////////////////////////
-// ENABLE MODAL FORM INTERACTION - ARTWORK & CREATOR
 
+// ENABLE MODAL FORM INTERACTION - ARTWORK
 for (let i = 0; i < nftButtons.length; i++) {
   nftButtons[i].onclick = function (event) {
     const currentButton = event.target;
-    setModalOrigin(nftModals[i], currentButton);
-    showModal(nftModals[i]);
+    // Add HTML code for modals
+    nftsGrid.insertAdjacentHTML("beforeend", createNftModal(nfts[i]));
+    // Select class of recently created modal
+    nftModal = document.querySelector(".nft-modal");
+    // Display modal
+    setModalOrigin(nftModal, currentButton);
+    showModal(nftModal);
   };
 }
 
+// ENABLE MODAL FORM INTERACTION - CREATOR
 for (let i = 0; i < creatorButtons.length; i++) {
   creatorButtons[i].onclick = function (event) {
     const currentButton = event.target;
-    console.log("TESTING", creatorModals);
-    setModalOrigin(creatorModals[i], currentButton);
-    showModal(creatorModals[i]);
+    // Add HTML code for modals
+    creatorsGrid.insertAdjacentHTML(
+      "beforeend",
+      createCreatorModal(creators[i])
+    );
+    createCharts(creators[i]);
+    // Select class of recently created modal
+    creatorModal = document.querySelector(".creator-modal");
+    // Display modal
+    setModalOrigin(creatorModal, currentButton);
+    showModal(creatorModal);
   };
 }
 

@@ -1,23 +1,17 @@
 // "use script";
 
-import { nft1, nft2, nft3, nft4 } from "./nft-class.js";
-
 // Automate the timer when main window loads
 window.onload = function () {
   let hours = 23;
   let minutes = 59;
   let seconds = 59;
-  const timers = document.querySelectorAll(".timer");
+  const timer = document.querySelector(".timer");
   setInterval(function () {
-    timers.forEach((timer) => {
-      // Add leading 0 for numbers smaller than 10
-      if (seconds < 10 && seconds.toString().length == 1)
-        seconds = `0${seconds}`;
-      if (minutes < 10 && minutes.toString().length == 1)
-        minutes = `0${minutes}`;
-      if (hours < 10 && hours.toString().length == 1) hours = `0${hours}`;
-      timer.textContent = hours + " : " + minutes + " : " + seconds;
-    });
+    // Add leading 0 for numbers smaller than 10
+    if (seconds < 10 && seconds.toString().length == 1) seconds = `0${seconds}`;
+    if (minutes < 10 && minutes.toString().length == 1) minutes = `0${minutes}`;
+    if (hours < 10 && hours.toString().length == 1) hours = `0${hours}`;
+    timer.textContent = hours + " : " + minutes + " : " + seconds;
     seconds--;
     if (seconds < 0) {
       minutes--;
@@ -40,7 +34,7 @@ window.onload = function () {
 };
 
 // Create a modal window when clicking on "view NFT"
-function createModal({
+export function createNftModal({
   image,
   name,
   creator,
@@ -63,10 +57,7 @@ function createModal({
                 />
             </div>
             <div>
-                <ion-icon
-                  class="modal-close"
-                  name="close-outline"
-                ></ion-icon>
+                <ion-icon class="modal-close" name="close-outline"></ion-icon>
                 <div class="modal-nft-info">
                   <p class="modal-nft-name">${name}</p>
                   <p class="modal-nft-creator">
@@ -129,11 +120,3 @@ function createModal({
     </div>
   </div>`;
 }
-
-(function () {
-  const flipCard = document.querySelector(".nfts-grid");
-  flipCard.insertAdjacentHTML("beforeend", createModal(nft1));
-  flipCard.insertAdjacentHTML("beforeend", createModal(nft2));
-  flipCard.insertAdjacentHTML("beforeend", createModal(nft3));
-  flipCard.insertAdjacentHTML("beforeend", createModal(nft4));
-})();

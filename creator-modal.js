@@ -1,9 +1,13 @@
 // "use script";
 
-import { creator1, creator2, creator3, creator4 } from "./creator-class.js";
+import {
+  createBarChart,
+  createAreaChart,
+  createDoughnutChart,
+} from "./creator-charts.js";
 
 // Create a modal window when clicking on "view Creator"
-function createModal({
+export function createCreatorModal({
   name,
   joinDate,
   items,
@@ -117,29 +121,44 @@ function createModal({
                     </div>
                 </div>
                 <div class="bar-chart-container analytics-border">
-                    <canvas id="creator-bar-chart"></canvas>
+                    <canvas class="creator-bar-chart"></canvas>
                 </div>
                 <div class="area-chart-container analytics-border">
-                    <canvas id="creator-area-chart"></canvas>
+                    <canvas class="creator-area-chart"></canvas>
                 </div>
                 <div class="doughnut-chart-container analytics-border">
-                    <canvas id="creator-doughnut-chart-1"></canvas>
+                    <canvas class="creator-doughnut-chart-1"></canvas>
                 </div>
                 <div class="doughnut-chart-container analytics-border">
-                    <canvas id="creator-doughnut-chart-2"></canvas>
+                    <canvas class="creator-doughnut-chart-2"></canvas>
                 </div>
                 <div class="doughnut-chart-container analytics-border">
-                    <canvas id="creator-doughnut-chart-3"></canvas>
+                    <canvas class="creator-doughnut-chart-3"></canvas>
                 </div>
             </div>
         </div>
     </div>`;
 }
 
-(function () {
-  const flipCard = document.querySelector(".creators-grid");
-  flipCard.insertAdjacentHTML("beforeend", createModal(creator1));
-  flipCard.insertAdjacentHTML("beforeend", createModal(creator2));
-  flipCard.insertAdjacentHTML("beforeend", createModal(creator3));
-  flipCard.insertAdjacentHTML("beforeend", createModal(creator4));
-})();
+export function createCharts(creator) {
+  createBarChart(creator.revenueData, creator.expanseData);
+  createAreaChart(creator.viewsData);
+  createDoughnutChart(
+    ".creator-doughnut-chart-1",
+    "Profit Margin",
+    ["Profit", "Revenue"],
+    creator.profitMargin
+  );
+  createDoughnutChart(
+    ".creator-doughnut-chart-2",
+    "Sales Effectiveness",
+    ["Sold", "Unsold"],
+    creator.salesEffectiveness
+  );
+  createDoughnutChart(
+    ".creator-doughnut-chart-3",
+    "New Viewership",
+    ["New", "Returning"],
+    creator.newViewsData
+  );
+}
