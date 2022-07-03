@@ -1,10 +1,11 @@
 // "use script";
 
+let hours = 23;
+let minutes = 59;
+let seconds = 59;
 // Automate the timer when main window loads
-window.onload = function () {
-  let hours = 23;
-  let minutes = 59;
-  let seconds = 59;
+// window.onload = function () {
+export function setTimer() {
   const timer = document.querySelector(".timer");
   setInterval(function () {
     // Add leading 0 for numbers smaller than 10
@@ -31,7 +32,7 @@ window.onload = function () {
     //   timer.style.color = "red";
     // }
   }, 1000);
-};
+}
 
 // Create a modal window when clicking on "view NFT"
 export function createNftModal({
@@ -39,6 +40,7 @@ export function createNftModal({
   name,
   creator,
   ethereum,
+  dollar,
   views,
   favorites,
   description,
@@ -79,7 +81,7 @@ export function createNftModal({
                         </strong>
                       </p>
                       <p class="nft-modal-price-dollar">
-                        ($<span class="dollar-value">0</span>)
+                        ($<span class="dollar-value">${dollar}</span>)
                       </p>
                     </div>
                     <div class="modal-nft-time">

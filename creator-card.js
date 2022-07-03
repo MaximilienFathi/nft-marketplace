@@ -2,7 +2,14 @@
 
 import { creator1, creator2, creator3, creator4 } from "./creator-class.js";
 
-function createCard({ name, items, views, followers, bannerImg, profileImg }) {
+function createCreatorCard({
+  name,
+  items,
+  views,
+  followers,
+  bannerImg,
+  profileImg,
+}) {
   return `<div class="creator-card">
               <img class="creator-banner" src="${bannerImg}" alt=""/>
               <img
@@ -31,8 +38,8 @@ function createCard({ name, items, views, followers, bannerImg, profileImg }) {
 
 (function () {
   const gridCreators = document.querySelector(".creators-grid");
-  gridCreators.insertAdjacentHTML("beforeend", createCard(creator1));
-  gridCreators.insertAdjacentHTML("beforeend", createCard(creator2));
-  gridCreators.insertAdjacentHTML("beforeend", createCard(creator3));
-  gridCreators.insertAdjacentHTML("beforeend", createCard(creator4));
+  gridCreators.insertAdjacentHTML("beforeend", createCreatorCard(creator1));
+  gridCreators.insertAdjacentHTML("beforeend", createCreatorCard(creator2));
+  gridCreators.insertAdjacentHTML("beforeend", createCreatorCard(creator3));
+  gridCreators.insertAdjacentHTML("beforeend", createCreatorCard(creator4));
 })();

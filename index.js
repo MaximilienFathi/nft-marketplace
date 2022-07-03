@@ -1,9 +1,10 @@
 "use strict";
 
+import { nft1, nft2, nft3, nft4 } from "./nft-class.js";
+import { createNftCard } from "./nft-card.js";
+import { createNftModal, setTimer } from "./nft-modal.js";
 import { creator1, creator2, creator3, creator4 } from "./creator-class.js";
 import { createCreatorModal, createCharts } from "./creator-modal.js";
-import { nft1, nft2, nft3, nft4 } from "./nft-class.js";
-import { createNftModal } from "./nft-modal.js";
 
 //////////////////////////////////////////////////
 // ELEMENTS
@@ -14,9 +15,6 @@ const year = document.querySelector(".year");
 const btnLogin = document.querySelector(".btn-login");
 const btnSignup = document.querySelector(".btn-signup");
 const btnCreator = document.querySelector(".creator-button");
-
-const nftButtons = document.querySelectorAll(".nft-button");
-const creatorButtons = document.querySelectorAll(".creator-button");
 
 const modalAuthentication = document.querySelector("#modal-authentication");
 const modalClose = document.querySelector(".modal-close");
@@ -31,12 +29,61 @@ const nftsGrid = document.querySelector(".nfts-grid");
 const creatorsGrid = document.querySelector(".creators-grid");
 const nfts = [nft1, nft2, nft3, nft4];
 const creators = [creator1, creator2, creator3, creator4];
+let nftButtons = null;
+let creatorButtons = null;
 let creatorModal = null;
 let nftModal = null;
 
 //////////////////////////////////////////////////
-// CONVERT ETH TO CAD
 
+// SHOW MODAL WINDOW
+const showModal = function (currentModal) {
+  // console.log(currentModal);
+  currentModal.style.display = "flex";
+  document.querySelector("body").style.overflow = "hidden";
+};
+
+// SET ORIGIN OF MODAL POPUP ANIMATION
+const setModalOrigin = function (currentModal, currentButton) {
+  const xPosition = currentButton.offsetLeft;
+  const yPosition = currentButton.offsetTop;
+  currentModal.style.transformOrigin = `${xPosition}px ${yPosition}px`;
+  // console.log(currentModal.style.transformOrigin);
+};
+
+// RESET FORMS WHEN CLOSING THEM
+const resetForm = function () {
+  document.getElementById(formLogin.id).reset();
+  document.getElementById(formSignup.id).reset();
+};
+
+// ENABLE MODAL FORM INTERACTION - ARTWORK
+const enableNftViewButtons = function () {
+  for (let i = 0; i < nftButtons.length; i++) {
+    nftButtons[i].onclick = function (event) {
+      const currentButton = event.target;
+      // Add HTML code for modals
+      nftsGrid.insertAdjacentHTML("beforeend", createNftModal(nfts[i]));
+      setTimer();
+      // Select class of recently created modal
+      nftModal = document.querySelector(".nft-modal");
+      // Display modal
+      setModalOrigin(nftModal, currentButton);
+      showModal(nftModal);
+    };
+  }
+};
+
+// ADD ALL NFT CARDS ON MAIN PAGE
+const createNftCards = function () {
+  nfts.forEach((nft) =>
+    nftsGrid.insertAdjacentHTML("beforeend", createNftCard(nft))
+  );
+  nftButtons = document.querySelectorAll(".nft-button");
+  creatorButtons = document.querySelectorAll(".creator-button");
+};
+
+// CONVERT ETH TO CAD
 const convertETHtoCAD = async function () {
   try {
     const fromCurrency = "ethereum";
@@ -50,20 +97,19 @@ const convertETHtoCAD = async function () {
   }
 };
 
-convertETHtoCAD().then((oneETHprice) => {
-  console.log(oneETHprice);
-  const numberFormatter = Intl.NumberFormat("en-US");
-  const ethereumValueElements =
-    document.getElementsByClassName("ethereum-value");
-  const dollarValueElements = document.getElementsByClassName("dollar-value");
-  for (let i = 0; i < dollarValueElements.length; i++) {
-    let ethereumValue = Number(ethereumValueElements[i].textContent);
-    let dollarValue = (oneETHprice * ethereumValue).toFixed(2);
-    dollarValueElements[i].textContent = `${numberFormatter.format(
-      dollarValue
-    )}`;
-  }
-});
+// MAIN CODE
+convertETHtoCAD()
+  .then((oneETHprice) => {
+    const numberFormatter = Intl.NumberFormat("en-US");
+    nfts.forEach(function (nft) {
+      const dollarValue = (oneETHprice * nft.ethereum).toFixed(2);
+      nft.dollar = numberFormatter.format(dollarValue);
+    });
+  })
+  .then(() => {
+    createNftCards();
+    enableNftViewButtons();
+  });
 
 //////////////////////////////////////////////////
 // SMOOTH SCROLLING ANIMATION
@@ -117,27 +163,6 @@ year.textContent = currentYear.toString();
 
 //////////////////////////////////////////////////
 // COMMON METHODS FOR ALL MODALS
-
-// Reset forms when closing them
-const resetForm = function () {
-  document.getElementById(formLogin.id).reset();
-  document.getElementById(formSignup.id).reset();
-};
-
-// Set origin of modal popup animation
-const setModalOrigin = function (currentModal, currentButton) {
-  const xPosition = currentButton.offsetLeft;
-  const yPosition = currentButton.offsetTop;
-  currentModal.style.transformOrigin = `${xPosition}px ${yPosition}px`;
-  // console.log(currentModal.style.transformOrigin);
-};
-
-// Show modal window
-const showModal = function (currentModal) {
-  // console.log(currentModal);
-  currentModal.style.display = "flex";
-  document.querySelector("body").style.overflow = "hidden";
-};
 
 // Used as an alternative to includes() for modal objects
 // const isInArray = function (arr, target) {
@@ -223,21 +248,8 @@ btnSignup.onclick = function (event) {
 
 //////////////////////////////////////////////////
 
-// ENABLE MODAL FORM INTERACTION - ARTWORK
-for (let i = 0; i < nftButtons.length; i++) {
-  nftButtons[i].onclick = function (event) {
-    const currentButton = event.target;
-    // Add HTML code for modals
-    nftsGrid.insertAdjacentHTML("beforeend", createNftModal(nfts[i]));
-    // Select class of recently created modal
-    nftModal = document.querySelector(".nft-modal");
-    // Display modal
-    setModalOrigin(nftModal, currentButton);
-    showModal(nftModal);
-  };
-}
-
 // ENABLE MODAL FORM INTERACTION - CREATOR
+console.log(creatorButtons[0]);
 for (let i = 0; i < creatorButtons.length; i++) {
   creatorButtons[i].onclick = function (event) {
     const currentButton = event.target;
