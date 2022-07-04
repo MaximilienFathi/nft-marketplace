@@ -1,39 +1,5 @@
 // "use script";
 
-let hours = 23;
-let minutes = 59;
-let seconds = 59;
-// Automate the timer when main window loads
-// window.onload = function () {
-export function setTimer() {
-  const timer = document.querySelector(".timer");
-  setInterval(function () {
-    // Add leading 0 for numbers smaller than 10
-    if (seconds < 10 && seconds.toString().length == 1) seconds = `0${seconds}`;
-    if (minutes < 10 && minutes.toString().length == 1) minutes = `0${minutes}`;
-    if (hours < 10 && hours.toString().length == 1) hours = `0${hours}`;
-    timer.textContent = hours + " : " + minutes + " : " + seconds;
-    seconds--;
-    if (seconds < 0) {
-      minutes--;
-      seconds = 59;
-      if (minutes < 0) {
-        hours--;
-        minutes = 59;
-      }
-      if (hours < 0) {
-        hours = 23;
-      }
-    }
-    // if (seconds >= 58) {
-    //   timer.style.color = "#ded6d6";
-    // }
-    // if (seconds < 58) {
-    //   timer.style.color = "red";
-    // }
-  }, 1000);
-}
-
 // Create a modal window when clicking on "view NFT"
 export function createNftModal({
   image,

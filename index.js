@@ -2,7 +2,7 @@
 
 import { nft1, nft2, nft3, nft4 } from "./nft-class.js";
 import { createNftCard } from "./nft-card.js";
-import { createNftModal, setTimer } from "./nft-modal.js";
+import { createNftModal } from "./nft-modal.js";
 import { creator1, creator2, creator3, creator4 } from "./creator-class.js";
 import { createCreatorModal, createCharts } from "./creator-modal.js";
 
@@ -24,6 +24,7 @@ const flipCard = document.querySelector(".flip-card");
 const formLogin = document.querySelector("#form-login");
 const formSignup = document.querySelector("#form-signup");
 
+// const timer = document.querySelector(".timer");
 //////////////////////////////////////////////////
 const nftsGrid = document.querySelector(".nfts-grid");
 const creatorsGrid = document.querySelector(".creators-grid");
@@ -33,6 +34,41 @@ let nftButtons = null;
 let creatorButtons = null;
 let creatorModal = null;
 let nftModal = null;
+
+let hours = 23;
+let minutes = 59;
+let seconds = 59;
+// Automate the timer when main window loads
+// window.onload = function () {
+function setTimer() {
+  setInterval(function () {
+    // Add leading 0 for numbers smaller than 10
+    if (seconds < 10 && seconds.toString().length == 1) seconds = `0${seconds}`;
+    if (minutes < 10 && minutes.toString().length == 1) minutes = `0${minutes}`;
+    if (hours < 10 && hours.toString().length == 1) hours = `0${hours}`;
+    document.querySelector(".timer").textContent =
+      hours + " : " + minutes + " : " + seconds;
+    seconds--;
+    if (seconds < 0) {
+      minutes--;
+      seconds = 59;
+      if (minutes < 0) {
+        hours--;
+        minutes = 59;
+      }
+      if (hours < 0) {
+        hours = 23;
+      }
+    }
+    console.log("testing1");
+    // if (seconds >= 58) {
+    //   timer.style.color = "#ded6d6";
+    // }
+    // if (seconds < 58) {
+    //   timer.style.color = "red";
+    // }
+  }, 1000);
+}
 
 //////////////////////////////////////////////////
 
@@ -63,13 +99,25 @@ const enableNftViewButtons = function () {
     nftButtons[i].onclick = function (event) {
       const currentButton = event.target;
       // Add HTML code for modals
-      nftsGrid.insertAdjacentHTML("beforeend", createNftModal(nfts[i]));
-      setTimer();
-      // Select class of recently created modal
-      nftModal = document.querySelector(".nft-modal");
-      // Display modal
-      setModalOrigin(nftModal, currentButton);
-      showModal(nftModal);
+      new Promise(function (resolve, reject) {
+        nftsGrid.insertAdjacentHTML("beforeend", createNftModal(nfts[i]));
+        console.log(1, document.querySelector(".timer"));
+        resolve();
+      })
+        .then(() => {
+          console.log(2, document.querySelector(".timer"));
+          setTimer();
+        })
+        .then(() =>
+          // Select class of recently created modal
+          {
+            nftModal = document.querySelector(".nft-modal");
+            // Display modal
+            setModalOrigin(nftModal, currentButton);
+            showModal(nftModal);
+            console.log("testing2");
+          }
+        );
     };
   }
 };
