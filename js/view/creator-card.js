@@ -1,8 +1,6 @@
 // "use script";
 
-import { creator1, creator2, creator3, creator4 } from "./creator-class.js";
-
-function createCreatorCard({
+export function createCreatorCard({
   name,
   items,
   views,
@@ -35,11 +33,3 @@ function createCreatorCard({
               <button class="btn creator-button">View Creator</button>
             </div>`;
 }
-
-(function () {
-  const gridCreators = document.querySelector(".creators-grid");
-  gridCreators.insertAdjacentHTML("beforeend", createCreatorCard(creator1));
-  gridCreators.insertAdjacentHTML("beforeend", createCreatorCard(creator2));
-  gridCreators.insertAdjacentHTML("beforeend", createCreatorCard(creator3));
-  gridCreators.insertAdjacentHTML("beforeend", createCreatorCard(creator4));
-})();

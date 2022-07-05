@@ -13,7 +13,7 @@ export function createNftModal({
 }) {
   return `
 <!--    <div id="nft-modal" class="modal-container">-->
-    <div class="nft-modal modal-container">
+    <div class="data-modal modal-container">
       <div class="flip-container">
         <div class="flip-card">
           <div class="artwork-modal-content border-glow">
