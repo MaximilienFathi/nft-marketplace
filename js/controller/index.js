@@ -14,6 +14,8 @@ import { createCreatorModal, createCharts } from "../view/creator-modal.js";
 
 //////////////////////////////////////////////////
 // ELEMENTS
+const body = document.querySelector("body");
+
 const allLinks = document.querySelectorAll("a:link");
 const heroSection = document.querySelector(".hero-section");
 const year = document.querySelector(".year");
@@ -25,10 +27,10 @@ const btnCreator = document.querySelector(".creator-button");
 const modalAuthentication = document.querySelector("#modal-authentication");
 const modalClose = document.querySelector(".modal-close");
 
-const flipCard = document.querySelector(".flip-card");
-
 const formLogin = document.querySelector("#form-login");
 const formSignup = document.querySelector("#form-signup");
+
+const linkToTop = document.querySelector(".link-to-top");
 
 //////////////////////////////////////////////////
 const nftsGrid = document.querySelector(".nfts-grid");
@@ -84,13 +86,13 @@ window.onclick = function (event) {
   if (currentModal === modalAuthentication) {
     resetForm();
     currentModal.style.display = "none";
-    document.querySelector("body").style.overflowY = "scroll";
+    body.style.overflowY = "scroll";
   }
   // nftModals.includes(currentModal) || // Does not work
   // if (isInArray(nftModals, currentModal)) {
   if (currentModal === dataModal) {
     currentModal.remove();
-    document.querySelector("body").style.overflowY = "scroll";
+    body.style.overflowY = "scroll";
     // flipCard.classList.remove("is-flipped");
   }
 };
@@ -102,11 +104,11 @@ document.body.onclick = function (event) {
     if (currentButton.parentNode.parentNode === modalAuthentication) {
       resetForm();
       modalAuthentication.style.display = "none";
-      document.querySelector("body").style.overflowY = "scroll";
+      body.style.overflowY = "scroll";
     }
     if (currentButton.closest(".data-modal")) {
       dataModal.remove();
-      document.querySelector("body").style.overflowY = "scroll";
+      body.style.overflowY = "scroll";
       // flipCard.classList.remove("is-flipped");
     }
 
@@ -116,7 +118,7 @@ document.body.onclick = function (event) {
     // creatorModals.forEach(
     //   (creatorModal) => (creatorModal.style.display = "none")
     // );
-    // document.querySelector("body").style.overflowY = "scroll";
+    //body.style.overflowY = "scroll";
     // flipCard.classList.remove("is-flipped");
   }
 };
@@ -132,14 +134,26 @@ document.body.onclick = function (event) {
 
 //////////////////////////////////////////////////
 
-// 4. SHOW MODAL WINDOW
+// 4. ENABLE FLIP FUNCTIONALITY
+const enableFlip = function () {
+  const flipCard = document.querySelector(".flip-card");
+  const nftModalContent = document.querySelector(".nft-modal-content");
+  // flipCard.insertAdjacentHTML("beforeend", createCreatorModal(objectsArray[i]));
+  nftModalContent.onclick = function () {
+    console.log(flipCard);
+    flipCard.classList.toggle("is-flipped");
+  };
+};
+
+// 5. SHOW MODAL WINDOW
 const showModal = function (currentModal) {
   // console.log(currentModal);
   currentModal.style.display = "flex";
-  document.querySelector("body").style.overflow = "hidden";
+  body.style.overflow = "hidden";
+  enableFlip();
 };
 
-// 5. SET ORIGIN OF MODAL POPUP ANIMATION
+// 6. SET ORIGIN OF MODAL POPUP ANIMATION
 const setModalOrigin = function (currentModal, currentButton) {
   const xPosition = currentButton.offsetLeft;
   const yPosition = currentButton.offsetTop;
@@ -147,13 +161,13 @@ const setModalOrigin = function (currentModal, currentButton) {
   // console.log(currentModal.style.transformOrigin);
 };
 
-// 6. RESET FORMS WHEN CLOSING THEM
+// 7. RESET FORMS WHEN CLOSING THEM
 const resetForm = function () {
   document.getElementById(formLogin.id).reset();
   document.getElementById(formSignup.id).reset();
 };
 
-// 7. ENABLE MODAL FORM INTERACTION
+// 8. ENABLE MODAL FORM INTERACTION
 const enableViewButtons = function (
   type,
   buttons,
@@ -179,14 +193,14 @@ const enableViewButtons = function (
   }
 };
 
-// 8. ADD CARDS ON MAIN PAGE (2 TYPES: NFT AND CREATOR)
+// 9. ADD CARDS ON MAIN PAGE (2 TYPES: NFT AND CREATOR)
 const createCards = function (objectsArray, place, createCard) {
   objectsArray.forEach((item) =>
     place.insertAdjacentHTML("beforeend", createCard(item))
   );
 };
 
-// 9. CONVERT ETH TO CAD
+// 10. CONVERT ETH TO CAD
 const convertETHtoCAD = async function () {
   try {
     const fromCurrency = "ethereum";
@@ -200,7 +214,7 @@ const convertETHtoCAD = async function () {
   }
 };
 
-// 10. MAIN CODE
+// 11. MAIN CODE
 convertETHtoCAD()
   .then((oneETHprice) => {
     const numberFormatter = Intl.NumberFormat("en-US");
@@ -248,11 +262,6 @@ btnSignup.onclick = function (event) {
 
 //////////////////////////////////////////////////
 
-// modalArtwork.onclick = function () {
-//   flipCard.classList.toggle("is-flipped");
-// };
-
-//////////////////////////////////////////////////
 // SMOOTH SCROLLING ANIMATION
 allLinks.forEach(function (link) {
   link.addEventListener("click", function (e) {
@@ -299,10 +308,7 @@ obs.observe(heroSection);
 
 /////////////////////////////////////////////////////////////
 
-//Get the button:
-const linkToTop = document.querySelector(".link-to-top");
-
-// When the user scrolls down 20px from the top of the document, show the button
+// When user scrolls down 500px from the top of the document, show the button
 window.onscroll = function () {
   if (
     document.body.scrollTop > 500 ||

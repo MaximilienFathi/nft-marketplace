@@ -16,11 +16,11 @@ export function createNftModal({
     <div class="data-modal modal-container">
       <div class="flip-container">
         <div class="flip-card">
-          <div class="artwork-modal-content border-glow">
+          <div class="nft-modal-content border-glow">
             <div>
                 <img
                   class="modal-nft-img"
-                  src=${image}
+                  src="${image}"
                   alt=""
                 />
             </div>

@@ -1,4 +1,4 @@
-.artwork-modal-content {
+.nft-modal-content {
   background-color: rgba(6, 6, 73, 0.8);
   border-radius: 11px;
   display: grid; /* flex would not enlarge 3rd picture*/
@@ -15,11 +15,11 @@
   transform: rotateY(0deg);
 }
 
-.artwork-modal-content > div:first-child {
+.nft-modal-content > div:first-child {
   grid-column: 1 / 2;
 }
 
-.artwork-modal-content > div:last-child {
+.nft-modal-content > div:last-child {
   grid-column: 2 / -1;
 }
 
