@@ -24,7 +24,10 @@ export function createCreatorModal({
 <!--    <div id="modal-creator" class="modal-container">-->
     <div class="data-modal modal-container">
         <div class="modal-creator-content border-glow">
-            <ion-icon class="modal-close" name="close-outline"></ion-icon>
+            <div class="modal-nav-icons">
+                <ion-icon class="modal-go-back hidden" name="arrow-undo-outline"></ion-icon>
+                <ion-icon class="modal-close" name="close-outline"></ion-icon>
+            </div>
             <div class="modal-creator-left-content">
                 <img
                     class="modal-creator-banner"

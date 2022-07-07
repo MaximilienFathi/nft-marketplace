@@ -25,7 +25,9 @@ export function createNftModal({
                 />
             </div>
             <div>
-                <ion-icon class="modal-close" name="close-outline"></ion-icon>
+                <div class="modal-nav-icons">
+                    <ion-icon class="modal-close" name="close-outline"></ion-icon>
+                </div>
                 <div class="modal-nft-info">
                   <p class="modal-nft-name">${name}</p>
                   <p class="modal-nft-creator">

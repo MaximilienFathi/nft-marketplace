@@ -152,10 +152,12 @@ const enableFlip = function (currentNFT) {
   modalCreatorContent.style.transform = "rotateY(180deg)";
   // Enable flip effect
   const modalCreatorLink = document.querySelector(".modal-creator-link");
+  const modalGoBack = document.querySelector(".modal-go-back");
   modalCreatorLink.onclick = function () {
     flipCard.classList.toggle("is-flipped");
+    modalGoBack.classList.remove("hidden");
   };
-  modalCreatorContent.onclick = function () {
+  modalGoBack.onclick = function () {
     flipCard.classList.toggle("is-flipped");
   };
 };
