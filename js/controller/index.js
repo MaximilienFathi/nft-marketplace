@@ -171,10 +171,11 @@ const showModal = function (currentType, currentModal, currentNFT) {
 
 // 6. SET ORIGIN OF MODAL POPUP ANIMATION
 const setModalOrigin = function (currentModal, currentButton) {
-  const xPosition = currentButton.offsetLeft;
-  const yPosition = currentButton.offsetTop;
+  const xPosition = currentButton.getBoundingClientRect().left;
+  const yPosition = currentButton.getBoundingClientRect().top;
   currentModal.style.transformOrigin = `${xPosition}px ${yPosition}px`;
-  // console.log(currentModal.style.transformOrigin);
+  console.log(xPosition, yPosition);
+  console.log(currentModal.style.transformOrigin);
 };
 
 // 7. RESET FORMS WHEN CLOSING THEM
@@ -269,7 +270,7 @@ btnLogin.onclick = function (event) {
   document.querySelector("#chk").checked = true;
   const currentButton = event.target;
   setModalOrigin(modalAuthentication, currentButton);
-  showModal(modalAuthentication);
+  showModal("AUTHENTICATION", modalAuthentication);
 };
 
 // ENABLE MODAL FORM INTERACTION - SIGN UP
@@ -277,7 +278,7 @@ btnSignup.onclick = function (event) {
   document.querySelector("#chk").checked = false;
   const currentButton = event.target;
   setModalOrigin(modalAuthentication, currentButton);
-  showModal(modalAuthentication);
+  showModal("AUTHENTICATION", modalAuthentication);
 };
 
 //////////////////////////////////////////////////
