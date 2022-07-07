@@ -135,22 +135,36 @@ document.body.onclick = function (event) {
 //////////////////////////////////////////////////
 
 // 4. ENABLE FLIP FUNCTIONALITY
-const enableFlip = function () {
+const enableFlip = function (currentNFT) {
   const flipCard = document.querySelector(".flip-card");
   const nftModalContent = document.querySelector(".nft-modal-content");
-  // flipCard.insertAdjacentHTML("beforeend", createCreatorModal(objectsArray[i]));
-  nftModalContent.onclick = function () {
-    console.log(flipCard);
+  const currentCreator = creators.find((creator) => {
+    return creator.name === currentNFT.creator;
+  });
+  // Insert HTML code
+  flipCard.insertAdjacentHTML("beforeend", createCreatorModal(currentCreator));
+  createCharts(currentCreator);
+  // Remove unnecessary parent element card content
+  const parent = flipCard.lastElementChild;
+  parent.replaceWith(...parent.childNodes);
+  // Add CSS style to enable flip
+  const modalCreatorContent = document.querySelector(".modal-creator-content");
+  modalCreatorContent.style.transform = "rotateY(180deg)";
+  // Enable flip effect
+  const modalCreatorLink = document.querySelector(".modal-creator-link");
+  modalCreatorLink.onclick = function () {
+    flipCard.classList.toggle("is-flipped");
+  };
+  modalCreatorContent.onclick = function () {
     flipCard.classList.toggle("is-flipped");
   };
 };
 
 // 5. SHOW MODAL WINDOW
-const showModal = function (currentModal) {
-  // console.log(currentModal);
+const showModal = function (currentType, currentModal, currentNFT) {
   currentModal.style.display = "flex";
   body.style.overflow = "hidden";
-  enableFlip();
+  if (currentType === "NFT") enableFlip(currentNFT);
 };
 
 // 6. SET ORIGIN OF MODAL POPUP ANIMATION
@@ -180,15 +194,19 @@ const enableViewButtons = function (
       const currentButton = event.target;
       // Add HTML code for modals - synchronous code
       place.insertAdjacentHTML("beforeend", createModal(objectsArray[i]));
-      if (type === "NFT")
+      // Specify from where modal should appear
+      dataModal = document.querySelector(".data-modal");
+      setModalOrigin(dataModal, currentButton);
+      // Add specific HTML code based on type of current modal
+      if (type === "NFT") {
         document.querySelector(".timer").textContent =
           hours + " : " + minutes + " : " + seconds;
-      if (type === "CREATOR") createCharts(objectsArray[i]);
-      // Select class of recently created modal
-      dataModal = document.querySelector(".data-modal");
-      // Display modal
-      setModalOrigin(dataModal, currentButton);
-      showModal(dataModal);
+        showModal(type, dataModal, objectsArray[i]);
+      }
+      if (type === "CREATOR") {
+        createCharts(objectsArray[i]);
+        showModal(type, dataModal);
+      }
     };
   }
 };
