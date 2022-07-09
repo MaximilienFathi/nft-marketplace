@@ -32,7 +32,6 @@
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <script defer type="module" src="js/model/nft-class.js"></script>
     <script defer type="module" src="js/view/nft-card.js"></script>
@@ -252,73 +251,92 @@
     </main>
 
     <footer class="footer">
-      <div class="container grid grid-footer">
-        <div class="footer-logos">
-          <a class="brand-logo margin-bottom" href="#">NFT marketplace</a>
-          <p class="footer-description">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab beatae
-            dicta ducimus ea eveniet ex
-          </p>
-          <p class="footer-community">Join the community</p>
-          <ul class="networks-list">
-            <li>
-              <a class="footer-link" href="#"
-                ><ion-icon class="network-icon" name="logo-github"></ion-icon
-              ></a>
-            </li>
-            <li>
-              <a class="footer-link" href="#">
-                <ion-icon class="network-icon" name="logo-twitter"></ion-icon>
-              </a>
-            </li>
-            <li>
-              <a class="footer-link" href="#">
-                <ion-icon class="network-icon" name="logo-facebook"></ion-icon>
-              </a>
-            </li>
-            <li>
-              <a class="footer-link" href="#">
-                <ion-icon class="network-icon" name="logo-instagram"></ion-icon>
-              </a>
-            </li>
-          </ul>
+      <div class="container">
+        <div class="footer-container">
+          <div class="footer-community">
+            <a class="brand-logo margin-bottom" href="#">NFT marketplace</a>
+            <p class="footer-description">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab
+              beatae dicta ducimus ea eveniet ex
+            </p>
+            <p class="footer-join">Join the community</p>
+            <ul class="networks-list">
+              <li>
+                <a class="footer-link" href="#"
+                  ><ion-icon class="network-icon" name="logo-github"></ion-icon
+                ></a>
+              </li>
+              <li>
+                <a class="footer-link" href="#">
+                  <ion-icon class="network-icon" name="logo-twitter"></ion-icon>
+                </a>
+              </li>
+              <li>
+                <a class="footer-link" href="#">
+                  <ion-icon
+                    class="network-icon"
+                    name="logo-facebook"
+                  ></ion-icon>
+                </a>
+              </li>
+              <li>
+                <a class="footer-link" href="#">
+                  <ion-icon
+                    class="network-icon"
+                    name="logo-instagram"
+                  ></ion-icon>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="grid footer-grid">
+            <nav class="footer-column">
+              <p class="footer-heading">Marketplace</p>
+              <ul class="footer-list">
+                <li><a class="footer-link" href="#nfts">All NFTs</a></li>
+                <li><a class="footer-link" href="#">Art</a></li>
+                <li><a class="footer-link" href="#">Collectibles</a></li>
+                <li><a class="footer-link" href="#">Domain Names</a></li>
+              </ul>
+            </nav>
+            <nav class="footer-column">
+              <p class="footer-heading">My Account</p>
+              <ul class="footer-list">
+                <li><a class="footer-link" href="#">Profile</a></li>
+                <li><a class="footer-link" href="#">Favorites</a></li>
+                <li><a class="footer-link" href="#">My Collections</a></li>
+                <li><a class="footer-link" href="#">Settings</a></li>
+              </ul>
+            </nav>
+            <nav class="footer-column">
+              <p class="footer-heading">Resources</p>
+              <ul class="footer-list">
+                <li><a class="footer-link" href="#">Help Center</a></li>
+                <li><a class="footer-link" href="#">Blog</a></li>
+                <li><a class="footer-link" href="#">Docs</a></li>
+                <li><a class="footer-link" href="#">Newsletter</a></li>
+              </ul>
+            </nav>
+            <nav class="footer-column">
+              <p class="footer-heading">Company</p>
+              <ul class="footer-list">
+                <li><a class="footer-link" href="#">About</a></li>
+                <li><a class="footer-link" href="#">Careers</a></li>
+                <li><a class="footer-link" href="#">Press</a></li>
+                <li><a class="footer-link" href="#">Contact Us</a></li>
+              </ul>
+            </nav>
+          </div>
         </div>
-        <nav class="footer-column">
-          <p class="footer-heading">Marketplace</p>
-          <ul class="footer-list">
-            <li><a class="footer-link" href="#nfts">All NFTs</a></li>
-            <li><a class="footer-link" href="#">Art</a></li>
-            <li><a class="footer-link" href="#">Collectibles</a></li>
-            <li><a class="footer-link" href="#">Domain Names</a></li>
-          </ul>
-        </nav>
-        <nav class="footer-column">
-          <p class="footer-heading">My Account</p>
-          <ul class="footer-list">
-            <li><a class="footer-link" href="#">Profile</a></li>
-            <li><a class="footer-link" href="#">Favorites</a></li>
-            <li><a class="footer-link" href="#">My Collections</a></li>
-            <li><a class="footer-link" href="#">Settings</a></li>
-          </ul>
-        </nav>
-        <nav class="footer-column">
-          <p class="footer-heading">Resources</p>
-          <ul class="footer-list">
-            <li><a class="footer-link" href="#">Help Center</a></li>
-            <li><a class="footer-link" href="#">Blog</a></li>
-            <li><a class="footer-link" href="#">Docs</a></li>
-            <li><a class="footer-link" href="#">Newsletter</a></li>
-          </ul>
-        </nav>
-      </div>
-      <div class="container copyright-container">
-        <p class="copyright">
-          Copyright &copy; <span class="year">.</span> by Maximilien Fathi. All
-          rights reserved.
-        </p>
-        <div class="legal-documents">
-          <a class="legal-doc-link" href="#">Privacy Policy</a>
-          <a class="legal-doc-link" href="#">Terms of Service</a>
+        <div class="copyright-container">
+          <p class="copyright">
+            Copyright &copy; <span class="year">.</span> by Maximilien Fathi.
+            All rights reserved.
+          </p>
+          <div class="legal-documents">
+            <a class="legal-doc-link" href="#">Privacy Policy</a>
+            <a class="legal-doc-link" href="#">Terms of Service</a>
+          </div>
         </div>
       </div>
     </footer>
