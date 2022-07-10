@@ -13,28 +13,24 @@ import { createCreatorCard } from "../view/creator-card.js";
 import { createCreatorModal, createCharts } from "../view/creator-modal.js";
 
 //////////////////////////////////////////////////
-// ELEMENTS
-const body = document.querySelector("body");
 
+// DOM ELEMENTS
+const body = document.querySelector("body");
 const allLinks = document.querySelectorAll("a:link");
 const heroSection = document.querySelector(".hero-section");
 const year = document.querySelector(".year");
+const linkToTop = document.querySelector(".link-to-top");
 
 const btnLogin = document.querySelector(".btn-login");
 const btnSignup = document.querySelector(".btn-signup");
-const btnCreator = document.querySelector(".creator-button");
-
-const modalAuthentication = document.querySelector("#modal-authentication");
-const modalClose = document.querySelector(".modal-close");
-
+const modalAuthentication = document.querySelector(".authentication-modal");
 const formLogin = document.querySelector("#form-login");
 const formSignup = document.querySelector("#form-signup");
 
-const linkToTop = document.querySelector(".link-to-top");
-
-//////////////////////////////////////////////////
 const nftsGrid = document.querySelector(".nfts-grid");
 const creatorsGrid = document.querySelector(".creators-grid");
+
+// OTHER VARIABLES
 const nfts = [nft1, nft2, nft3, nft4];
 const creators = [creator1, creator2, creator3, creator4];
 let nftButtons = null;
@@ -93,7 +89,6 @@ window.onclick = function (event) {
   if (currentModal === dataModal) {
     currentModal.remove();
     body.style.overflowY = "scroll";
-    // flipCard.classList.remove("is-flipped");
   }
 };
 
@@ -101,7 +96,7 @@ window.onclick = function (event) {
 document.body.onclick = function (event) {
   const currentButton = event.target;
   if (currentButton.getAttribute("name") === "close-outline") {
-    if (currentButton.parentNode.parentNode === modalAuthentication) {
+    if (currentButton.closest(".authentication-modal")) {
       resetForm();
       modalAuthentication.style.display = "none";
       body.style.overflowY = "scroll";
@@ -109,7 +104,6 @@ document.body.onclick = function (event) {
     if (currentButton.closest(".data-modal")) {
       dataModal.remove();
       body.style.overflowY = "scroll";
-      // flipCard.classList.remove("is-flipped");
     }
 
     // OLD strategy of having all html code for modals at the same time
@@ -305,6 +299,7 @@ allLinks.forEach(function (link) {
 });
 
 //////////////////////////////////////////////////
+
 // STICKY NAVIGATION
 const obs = new IntersectionObserver(
   function (entries) {
@@ -329,7 +324,7 @@ obs.observe(heroSection);
 
 /////////////////////////////////////////////////////////////
 
-// When user scrolls down 500px from the top of the document, show the button
+// SHOW LINK-TO-TOP BUTTON AFTER SCROLLING DOWN 500PX FROM TOP OF DOCUMENT
 window.onscroll = function () {
   if (
     document.body.scrollTop > 500 ||
@@ -342,6 +337,7 @@ window.onscroll = function () {
 };
 
 //////////////////////////////////////////////////
+
 // SET CURRENT YEAR
 const currentYear = new Date().getFullYear();
 year.textContent = currentYear.toString();
