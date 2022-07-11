@@ -13,6 +13,8 @@ import { createCreatorCard } from "../view/creator-card.js";
 import { createCreatorModal, createCharts } from "../view/creator-modal.js";
 
 //////////////////////////////////////////////////
+// GLOBAL VARIABLES
+//////////////////////////////////////////////////
 
 // DOM ELEMENTS
 const body = document.querySelector("body");
@@ -41,42 +43,77 @@ let minutes = 59;
 let seconds = 59;
 
 //////////////////////////////////////////////////
+// MISCELLANEOUS FUNCTIONS
+//////////////////////////////////////////////////
 
-// 1. AUTOMATE TIMER IMMEDIATELY WHEN MAIN WINDOW LOADS
-window.onload = function () {
-  setInterval(function () {
-    let timer = document.querySelector(".timer");
-    // Add leading 0 for numbers smaller than 10
-    if (seconds < 10 && seconds.toString().length == 1) seconds = `0${seconds}`;
-    if (minutes < 10 && minutes.toString().length == 1) minutes = `0${minutes}`;
-    if (hours < 10 && hours.toString().length == 1) hours = `0${hours}`;
-    // Update timer when modal HTML is loaded
-    if (timer !== null)
-      timer.textContent = hours + " : " + minutes + " : " + seconds;
-    seconds--;
-    if (seconds < 0) {
-      minutes--;
-      seconds = 59;
-      if (minutes < 0) {
-        hours--;
-        minutes = 59;
-      }
-      if (hours < 0) {
-        hours = 23;
-      }
+// 1. SET CURRENT YEAR
+const currentYear = new Date().getFullYear();
+year.textContent = currentYear.toString();
+
+//////////////////////////////////////////////////
+// FUNCTIONS FOR PAGE NAVIGATION
+//////////////////////////////////////////////////
+
+// 2. SMOOTH SCROLLING ANIMATION
+allLinks.forEach(function (link) {
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
+    const href = link.getAttribute("href");
+
+    // Scroll back to top
+    if (href === "#")
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+
+    // Scroll to other links
+    if (href !== "#" && href.startsWith("#")) {
+      const sectionEl = document.querySelector(href);
+      sectionEl.scrollIntoView({ behavior: "smooth" });
     }
-    // if (seconds >= 58) {
-    //   timer.style.color = "#ded6d6";
-    // }
-    // if (seconds < 58) {
-    //   timer.style.color = "red";
-    // }
-  }, 1000);
+  });
+});
+
+// 3. STICKY NAVIGATION
+const obs = new IntersectionObserver(
+  function (entries) {
+    const ent = entries[0];
+    // console.log(entries);
+
+    if (ent.isIntersecting === false) {
+      document.body.classList.add("sticky");
+    }
+
+    if (ent.isIntersecting === true) {
+      document.body.classList.remove("sticky");
+    }
+  },
+  {
+    root: null,
+    threshold: 0,
+    rootMargin: "-100%",
+  }
+);
+obs.observe(heroSection);
+
+// 4. SHOW LINK-TO-TOP BUTTON (500PX FROM TOP OF DOCUMENT)
+window.onscroll = function () {
+  if (
+    document.body.scrollTop > 500 ||
+    document.documentElement.scrollTop > 500
+  ) {
+    linkToTop.style.display = "block";
+  } else {
+    linkToTop.style.display = "none";
+  }
 };
 
 //////////////////////////////////////////////////
+// COMMON FUNCTIONS FOR ALL MODALS
+//////////////////////////////////////////////////
 
-// 2. CLOSE MODAL WHEN USER CLICKS OUTSIDE OF IT
+// 5. CLOSE MODAL WHEN USER CLICKS OUTSIDE OF IT
 window.onclick = function (event) {
   const currentModal = event.target;
   if (currentModal === modalAuthentication) {
@@ -92,7 +129,7 @@ window.onclick = function (event) {
   }
 };
 
-// 3. WHEN USER CLICKS ON X, CLOSE THE MODAL
+// 6. WHEN USER CLICKS ON X, CLOSE THE MODAL
 document.body.onclick = function (event) {
   const currentButton = event.target;
   if (currentButton.getAttribute("name") === "close-outline") {
@@ -127,8 +164,62 @@ document.body.onclick = function (event) {
 // };
 
 //////////////////////////////////////////////////
+// FUNCTIONS FOR AUTHENTICATION MODALS
+//////////////////////////////////////////////////
 
-// 4. ENABLE FLIP FUNCTIONALITY
+// 7. ENABLE MODAL FORM INTERACTION - LOGIN
+btnLogin.onclick = function (event) {
+  document.querySelector("#chk").checked = true;
+  const currentButton = event.target;
+  setModalOrigin(modalAuthentication, currentButton);
+  showModal("AUTHENTICATION", modalAuthentication);
+};
+
+// 8. ENABLE MODAL FORM INTERACTION - SIGN UP
+btnSignup.onclick = function (event) {
+  document.querySelector("#chk").checked = false;
+  const currentButton = event.target;
+  setModalOrigin(modalAuthentication, currentButton);
+  showModal("AUTHENTICATION", modalAuthentication);
+};
+
+//////////////////////////////////////////////////
+// FUNCTIONS FOR NFT/CREATOR MODALS
+//////////////////////////////////////////////////
+
+// 9. AUTOMATE TIMER IMMEDIATELY WHEN MAIN WINDOW LOADS
+window.onload = function () {
+  setInterval(function () {
+    let timer = document.querySelector(".timer");
+    // Add leading 0 for numbers smaller than 10
+    if (seconds < 10 && seconds.toString().length == 1) seconds = `0${seconds}`;
+    if (minutes < 10 && minutes.toString().length == 1) minutes = `0${minutes}`;
+    if (hours < 10 && hours.toString().length == 1) hours = `0${hours}`;
+    // Update timer when modal HTML is loaded
+    if (timer !== null)
+      timer.textContent = hours + " : " + minutes + " : " + seconds;
+    seconds--;
+    if (seconds < 0) {
+      minutes--;
+      seconds = 59;
+      if (minutes < 0) {
+        hours--;
+        minutes = 59;
+      }
+      if (hours < 0) {
+        hours = 23;
+      }
+    }
+    // if (seconds >= 58) {
+    //   timer.style.color = "#ded6d6";
+    // }
+    // if (seconds < 58) {
+    //   timer.style.color = "red";
+    // }
+  }, 1000);
+};
+
+// 10. ENABLE FLIP FUNCTIONALITY
 const enableFlip = function (currentNFT) {
   const flipCard = document.querySelector(".flip-card");
   const nftModalContent = document.querySelector(".nft-modal-content");
@@ -156,14 +247,14 @@ const enableFlip = function (currentNFT) {
   };
 };
 
-// 5. SHOW MODAL WINDOW
+// 11. SHOW MODAL WINDOW
 const showModal = function (currentType, currentModal, currentNFT) {
   currentModal.style.display = "flex";
   body.style.overflow = "hidden";
   if (currentType === "NFT") enableFlip(currentNFT);
 };
 
-// 6. SET ORIGIN OF MODAL POPUP ANIMATION
+// 12. SET ORIGIN OF MODAL POPUP ANIMATION
 const setModalOrigin = function (currentModal, currentButton) {
   const xPosition = currentButton.getBoundingClientRect().left;
   const yPosition = currentButton.getBoundingClientRect().top;
@@ -172,13 +263,13 @@ const setModalOrigin = function (currentModal, currentButton) {
   console.log(currentModal.style.transformOrigin);
 };
 
-// 7. RESET FORMS WHEN CLOSING THEM
+// 13. RESET FORMS WHEN CLOSING THEM
 const resetForm = function () {
   document.getElementById(formLogin.id).reset();
   document.getElementById(formSignup.id).reset();
 };
 
-// 8. ENABLE MODAL FORM INTERACTION
+// 14. ENABLE MODAL FORM INTERACTION
 const enableViewButtons = function (
   type,
   buttons,
@@ -208,14 +299,14 @@ const enableViewButtons = function (
   }
 };
 
-// 9. ADD CARDS ON MAIN PAGE (2 TYPES: NFT AND CREATOR)
+// 15. ADD CARDS ON MAIN PAGE (2 TYPES: NFT AND CREATOR)
 const createCards = function (objectsArray, place, createCard) {
   objectsArray.forEach((item) =>
     place.insertAdjacentHTML("beforeend", createCard(item))
   );
 };
 
-// 10. CONVERT ETH TO CAD
+// 16. CONVERT ETH TO CAD
 const convertETHtoCAD = async function () {
   try {
     const fromCurrency = "ethereum";
@@ -229,7 +320,7 @@ const convertETHtoCAD = async function () {
   }
 };
 
-// 11. MAIN CODE
+// 17. ASYNCHRONOUS CODE
 convertETHtoCAD()
   .then((oneETHprice) => {
     const numberFormatter = Intl.NumberFormat("en-US");
@@ -252,92 +343,3 @@ convertETHtoCAD()
       createCreatorModal
     );
   });
-
-//////////////////////////////////////////////////
-//////////////////////////////////////////////////
-//////////////////////////////////////////////////
-//////////////////////////////////////////////////
-//////////////////////////////////////////////////
-
-// ENABLE MODAL FORM INTERACTION - LOGIN
-btnLogin.onclick = function (event) {
-  document.querySelector("#chk").checked = true;
-  const currentButton = event.target;
-  setModalOrigin(modalAuthentication, currentButton);
-  showModal("AUTHENTICATION", modalAuthentication);
-};
-
-// ENABLE MODAL FORM INTERACTION - SIGN UP
-btnSignup.onclick = function (event) {
-  document.querySelector("#chk").checked = false;
-  const currentButton = event.target;
-  setModalOrigin(modalAuthentication, currentButton);
-  showModal("AUTHENTICATION", modalAuthentication);
-};
-
-//////////////////////////////////////////////////
-
-// SMOOTH SCROLLING ANIMATION
-allLinks.forEach(function (link) {
-  link.addEventListener("click", function (e) {
-    e.preventDefault();
-    const href = link.getAttribute("href");
-
-    // Scroll back to top
-    if (href === "#")
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-
-    // Scroll to other links
-    if (href !== "#" && href.startsWith("#")) {
-      const sectionEl = document.querySelector(href);
-      sectionEl.scrollIntoView({ behavior: "smooth" });
-    }
-  });
-});
-
-//////////////////////////////////////////////////
-
-// STICKY NAVIGATION
-const obs = new IntersectionObserver(
-  function (entries) {
-    const ent = entries[0];
-    // console.log(entries);
-
-    if (ent.isIntersecting === false) {
-      document.body.classList.add("sticky");
-    }
-
-    if (ent.isIntersecting === true) {
-      document.body.classList.remove("sticky");
-    }
-  },
-  {
-    root: null,
-    threshold: 0,
-    rootMargin: "-100%",
-  }
-);
-obs.observe(heroSection);
-
-/////////////////////////////////////////////////////////////
-
-// SHOW LINK-TO-TOP BUTTON AFTER SCROLLING DOWN 500PX FROM TOP OF DOCUMENT
-window.onscroll = function () {
-  if (
-    document.body.scrollTop > 500 ||
-    document.documentElement.scrollTop > 500
-  ) {
-    linkToTop.style.display = "block";
-  } else {
-    linkToTop.style.display = "none";
-  }
-};
-
-//////////////////////////////////////////////////
-
-// SET CURRENT YEAR
-const currentYear = new Date().getFullYear();
-year.textContent = currentYear.toString();
