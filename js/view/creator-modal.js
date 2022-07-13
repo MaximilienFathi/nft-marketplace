@@ -123,19 +123,19 @@ export function createCreatorModal({
                     </div>
                 </div>
                 <div class="bar-chart-container analytics-border">
-                    <canvas class="creator-bar-chart"></canvas>
+                    <canvas class="creator-bar-chart" aria-label="Bar chart showing daily revenue and expanses this week" role="img"></canvas>
                 </div>
                 <div class="area-chart-container analytics-border">
-                    <canvas class="creator-area-chart"></canvas>
+                    <canvas class="creator-area-chart" aria-label="Area chart showing daily number of views this week" role="img"></canvas>
                 </div>
                 <div class="doughnut-chart-container analytics-border">
-                    <canvas class="creator-doughnut-chart-1"></canvas>
+                    <canvas class="creator-doughnut-chart-1" aria-label="Doughnut chart showing profit margin" role="img"></canvas>
                 </div>
                 <div class="doughnut-chart-container analytics-border">
-                    <canvas class="creator-doughnut-chart-2"></canvas>
+                    <canvas class="creator-doughnut-chart-2" aria-label="Doughnut chart showing ratio of NFTs sold" role="img"></canvas>
                 </div>
                 <div class="doughnut-chart-container analytics-border">
-                    <canvas class="creator-doughnut-chart-3"></canvas>
+                    <canvas class="creator-doughnut-chart-3" aria-label="Doughnut chart showing ratio of new viewers" role="img"></canvas>
                 </div>
             </div>
         </div>
@@ -148,7 +148,7 @@ export function createCharts(creator) {
   createDoughnutChart(
     ".creator-doughnut-chart-1",
     "Profit Margin",
-    ["Profit", "Revenue"],
+    ["Profit", "Rest of revenue"],
     creator.profitMargin
   );
   createDoughnutChart(
