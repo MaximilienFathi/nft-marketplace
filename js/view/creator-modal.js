@@ -32,12 +32,12 @@ export function createCreatorModal({
                 <img
                     class="modal-creator-banner"
                     src=${bannerImg}
-                    alt=""
+                    alt="Creator banner image"
                 />
                 <img
                     class="modal-creator-img"
                     src=${profileImg}
-                    alt=""
+                    alt="Creator profile image"
                 />
                 <!--                  <div class="modal-creator-about">-->
                 <p class="modal-creator-name">${name}</p>

@@ -21,7 +21,7 @@ export function createNftModal({
                 <img
                   class="modal-nft-img"
                   src="${image}"
-                  alt=""
+                  alt="NFT image"
                 />
             </div>
             <div>

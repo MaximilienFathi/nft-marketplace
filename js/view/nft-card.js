@@ -2,7 +2,7 @@
 
 export function createNftCard({ image, name, creator, ethereum, dollar }) {
   return `<div class="nft-card">
-             <img class="nft-img" src="${image}" alt="" />
+             <img class="nft-img" src="${image}" alt="NFT image" />
              <div class="nft-info">
                <p class="nft-name">${name}</p>
                <p class="nft-creator">By ${creator}</p>

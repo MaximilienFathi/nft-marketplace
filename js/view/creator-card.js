@@ -9,11 +9,11 @@ export function createCreatorCard({
   profileImg,
 }) {
   return `<div class="creator-card">
-              <img class="creator-banner" src="${bannerImg}" alt=""/>
+              <img class="creator-banner" src="${bannerImg}" alt="Creator banner image"/>
               <img
                 class="creator-img"
                 src="${profileImg}"
-                alt=""
+                alt="Creator profile image"
               />
               <div class="creator-info">
                 <p class="creator-name">${name}</p>
