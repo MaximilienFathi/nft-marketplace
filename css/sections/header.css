@@ -8,13 +8,24 @@
   /*background: linear-gradient(113.49deg, #984d38 -30.3%, #181e41 58.12%);*/
 }
 
-.brand-logo {
+.brand-container {
+  /*display: block; useful for IMAGES*/
   color: #fff;
   /*height: 2.2rem;*/
-  font-size: 1.8rem;
+  font-size: 2.4rem;
   font-weight: 500;
   text-decoration: none;
   transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.brand-logo {
+  color: #f5671b;
+  height: 3.2rem;
+  width: 3.2rem;
+  pointer-events: none;
 }
 
 .main-nav-list {

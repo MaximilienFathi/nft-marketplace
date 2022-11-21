@@ -173,6 +173,7 @@
 .modal-nft-icon {
   width: 2.2rem;
   height: 2.2rem;
+  pointer-events: none;
 }
 /*/////////////////////////////////////////////////*/
 .border-glow {

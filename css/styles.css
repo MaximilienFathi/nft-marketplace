@@ -17,7 +17,7 @@ body {
   font-family: Rubik, sans-serif;
   font-weight: 400;
   line-height: 1;
-  /*background-image: url(images/red-blue-background.jpg);*/
+  /*background-image: url(IMAGES/red-blue-background.jpg);*/
   /*background-size: cover;*/
   background: linear-gradient(
     45deg,
@@ -145,7 +145,7 @@ body {
   margin-bottom: 2.4rem;
 }
 
-/*images {*/
+/*IMAGES {*/
 /*    width: 100%;*/
 /*}*/
 

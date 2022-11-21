@@ -161,6 +161,7 @@
   width: 3.6rem;
   height: 3.6rem;
   color: rgb(255, 69, 0);
+  pointer-events: none;
 }
 
 .stat-text {
@@ -208,10 +209,3 @@
   box-shadow: 0 0 0.4rem silver;
   /*border: 3px solid red;*/
 }
-
-/*
-Have horizontal bar graph
-Put it on left side and area chart on right
-Bar chart is about revenue/expenses
-Area chart is about views
-*/
