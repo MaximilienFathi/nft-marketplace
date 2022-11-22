@@ -55,7 +55,8 @@ export const creator1 = new CreatorClass(
   [30, 70],
   [20, 80],
   [40, 60],
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad deleniti",
+  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad" +
+    " deleniti.",
   "IMAGES/cosmos-g20ff2fd5e_640.png",
   "IMAGES/man-g238e36a78_640.png"
 );
@@ -75,7 +76,8 @@ export const creator2 = new CreatorClass(
   [10, 90],
   [76, 24],
   [34, 66],
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad deleniti",
+  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad" +
+    " deleniti.",
   "IMAGES/bear-gfc11ffe9c_640.png",
   "IMAGES/man-g1679334f6_640.png"
 );
@@ -95,7 +97,8 @@ export const creator3 = new CreatorClass(
   [25, 75],
   [55, 45],
   [76, 24],
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad deleniti",
+  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad" +
+    " deleniti.",
   "IMAGES/memphis-g1020b08ad_640.jpg",
   "IMAGES/woman-g33cc37279_640.jpg"
 );
@@ -115,7 +118,8 @@ export const creator4 = new CreatorClass(
   [64, 36],
   [70, 30],
   [82, 18],
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad deleniti",
+  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad" +
+    " deleniti.",
   "IMAGES/ice-cream-g26773c881_640.png",
   "IMAGES/woman-g11e4ec8b8_640.jpg"
 );

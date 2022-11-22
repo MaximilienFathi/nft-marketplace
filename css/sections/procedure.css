@@ -35,12 +35,16 @@
 
 /* Add animation for each box when reaching viewport*/
 .procedure-step {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   border: 1px solid darkgoldenrod;
   border-radius: 11px;
   box-shadow: 0 0 9.6rem 0.8rem goldenrod;
   background: linear-gradient(113.49deg, #640348 -30.3%, #060649 58.12%);
   text-align: center;
-  padding: 1.6rem;
+  padding: 1.6rem 2.4rem 2.4rem 2.4rem;
 }
 
 .step-icon {
@@ -51,18 +55,19 @@
   height: 3.2rem;
   width: 3.2rem;
   padding: 1.6rem;
-  margin-bottom: 3.2rem; /* or 2.4rem*/
+  margin-bottom: 1.2rem;
   pointer-events: none;
 }
 
 .step-title {
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   color: #ded6d6;
   font-weight: 700;
-  margin-bottom: 1.6rem;
+  margin-bottom: 2.4rem;
+  line-height: 1.2;
 }
 
 .step-description {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   line-height: 1.8;
 }
