@@ -9,7 +9,7 @@ of the project for now.
 
 - [Overview](#overview)
     - [The challenge](#the-challenge)
-    - [Screenshot](#screenshot)
+    - [Screenshots](#screenshots)
     - [Links](#links)
 - [My process](#my-process)
     - [Built with](#built-with)
@@ -34,7 +34,7 @@ Users should be able to:
 - Flip between each NFT and associated creator modal window.
 - Access specific parts of the page using links.
 
-### Screenshot
+### Screenshots
 
 ![Image of the NFTs section](/README_nfts_section.PNG)  
 ![Image of the NFT modal window](/README_nft_modal.PNG)  
