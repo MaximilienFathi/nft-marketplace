@@ -25,19 +25,20 @@ of the project for now.
 Users should be able to:
 
 - Have access to a landing page with proper sections (e.g. header, hero, footer, etc.)
-- View trending NFTs at a glance
-- View each NFT buyout section via a modal window
-- View top creators at a glance
-- View each creator's dashboard via a modal window
-- Have access to specific creator analytics (shown using classes and chart libraries)
-- Flip between each NFT and associated creator modal window
-- Access specific parts of the page using links
+- View trending NFTs at a glance.
+- View each NFT buyout section via a modal window.
+- View top creators at a glance.
+- View each creator's dashboard via a modal window.
+- Have access to specific creator analytics (shown using classes and chart 
+  libraries).
+- Flip between each NFT and associated creator modal window.
+- Access specific parts of the page using links.
 
 ### Screenshot
 
-![Image of cryptocurencies table](/README_table_screenshot.PNG)  
-![Image of cryptocurency statistics and price data](/README_statistics_screenshot.PNG)  
-![Image of cryptocurencies performance chart and swapper](/README_chart&swapper_screenshot.PNG)
+![Image of the NFTs section](/README_nfts_section.PNG)  
+![Image of the NFT modal window](/README_nft_modal.PNG)  
+![Image of the creator modal window](/README_creator_modal.PNG)
 
 ### Links
 
@@ -56,6 +57,7 @@ While working through this project, the major learnings involved:
 
 - The gain in HTML, CSS, JavaScript knowledge while creating every component 
   of the website from scratch.
+- The manipulation of DOM elements.
 - The use of smooth scrolling animations.
 - The use of sticky navigation.
 - The creation and manipulation (e.g. positioning, opening/closing, etc.) of modal windows.
@@ -63,38 +65,33 @@ While working through this project, the major learnings involved:
 - The use of charting libraries to create beautiful charts that match user data.
 - The use of the MVC pattern.
 
-
-
-- The handling of routing with React projects involving multiple pages
-- The use and customization of components from libraries like Material UI
-- The use of UI design styles like glassmorphism to create beautiful websites
-- The main blockchain technology and cryptocurrency-related concepts
-
 ### Continued development
 
 Even though I have accomplished many of my initial objectives for this
 project, there are still some new features I wish to include such as:
 
-- Some UI changes, particularly for the home page
-- More pages such as one dedicated to blog posts
-- A page for each coin exchange outlining their performance
-- A complete back-end mechanism with actual user accounts
-- A proper way of having real cryptocurrency transactions using Web3
-  technologies
+- Some UI changes, particularly for the hero section.
+- More pages such as ones dedicated to displaying all NFTs and creators.
+- A way of sending news and updates to subscribed users.
+- A complete back-end mechanism with actual user accounts.
+- A proper way of trading NFTs using Web3 technologies.
+
+While I may want to improve my project later on by using popular libraries 
+and frameworks such as React or Angular, I purposefully decided to stay with 
+vanilla JS so far in order to have a better understanding of the language itself.
 
 ### Useful resources
 
 - [stackoverflow](http://stackoverflow.com/) - This proved insightful
   when I was stuck on specific coding issues.
 - [coingecko](https://www.coingecko.com/) - This was very useful when it
-  came to gathering API data for various cryptocurrencies and coin exchanges.
+  came to gathering API data for currency conversions.
 - [dribbble](https://dribbble.com/) - This helped me discover great web
   design inspirations.
 - [maketintsandshades](https://maketintsandshades.com/) - This was a
   great tool for generating lighter and darker versions of specific colors.
-- [storyset](https://storyset.com/) - This provided me with a variety of
-  great pictures to include in my project while still being similar in style
-  as well as customizable (i.e. colors can be modified).
+- [pixabay](https://pixabay.com/) - This provided me with a variety of
+  great stock images to include in my project.
 - [favicon.io](https://favicon.io/) - This helped me quickly generate
   necessary files for the favicon and its different formats.
 
