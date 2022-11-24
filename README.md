@@ -24,16 +24,14 @@ of the project for now.
 
 Users should be able to:
 
+- Have access to a landing page with proper sections (e.g. header, hero, footer, etc.)
 - View trending NFTs at a glance
+- View each NFT buyout section via a modal window
 - View top creators at a glance
-- Set specific cryptocurrencies as favorites
-- Rank cryptocurrencies and coin exchanges by a specific metric
-- Search and find specific cryptocurrencies and coin exchanges
-- View current balance for specific cryptocurrency and recent amount change
-- View specific cryptocurrency past and current performance
-- Simulate a transaction from one currency to another with customizable settings
-- Have access to specific cryptocurrency website, social networks, source
-  code, etc.
+- View each creator's dashboard via a modal window
+- Have access to specific creator analytics (shown using classes and chart libraries)
+- Flip between each NFT and associated creator modal window
+- Access specific parts of the page using links
 
 ### Screenshot
 
@@ -50,21 +48,23 @@ Users should be able to:
 - HTML5
 - CSS
 - JavaScript
-- [Axios](https://axios-http.com/) - JavaScript HTTP requests library
-- [React](https://reactjs.org/) - JavaScript UI library
-- [Material UI](https://mui.com/) - React component library
-- [react-chartjs-2](https://react-chartjs-2.js.org/) - React charting library
-- [React Router](https://v5.reactrouter.com/) - React routing library
-- [Jest](https://jestjs.io/) - JavaScript testing framework
-- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) - Complementary testing library for React
+- [Chart.js](https://www.chartjs.org/) - JavaScript charting library
 
 ### What I learned
 
 While working through this project, the major learnings involved:
 
-- The use of React as well as the more recent functional components and hooks
-- The gain in HTML, CSS, JavaScript knowledge while creating many
-  React components from scratch
+- The gain in HTML, CSS, JavaScript knowledge while creating every component 
+  of the website from scratch.
+- The use of smooth scrolling animations.
+- The use of sticky navigation.
+- The creation and manipulation (e.g. positioning, opening/closing, etc.) of modal windows.
+- The use of APIs and how to consume promises in asynchronous coding.
+- The use of charting libraries to create beautiful charts that match user data.
+- The use of the MVC pattern.
+
+
+
 - The handling of routing with React projects involving multiple pages
 - The use and customization of components from libraries like Material UI
 - The use of UI design styles like glassmorphism to create beautiful websites
