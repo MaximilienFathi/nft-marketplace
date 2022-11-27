@@ -19,6 +19,7 @@ import { createCreatorModal, createCharts } from "../view/creator-modal.js";
 // DOM ELEMENTS
 const body = document.querySelector("body");
 const allLinks = document.querySelectorAll("a:link");
+console.log(allLinks);
 const heroSection = document.querySelector(".hero-section");
 const year = document.querySelector(".year");
 const linkToTop = document.querySelector(".link-to-top");
@@ -56,23 +57,26 @@ year.textContent = currentYear.toString();
 
 // 2. SMOOTH SCROLLING ANIMATION
 allLinks.forEach(function (link) {
-  link.addEventListener("click", function (e) {
-    e.preventDefault();
-    const href = link.getAttribute("href");
+  // Following conditional allows github.com anchor link to be functional
+  if (link.hostname !== "github.com") {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const href = link.getAttribute("href");
 
-    // Scroll back to top
-    if (href === "#")
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
+      // Scroll back to top
+      if (href === "#")
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
 
-    // Scroll to other links
-    if (href !== "#" && href.startsWith("#")) {
-      const sectionEl = document.querySelector(href);
-      sectionEl.scrollIntoView({ behavior: "smooth" });
-    }
-  });
+      // Scroll to other links
+      if (href !== "#" && href.startsWith("#")) {
+        const sectionEl = document.querySelector(href);
+        sectionEl.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  }
 });
 
 // 3. STICKY NAVIGATION
