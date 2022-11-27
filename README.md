@@ -10,7 +10,7 @@ of the project for now.
 - [Overview](#overview)
     - [The challenge](#the-challenge)
     - [Screenshots](#screenshots)
-    - [Links](#links)
+    - [Link](#link)
 - [My process](#my-process)
     - [Built with](#built-with)
     - [What I learned](#what-i-learned)
@@ -40,7 +40,9 @@ Users should be able to:
 ![Image of the NFT modal window](/README_nft_modal.PNG)  
 ![Image of the creator modal window](/README_creator_modal.PNG)
 
-### Links
+### Link
+
+Live Site URL: [https://maximilienfathi.github.io/nft-marketplace/](https://maximilienfathi.github.io/nft-marketplace/)
 
 ## My process
 
