@@ -54,7 +54,7 @@ export function createCreatorModal({
                 <hr class="modal-creator-divider"/>
                 <ul class="networks-list">
                     <li>
-                        <a class="footer-link" href=""
+                        <a class="network-link" href=""
                         >
                             <ion-icon
                                 class="network-icon"
@@ -64,7 +64,7 @@ export function createCreatorModal({
                         </a>
                     </li>
                     <li>
-                        <a class="footer-link" href="">
+                        <a class="network-link" href="">
                             <ion-icon
                                 class="network-icon"
                                 name="logo-instagram"
@@ -72,7 +72,7 @@ export function createCreatorModal({
                         </a>
                     </li>
                     <li>
-                        <a class="footer-link" href="">
+                        <a class="network-link" href="">
                             <ion-icon
                                 class="network-icon"
                                 name="logo-pinterest"
@@ -80,7 +80,7 @@ export function createCreatorModal({
                         </a>
                     </li>
                     <li>
-                        <a class="footer-link" href="">
+                        <a class="network-link" href="">
                             <ion-icon
                                 class="network-icon"
                                 name="logo-twitter"

@@ -67,14 +67,19 @@
   gap: 2.4rem;
 }
 
+.network-link:link,
 .footer-link:link,
+.network-link:visited,
 .footer-link:visited {
+  display: inline-block;
   text-decoration: none;
   color: goldenrod;
   transition: all 0.3s;
 }
 
+.network-link:hover,
 .footer-link:hover,
+.network-link:active,
 .footer-link:active {
   color: darkgoldenrod;
 }
