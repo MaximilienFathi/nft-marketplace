@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MaximilienFathi/nft-marketplace.git"
+    "url": "git+https://github.com/ma-fath/nft-marketplace.git"
   },
   "author": "Maximilien Fathi",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MaximilienFathi/nft-marketplace/issues"
+    "url": "https://github.com/ma-fath/nft-marketplace/issues"
   },
-  "homepage": "https://github.com/MaximilienFathi/nft-marketplace#readme",
+  "homepage": "https://github.com/ma-fath/nft-marketplace#readme",
   "dependencies": {
     "chart.js": "^3.8.0"
   }
