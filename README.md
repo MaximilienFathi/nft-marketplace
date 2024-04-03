@@ -42,7 +42,7 @@ Users should be able to:
 
 ### Link
 
-Live Site URL: [https://ma-fath.github.io/nft-marketplace/](https://maximilienfathi.github.io/nft-marketplace/)
+Live Site URL: [https://ma-fath.github.io/nft-marketplace/](https://ma-fath.github.io/nft-marketplace/)
 
 ## My process
 
