@@ -19,7 +19,6 @@ import { createCreatorModal, createCharts } from "../view/creator-modal.js";
 // DOM ELEMENTS
 const body = document.querySelector("body");
 const allLinks = document.querySelectorAll("a:link");
-console.log(allLinks);
 const heroSection = document.querySelector(".hero-section");
 const year = document.querySelector(".year");
 const linkToTop = document.querySelector(".link-to-top");
@@ -83,7 +82,6 @@ allLinks.forEach(function (link) {
 const obs = new IntersectionObserver(
   function (entries) {
     const ent = entries[0];
-    // console.log(entries);
 
     if (ent.isIntersecting === false) {
       document.body.classList.add("sticky");
@@ -125,8 +123,6 @@ window.onclick = function (event) {
     currentModal.style.display = "none";
     body.style.overflowY = "scroll";
   }
-  // nftModals.includes(currentModal) || // Does not work
-  // if (isInArray(nftModals, currentModal)) {
   if (currentModal === dataModal) {
     currentModal.remove();
     body.style.overflowY = "scroll";
@@ -146,26 +142,8 @@ document.body.onclick = function (event) {
       dataModal.remove();
       body.style.overflowY = "scroll";
     }
-
-    // OLD strategy of having all html code for modals at the same time
-    // NEW strategy is to add html when needed and remove it otherwise
-    // nftModals.forEach((nftModal) => (nftModal.style.display = "none"));
-    // creatorModals.forEach(
-    //   (creatorModal) => (creatorModal.style.display = "none")
-    // );
-    //body.style.overflowY = "scroll";
-    // flipCard.classList.remove("is-flipped");
   }
 };
-
-// Used as an alternative to includes() for modal objects
-// const isInArray = function (arr, target) {
-//   let found = false;
-//   arr.forEach((item) => {
-//     if (item === target) found = true;
-//   });
-//   return found;
-// };
 
 //////////////////////////////////////////////////
 // FUNCTIONS FOR AUTHENTICATION MODALS
@@ -214,12 +192,6 @@ window.onload = function () {
         hours = 23;
       }
     }
-    // if (seconds >= 58) {
-    //   timer.style.color = "#ded6d6";
-    // }
-    // if (seconds < 58) {
-    //   timer.style.color = "red";
-    // }
   }, 1000);
 };
 
@@ -263,8 +235,6 @@ const setModalOrigin = function (currentModal, currentButton) {
   const xPosition = currentButton.getBoundingClientRect().left;
   const yPosition = currentButton.getBoundingClientRect().top;
   currentModal.style.transformOrigin = `${xPosition}px ${yPosition}px`;
-  console.log(xPosition, yPosition);
-  console.log(currentModal.style.transformOrigin);
 };
 
 // 13. RESET FORMS WHEN CLOSING THEM

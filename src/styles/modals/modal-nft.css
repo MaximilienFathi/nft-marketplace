@@ -1,13 +1,10 @@
 .nft-modal-content {
   background-color: rgba(6, 6, 73, 0.8);
   border-radius: 11px;
-  display: grid; /* flex would not enlarge 3rd picture*/
+  display: grid;
   grid-template-columns: 1fr 1.5fr;
   gap: 3.2rem;
-  /*flex-shrink: 1;*/
-  /*flex-grow: 1;*/
-  /*transition: all 3s ease-in-out;*/
-  height: 100%; /* = 55rem. if commented, height will be full height allowed*/
+  height: 100%;
   width: 100%;
   position: absolute;
   backface-visibility: hidden;
@@ -28,7 +25,6 @@
   height: 55rem; /* Must be same as flip-container! */
   object-fit: cover;
   border-radius: 11px;
-  /*box-shadow: 0 0 6.4rem rgb(0, 0, 0);*/ /*CAUSE BUG WHEN FLIPPING CARD!!*/
   transform: scale(1.1);
   transition: all 0.4s;
 }
@@ -38,11 +34,11 @@
 }
 
 .modal-nft-info {
-  /*padding: 3.2rem 4.8rem 4.8rem 4.8rem;*/
   padding: 4.8rem 6rem 4.8rem 4.8rem;
-  /*text-align: center;*/
 }
-/*/////////////////////////////////////////////////*/
+
+/******************************************************************************/
+
 .modal-nft-name {
   font-size: 4.4rem;
   color: #ded6d6;
@@ -67,7 +63,9 @@
   color: darkgoldenrod;
   cursor: pointer;
 }
-/*/////////////////////////////////////////////////*/
+
+/******************************************************************************/
+
 .nft-description {
   display: flex;
   flex-direction: column;
@@ -83,10 +81,10 @@
 .nft-description-text {
   font-size: 1.6rem;
 }
-/*/////////////////////////////////////////////////*/
+
+/******************************************************************************/
+
 .modal-nft-sale {
-  /*flex-direction: column;*/
-  /*gap: 1.6rem;*/
   display: grid;
   margin-bottom: 2.4rem;
 }
@@ -94,7 +92,6 @@
 .nft-prices-label {
   font-size: 1.6rem;
   color: #b2abab;
-  /*margin-bottom: 1.2rem;*/
 }
 
 .nft-prices {
@@ -105,7 +102,7 @@
 }
 
 .nft-modal-price-ethereum {
-  font-size: 2.3rem; /* 2.4 before */
+  font-size: 2.3rem;
   color: goldenrod;
 }
 
@@ -118,9 +115,7 @@
   font-size: 1.6rem;
   display: flex;
   align-items: center;
-  /*flex-grow: 1;*/
   gap: 0.8rem;
-  /*justify-content: center;*/
 }
 
 .modal-nft-time svg {
@@ -153,7 +148,9 @@
   outline: none;
   width: 20rem;
 }
-/*/////////////////////////////////////////////////*/
+
+/******************************************************************************/
+
 .modal-nft-stats {
   font-size: 1.6rem;
   display: flex;
@@ -164,10 +161,8 @@
 
 .modal-nft-stat {
   display: flex;
-  /*justify-content: space-between;*/
   align-items: center;
   gap: 0.8rem;
-  /*flex-grow: 1;*/
 }
 
 .modal-nft-icon {
@@ -175,7 +170,9 @@
   height: 2.2rem;
   pointer-events: none;
 }
-/*/////////////////////////////////////////////////*/
+
+/******************************************************************************/
+
 .border-glow {
   animation: glow 1s ease-in-out infinite alternate;
 }

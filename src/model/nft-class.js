@@ -31,7 +31,7 @@ export const nft1 = new NftClass(
   59,
   "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam" +
     " doloribus magni maiores molestias mollitia nam nobis odio optio pariatur quae quaerat quo, rem sunt tempore velit veritatis voluptate voluptates! Assumenda!",
-  "IMAGES/space-ga758f1522_640.jpg"
+  "public/images/space-ga758f1522_640.jpg"
 );
 
 export const nft2 = new NftClass(
@@ -43,7 +43,7 @@ export const nft2 = new NftClass(
   87,
   "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam" +
     " doloribus magni maiores molestias mollitia nam nobis odio optio pariatur quae quaerat quo, rem sunt tempore velit veritatis voluptate voluptates! Assumenda!",
-  "IMAGES/art-g388e5fb4f_640.jpg"
+  "public/images/art-g388e5fb4f_640.jpg"
 );
 
 export const nft3 = new NftClass(
@@ -55,7 +55,7 @@ export const nft3 = new NftClass(
   9,
   "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam" +
     " doloribus magni maiores molestias mollitia nam nobis odio optio pariatur quae quaerat quo, rem sunt tempore velit veritatis voluptate voluptates! Assumenda!",
-  "IMAGES/art-ga0bb51423_640.jpg"
+  "public/images/art-ga0bb51423_640.jpg"
 );
 
 export const nft4 = new NftClass(
@@ -67,5 +67,5 @@ export const nft4 = new NftClass(
   45,
   "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam" +
     " doloribus magni maiores molestias mollitia nam nobis odio optio pariatur quae quaerat quo, rem sunt tempore velit veritatis voluptate voluptates! Assumenda!",
-  "IMAGES/art-ga1ef76e48_640.jpg"
+  "public/images/art-ga1ef76e48_640.jpg"
 );

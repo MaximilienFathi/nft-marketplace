@@ -1,21 +1,21 @@
 # NFT marketplace - A Vanilla JS Solution
 
 NFT marketplace is a website that allows users to discover, buy and sell
-non-fungible tokens (NFTs). Given that my knowledge of back-end development is 
-currently very limited, I have decided to solely focus on the front-end part 
+non-fungible tokens (NFTs). Given that my knowledge of back-end development is
+currently very limited, I have decided to solely focus on the front-end part
 of the project for now.
 
 ## Table of contents
 
 - [Overview](#overview)
-    - [The challenge](#the-challenge)
-    - [Screenshots](#screenshots)
-    - [Link](#link)
+  - [The challenge](#the-challenge)
+  - [Screenshots](#screenshots)
+  - [Link](#link)
 - [My process](#my-process)
-    - [Built with](#built-with)
-    - [What I learned](#what-i-learned)
-    - [Continued development](#continued-development)
-    - [Useful resources](#useful-resources)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
 - [Author](#author)
 
 ## Overview
@@ -29,16 +29,16 @@ Users should be able to:
 - View each NFT buyout section via a modal window.
 - View top creators at a glance.
 - View each creator's dashboard via a modal window.
-- Have access to specific creator analytics (shown using classes and chart 
+- Have access to specific creator analytics (shown using classes and chart
   libraries).
 - Flip between each NFT and associated creator modal window.
 - Access specific parts of the page using links.
 
 ### Screenshots
 
-![Image of the NFTs section](/README_nfts_section.PNG)  
-![Image of the NFT modal window](/README_nft_modal.PNG)  
-![Image of the creator modal window](/README_creator_modal.PNG)
+![Image of the NFTs section](/public/images/README_nfts_section.PNG)  
+![Image of the NFT modal window](/public/images/README_nft_modal.PNG)  
+![Image of the creator modal window](/public/images/README_creator_modal.PNG)
 
 ### Link
 
@@ -57,7 +57,7 @@ Live Site URL: [https://ma-fath.github.io/nft-marketplace/](https://ma-fath.gith
 
 While working through this project, the major learnings involved:
 
-- The gain in HTML, CSS, JavaScript knowledge while creating every component 
+- The gain in HTML, CSS, JavaScript knowledge while creating every component
   of the website from scratch.
 - The manipulation of DOM elements.
 - The use of smooth scrolling animations.
@@ -78,8 +78,8 @@ project, there are still some new features I wish to include such as:
 - A complete back-end mechanism with actual user accounts.
 - A proper way of trading NFTs using Web3 technologies.
 
-While I may want to improve my project later on by using popular libraries 
-and frameworks such as React or Angular, I purposefully decided to stay with 
+While I may want to improve my project later on by using popular libraries
+and frameworks such as React or Angular, I purposefully decided to stay with
 vanilla JS so far in order to have a better understanding of the language itself.
 
 ### Useful resources

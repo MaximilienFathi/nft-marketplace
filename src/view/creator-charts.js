@@ -11,7 +11,6 @@ export const createBarChart = function (revenueData, expanseData) {
         data: revenueData,
         backgroundColor: ["rgba(75, 192, 192, 0.2)"],
         borderColor: ["rgb(75, 192, 192)"],
-        // or use goldenrod
         borderWidth: 1,
       },
       {
@@ -19,12 +18,12 @@ export const createBarChart = function (revenueData, expanseData) {
         data: expanseData,
         backgroundColor: ["rgba(255, 69, 0, 0.2)"],
         borderColor: ["rgb(255, 69, 0)"],
-        // or use #ff4500ff
         borderWidth: 1,
       },
     ],
   };
   let delayed;
+
   // 2) config
   const bar_chart_config = {
     type: "bar",
@@ -32,10 +31,6 @@ export const createBarChart = function (revenueData, expanseData) {
     options: {
       animations: {
         duration: 2000,
-        // NOT WORKING
-        // easing: "linear",
-        // from: 0,
-        // to: 0,
       },
       scales: {
         x: {
@@ -56,21 +51,13 @@ export const createBarChart = function (revenueData, expanseData) {
             boxWidth: 30,
             color: "#b2abab",
           },
-          // labels: {
-          //   usePointStyle: true,
-          // },
         },
       },
     },
   };
 
   // 3) render chart
-
   const bar_ctx = document.querySelector(".creator-bar-chart").getContext("2d");
-  // Not needed anymore because I am adding and removing the HTML everytime
-  // if (myBarChart !== null) {
-  //   myBarChart.destroy();
-  // }
   const myBarChart = new Chart(bar_ctx, bar_chart_config);
 };
 
@@ -92,19 +79,16 @@ export const createAreaChart = function (viewsData) {
   area_ctx.canvas.height = 55;
 
   // 1) setup
-  // const labels = Utils.months({ count: 7 });
   const area_chart_data = {
     labels: [1, 2, 3, 4, 5, 6, 7],
     datasets: [
       {
-        // label: "My First Dataset",
         data: viewsData,
-        // borderColor: "rgb(75, 192, 192)",
         tension: 0.4,
         backgroundColor: gradient1,
         fill: true,
-        borderWidth: 1, // Specify bar border width
-        borderColor: gradient2, // Add custom color border (Line)
+        borderWidth: 1,
+        borderColor: gradient2,
         pointRadius: 0,
       },
     ],
@@ -114,9 +98,8 @@ export const createAreaChart = function (viewsData) {
   const area_chart_config = {
     type: "line",
     data: area_chart_data,
-    responsive: true, // Instruct chart js to respond nicely.
-    maintainAspectRatio: false, // Add to prevent default behaviour of full-width/height
-    // tension: 0.4,
+    responsive: true,
+    maintainAspectRatio: false,
     options: {
       scales: {
         x: {
@@ -136,10 +119,6 @@ export const createAreaChart = function (viewsData) {
       animations: {
         tension: {
           duration: 2000,
-          // NOT WORKING
-          // easing: "easeInOutCirc",
-          // from: 0,
-          // to: 1,
         },
       },
       plugins: {
@@ -185,9 +164,7 @@ export const createDoughnutChart = function (
       } = chart;
 
       ctx.save();
-      // console.log("test", top);
       const chartData = chart.data.datasets[0].data[0];
-      // console.log(chart.data.datasets[0].data[0]);
 
       ctx.font = "bolder 1.6rem Arial";
       ctx.fillStyle = "white";
@@ -202,12 +179,10 @@ export const createDoughnutChart = function (
     labels: myLabels,
     datasets: [
       {
-        // label: "My First Dataset",
         data: myData,
         backgroundColor: ["rgba(75, 192, 192, 0.2)", "rgba(255, 99, 132, 0.2)"],
         hoverOffset: 10,
         cutout: "60%",
-        // borderRadius: 30,
       },
     ],
   };
@@ -217,7 +192,6 @@ export const createDoughnutChart = function (
     type: "doughnut",
     data: doughnut_chart_data,
     options: {
-      // cutout: "50%",
       rotation: Math.PI * 0.5,
       animation: {
         duration: 2000,
@@ -226,7 +200,6 @@ export const createDoughnutChart = function (
       },
       responsive: true,
       maintainAspectRatio: false,
-      // showScale: false,
       elements: {
         arc: {
           borderWidth: 2,

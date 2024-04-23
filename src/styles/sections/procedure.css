@@ -1,39 +1,14 @@
 .procedure-section {
-  /*padding: 0 0 9.6rem 0;*/
   padding: 4.8rem 0;
-  /*margin-bottom: 2.4rem;*/
-  /*background-image: url("IMAGES/map-g165894aa7_640.png");*/
-  /*background-size: cover;*/
   backdrop-filter: contrast(80%);
-  /*position: relative;*/
 }
-
-/*.procedure-section:before {*/
-/*  background: url(IMAGES/treasure-map-g92be65d30_1280.png);*/
-/*  content: "";*/
-/*  z-index: 10;*/
-/*  position: absolute;*/
-/*  opacity: 0.05;*/
-/*  top: 0;*/
-/*  bottom: 10rem;*/
-/*  left: 0;*/
-/*  right: 0;*/
-/*  background-size: 200rem;*/
-/*}*/
 
 .procedure-heading {
   display: block;
   text-align: center;
-  /*padding: 2.4rem 0;*/
   margin-bottom: 4.8rem;
 }
 
-/*.procedure-container {*/
-/*  display: flex;*/
-/*  gap: 2.4rem;*/
-/*}*/
-
-/* Add animation for each box when reaching viewport*/
 .procedure-step {
   display: flex;
   flex-direction: column;
@@ -50,7 +25,7 @@
 .step-icon {
   color: blue;
   backdrop-filter: blur(8px);
-  color: darkgoldenrod; /*or goldenrod*/
+  color: darkgoldenrod;
   border-radius: 50%;
   height: 3.2rem;
   width: 3.2rem;

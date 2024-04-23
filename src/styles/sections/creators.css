@@ -1,5 +1,4 @@
 .creators-section {
-  /*padding: 0 0 9.6rem 0;*/
   padding: 4.8rem 0;
 }
 
@@ -22,12 +21,10 @@
   border-radius: 11px;
   overflow: hidden;
   transition: all 0.4s;
-  /*border: 3px solid red;*/
-  /*height: 65%;*/
   background: linear-gradient(113.49deg, #c73d54 -30.3%, #16256b 58.12%);
-  /*backdrop-filter: blur(1px);*/
   position: relative;
 }
+
 .creator-card:hover {
   transform: translateY(-1.2rem);
   box-shadow: 0 0 6.4rem goldenrod;
@@ -37,14 +34,12 @@
   width: 100%;
   height: 40%;
   object-fit: cover;
-  /*border-radius: 11px;*/
 }
 
 .creator-img {
   width: 25%;
   border: 2px solid #e3590f;
   border-radius: 10px;
-  /*background-color: #fff;*/
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
   position: absolute;
   left: 50%;
@@ -53,11 +48,9 @@
 }
 
 .creator-info {
-  /*padding: 3.2rem 4.8rem 4.8rem 4.8rem;*/
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  /*align-items: center;*/
   justify-items: center;
   padding: 2.4rem;
   margin-top: 2.4rem;
@@ -87,7 +80,6 @@
 
 .creator-button {
   background-color: #ff4500ff;
-  /*background: linear-gradient(45deg, #ea4c0a, #5252d9);*/
   font-size: 1.6rem;
   padding: 0.8rem 1.2rem;
   width: 75%;
