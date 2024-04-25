@@ -42,7 +42,7 @@ Users should be able to:
 
 ### Link
 
-Live Site URL: [https://ma-fath.github.io/nft-marketplace/](https://ma-fath.github.io/nft-marketplace/)
+Live Site URL: [ma-fath-nft-marketplace.vercel.app](ma-fath-nft-marketplace.vercel.app)
 
 ## My process
 
