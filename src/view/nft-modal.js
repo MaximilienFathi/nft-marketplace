@@ -31,7 +31,7 @@ export function createNftModal({
                 <div class="modal-nft-info">
                   <p class="modal-nft-name">${name}</p>
                   <p class="modal-nft-creator">
-                    By <a class="modal-creator-link">${creator}</a>
+                    By <a class="modal-creator-link">${creator}</a> (click on it)
                   </p>
                   <div class="nft-description">
                     <p class="nft-description-label">Description</p>

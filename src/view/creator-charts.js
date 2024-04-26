@@ -1,5 +1,3 @@
-import Chart from "/node_modules/chart.js/auto/auto.esm.js";
-
 /////////////////////////////////////////////////////////////
 // SET UP CHARTS
 
