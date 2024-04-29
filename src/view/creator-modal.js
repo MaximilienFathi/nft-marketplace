@@ -1,5 +1,3 @@
-// "use script";
-
 import {
   createBarChart,
   createAreaChart,
@@ -10,9 +8,6 @@ import {
 export function createCreatorModal({
   name,
   joinDate,
-  items,
-  views,
-  followers,
   balance,
   totalSales,
   totalValue,
@@ -21,7 +16,6 @@ export function createCreatorModal({
   profileImg,
 }) {
   return `
-<!--    <div id="modal-creator" class="modal-container">-->
     <div class="data-modal modal-container">
         <div class="modal-creator-content border-glow">
             <div class="modal-nav-icons">
@@ -39,14 +33,9 @@ export function createCreatorModal({
                     src=${profileImg}
                     alt="Creator profile image"
                 />
-                <!--                  <div class="modal-creator-about">-->
                 <p class="modal-creator-name">${name}</p>
                 <p class="creator-join-date">Joined ${joinDate}</p>
                 <p class="creator-description">${description}</p>
-                <!--                  <div class="creator-follow-stats">-->
-                <!--                    <p>24 followers</p>-->
-                <!--                    <p>10 following</p>-->
-                <!--                  </div>-->
                 <div class="creator-modal-btn-box">
                     <button class="btn btn-full btn-message">Message</button>
                     <button class="btn btn-outline btn-follow">Follow</button>
@@ -88,7 +77,6 @@ export function createCreatorModal({
                         </a>
                     </li>
                 </ul>
-                <!--                  </div>-->
             </div>
             <div class="modal-creator-right-content">
                 <p class="creator-analytics-label">Analytics Overview</p>

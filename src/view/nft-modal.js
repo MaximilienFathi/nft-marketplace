@@ -1,5 +1,3 @@
-// "use script";
-
 // Create a modal window when clicking on "view NFT"
 export function createNftModal({
   image,
@@ -12,7 +10,6 @@ export function createNftModal({
   description,
 }) {
   return `
-<!--    <div id="nft-modal" class="modal-container">-->
     <div class="data-modal modal-container">
       <div class="flip-container">
         <div class="flip-card">
@@ -42,7 +39,6 @@ export function createNftModal({
                     <p class="nft-prices-label">Current price</p>
                     <div class="nft-prices">
                       <p class="nft-modal-price-ethereum">
-                        <!--                      <i class="lab la-ethereum"></i>-->
                         <strong
                           ><span class="ethereum-value">${ethereum}</span>
                           ETH

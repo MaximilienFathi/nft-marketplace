@@ -71,9 +71,9 @@
   color: #fff;
 }
 
-/******************************************************************************/
-
+/* ########################################################################## */
 /* STICKY NAVIGATION */
+
 /* Had to switch to sticky from fixed as it was buggy and not recommended!*/
 .sticky .header {
   position: sticky;

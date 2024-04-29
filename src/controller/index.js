@@ -1,5 +1,3 @@
-"use strict";
-
 import { nft1, nft2, nft3, nft4 } from "../model/nft-class.js";
 import { createNftCard } from "../view/nft-card.js";
 import { createNftModal } from "../view/nft-modal.js";

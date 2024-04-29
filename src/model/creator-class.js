@@ -1,5 +1,3 @@
-// "use script";
-
 class CreatorClass {
   constructor(
     name,
