@@ -1,6 +1,6 @@
 # NFT marketplace - A World of Digital Collectibles
 
-The future of digital ownership unfolds! NFT Marketplace offers a user-friendly front-end built with JavaScript, empowering users to explore the world of non-fungible tokens (NFTs). One can discover a curated collection of NFTs, delve into creator profiles, and gain a glimpse into the exciting future of digital ownership.
+The future of digital ownership unfolds! NFT Marketplace offers a user-friendly front-end built with JavaScript, empowering you to explore the world of non-fungible tokens (NFTs). One can discover a curated collection of NFTs, delve into creator profiles, and gain a glimpse into the exciting future of digital ownership.
 
 ## Table of contents
 
