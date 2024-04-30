@@ -1,12 +1,13 @@
 {
   "name": "nft-marketplace",
   "version": "1.0.0",
+  "author": "Maximilien Fathi",
+  "license": "ISC",
+  "private": true,
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html"
   },
-  "author": "Maximilien Fathi",
-  "license": "ISC",
   "dependencies": {
     "chart.js": "^4.4.2"
   },
