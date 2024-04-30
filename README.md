@@ -76,11 +76,10 @@ While I may want to improve my project later on by using popular libraries
 and frameworks such as React or Angular, I purposefully decided to stay with
 vanilla JS so far in order to have a better understanding of the language itself.
 
-### Useful resources
+### Useful additional resources
 
 - [Stack Overflow](http://stackoverflow.com/) - This proved insightful
   when I was stuck on specific coding issues.
-- [Chart.js](https://www.chartjs.org/docs/latest/) - This provided me with the documentation necessary to integrate Chart.js's charting technology into my project.
 - [CoinGecko](https://www.coingecko.com/) - This was very useful when it
   came to gathering API data for currency conversions.
 - [Dribbble](https://dribbble.com/) - This helped me discover great web
