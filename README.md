@@ -1,6 +1,6 @@
 # NFT marketplace - A World of Digital Collectibles
 
-The future of digital ownership is here! NFT marketplace is a project built with JavaScript that allows users to discover, buy and sell non-fungible tokens (NFTs).
+The future of digital ownership unfolds! NFT Marketplace offers a user-friendly front-end built with JavaScript, empowering users to explore the world of non-fungible tokens (NFTs). One can discover a curated collection of NFTs, delve into creator profiles, and gain a glimpse into the exciting future of digital ownership.
 
 ## Table of contents
 
@@ -52,7 +52,7 @@ Live Site URL: [https://ma-fath.github.io/nft-marketplace/](https://ma-fath.gith
 
 While working through this project, the major learnings involved:
 
-- A deepened understanding of HTML, CSS, and JavaScript as a result of my framework-free approach to build the UI.
+- A deepened understanding of HTML, CSS, and JavaScript as a result of my UI framework-free approach.
 - The manipulation of DOM elements.
 - The use of smooth scrolling animations.
 - The implementation of sticky navigation.
