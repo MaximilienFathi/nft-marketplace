@@ -1,9 +1,6 @@
-# NFT marketplace - A Vanilla JS Solution
+# NFT marketplace - A World of Digital Collectibles
 
-NFT marketplace is a website that allows users to discover, buy and sell
-non-fungible tokens (NFTs). Given that my knowledge of back-end development is
-currently very limited, I have decided to solely focus on the front-end part
-of the project for now.
+The future of digital ownership is here! NFT marketplace is a project built with JavaScript that allows users to discover, buy and sell non-fungible tokens (NFTs).
 
 ## Table of contents
 
@@ -22,17 +19,14 @@ of the project for now.
 
 ### The challenge
 
-Users should be able to:
+NFT Marketplace should aim to meet the following objectives:
 
-- Have access to a landing page with proper sections (e.g. header, hero, footer, etc.)
-- View trending NFTs at a glance.
-- View each NFT buyout section via a modal window.
-- View top creators at a glance.
-- View each creator's dashboard via a modal window.
-- Have access to specific creator analytics (shown using classes and chart
-  libraries).
-- Flip between each NFT and associated creator modal window.
-- Access specific parts of the page using links.
+- **Engaging Landing Page:** Immerse yourself in the world of NFTs with a beautifully designed landing page featuring well-defined sections like a header, hero section, footer, and more, providing intuitive navigation and clear information about the marketplace.
+- **Discover Trending NFTs:** Dive into a curated collection of NFTs, showcasing the hottest items at a glance on the landing page.
+- **Seamless NFT Viewing:** Click on any NFT to explore details in a user-friendly modal window, complete with buyout information.
+- **Meet the Creators:** Explore a dedicated section highlighting top creators within the NFT marketplace.
+- **Unlock Creator Insights:** Delve into a creator's profile through a modal window, featuring data visualizations and analytics (utilizing classes and chart libraries) to understand their artistic journey and impact.
+- **Effortless Navigation:** Seamlessly flip between NFTs and their corresponding creator profiles using intuitive navigation. Access specific sections of the marketplace with clearly defined links, ensuring a smooth user experience.
 
 ### Screenshots
 
@@ -52,19 +46,19 @@ Live Site URL: [https://ma-fath.github.io/nft-marketplace/](https://ma-fath.gith
 - CSS
 - JavaScript
 - [Chart.js](https://www.chartjs.org/) - JavaScript charting library
+- [Parcel](https://parceljs.org/) - Web application bundler
 
 ### What I learned
 
 While working through this project, the major learnings involved:
 
-- The gain in HTML, CSS, JavaScript knowledge while creating every component
-  of the website from scratch.
+- A deepened understanding of HTML, CSS, and JavaScript as a result of my framework-free approach to build the UI.
 - The manipulation of DOM elements.
 - The use of smooth scrolling animations.
-- The use of sticky navigation.
+- The implementation of sticky navigation.
 - The creation and manipulation (e.g. positioning, opening/closing, etc.) of modal windows.
 - The use of APIs and how to consume promises in asynchronous coding.
-- The use of charting libraries to create beautiful charts that match user data.
+- The integration of charting libraries to create beautiful charts that match user data.
 - The use of the MVC pattern.
 
 ### Continued development
@@ -84,17 +78,18 @@ vanilla JS so far in order to have a better understanding of the language itself
 
 ### Useful resources
 
-- [stackoverflow](http://stackoverflow.com/) - This proved insightful
+- [Stack Overflow](http://stackoverflow.com/) - This proved insightful
   when I was stuck on specific coding issues.
-- [coingecko](https://www.coingecko.com/) - This was very useful when it
+- [Chart.js](https://www.chartjs.org/docs/latest/) - This provided me with the documentation necessary to integrate Chart.js's charting technology into my project.
+- [CoinGecko](https://www.coingecko.com/) - This was very useful when it
   came to gathering API data for currency conversions.
-- [dribbble](https://dribbble.com/) - This helped me discover great web
+- [Dribbble](https://dribbble.com/) - This helped me discover great web
   design inspirations.
-- [maketintsandshades](https://maketintsandshades.com/) - This was a
+- [Tint & Shade Generator](https://maketintsandshades.com/) - This was a
   great tool for generating lighter and darker versions of specific colors.
-- [pixabay](https://pixabay.com/) - This provided me with a variety of
+- [Pixabay](https://pixabay.com/) - This provided me with a variety of
   great stock images to include in my project.
-- [favicon.io](https://favicon.io/) - This helped me quickly generate
+- [Favicon.io](https://favicon.io/) - This helped me quickly generate
   necessary files for the favicon and its different formats.
 
 ## Author
