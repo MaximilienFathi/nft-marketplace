@@ -122,6 +122,7 @@ body {
   right: 2rem;
   bottom: 2rem;
   display: none;
+  z-index: 1;
 }
 
 .link-to-top:hover,
