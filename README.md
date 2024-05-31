@@ -12,7 +12,7 @@ The future of digital ownership unfolds! NFT Marketplace offers a user-friendly 
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
+  - [Useful additional resources](#useful-additional-resources)
 - [Author](#author)
 
 ## Overview
